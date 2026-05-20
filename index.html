@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>婚活スタイル診断 - あなたに合ったマッチングアプリが分かる無料診断</title>
+  <meta name="description" content="性格・恋愛観から最適なマッチングアプリを診断。Pairs・with・タップルなど人気アプリを比較して、あなたに合った出会いの場を無料で提案します。">
+  <link rel="canonical" href="https://appadaycreator.github.io/matchmaking-style-test/">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "婚活スタイル診断",
+      "url": "https://appadaycreator.github.io/matchmaking-style-test/",
+      "description": "性格・恋愛観から最適なマッチングアプリを診断。Pairs・with・タップルなど人気アプリを比較して、あなたに合った出会いの場を無料で提案します。",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "マッチングアプリは安全ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "大手マッチングアプリ（Pairs・with・タップルなど）は年齢確認・本人確認が義務付けられており、24時間365日の監視体制が整っています。ただし、個人情報の管理や会う際の注意など基本的なリテラシーは必要です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "有料プランは必ず必要ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "女性は多くのアプリで無料でメッセージまで利用できます。男性はメッセージ送受信に有料プランが必要なアプリが多いですが、月額3,000〜4,000円程度が相場です。まずは無料登録してプロフィールを見てみるのがおすすめです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "プロフィール写真は必ず必要ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "写真ありのプロフィールはマッチング率が大幅に上がるため、できれば用意することをおすすめします。ただし、写真を非公開にして特定の相手にだけ見せる「鍵付き写真」機能を持つアプリもあります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どのマッチングアプリがおすすめですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "目的によって異なります。結婚・真剣交際を求めるなら「Pairs」「with」、気軽な出会いなら「タップル」、共通の趣味で出会いたいなら「タップル」「with」がおすすめです。本診断で自分に合ったアプリを探してみましょう。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "マッチングアプリを初めて使う場合でも大丈夫ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、初めての方でも安心して使えます。大手アプリはUI/UXが洗練されており、チュートリアルも充実しています。まずは無料登録してプロフィールを作り、相手のプロフィールを眺めることから始められます。"
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <style>
+    .gradient-header {
+      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #db2777 100%);
+    }
+    .gradient-btn {
+      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+    }
+    .gradient-btn:hover {
+      background: linear-gradient(135deg, #e11d48 0%, #db2777 100%);
+    }
+    .option-btn {
+      transition: all 0.2s ease;
+      border: 2px solid #fda4af;
+    }
+    .option-btn:hover {
+      border-color: #f43f5e;
+      background-color: #fff1f2;
+      transform: translateY(-1px);
+    }
+    .option-btn.selected {
+      border-color: #f43f5e;
+      background-color: #ffe4e6;
+      color: #be123c;
+      font-weight: 600;
+    }
+    .progress-bar {
+      transition: width 0.4s ease;
+    }
+    .app-card {
+      border: 2px solid #fecdd3;
+      transition: all 0.2s ease;
+    }
+    .app-card:hover {
+      border-color: #f43f5e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(244, 63, 94, 0.15);
+    }
+    .score-circle {
+      background: conic-gradient(#f43f5e var(--score-deg), #fce7f3 0deg);
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .heart-float {
+      animation: heartFloat 3s ease-in-out infinite;
+    }
+    @keyframes heartFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body class="bg-rose-50 min-h-screen font-sans">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="gradient-header text-white py-6 px-4 shadow-lg">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="text-4xl mb-2 heart-float">
+        <i class="fas fa-heart"></i>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-bold mb-2">婚活スタイル診断</h1>
+      <p class="text-rose-100 text-sm md:text-base">あなたにぴったりのマッチングアプリが10問で分かる！</p>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 py-6">
+
+    <!-- AdSense 上部 -->
+    <div class="mb-6 text-center">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8427583028015858"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- 診断開始画面 -->
+    <div id="start-screen" class="fade-in">
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+        <div class="text-center mb-6">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-rose-100 text-rose-500 text-4xl mb-4">
+            <i class="fas fa-search-heart"></i>
+          </div>
+          <h2 class="text-xl font-bold text-gray-800 mb-3">あなたの婚活スタイルを診断します</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            性格・恋愛観・理想のパートナー像に関する10問の質問に答えるだけで、
+            <strong>Pairs・with・タップル</strong>などの人気マッチングアプリの中から
+            あなたに最も合ったものをご提案します。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div class="text-center">
+            <div class="text-2xl text-rose-500 mb-1"><i class="fas fa-clock"></i></div>
+            <div class="text-xs text-gray-600">所要時間<br><strong class="text-gray-800">約2分</strong></div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl text-rose-500 mb-1"><i class="fas fa-question-circle"></i></div>
+            <div class="text-xs text-gray-600">質問数<br><strong class="text-gray-800">10問</strong></div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl text-rose-500 mb-1"><i class="fas fa-gift"></i></div>
+            <div class="text-xs text-gray-600">利用料金<br><strong class="text-gray-800">完全無料</strong></div>
+          </div>
+        </div>
+
+        <button onclick="startDiagnosis()" class="gradient-btn text-white w-full py-4 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
+          <i class="fas fa-heart mr-2"></i>診断スタート！
+        </button>
+      </div>
+
+      <!-- サービス説明 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+          <i class="fas fa-info-circle text-rose-500 mr-2"></i>このサービスについて
+        </h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          「婚活スタイル診断」は、マッチングアプリ選びで迷っているあなたのための無料診断ツールです。
+          20〜35歳の婚活・恋活を考えている独身の方を対象に、性格・恋愛観・生活スタイルから
+          最もマッチするマッチングアプリを提案します。
+        </p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          日本国内には数十種類のマッチングアプリが存在しますが、それぞれ特徴が大きく異なります。
+          真剣な交際・結婚を目指すなら会員数No.1の<strong>Pairs（ペアーズ）</strong>、
+          心理学を活用して深い相性を重視するなら<strong>with（ウィズ）</strong>、
+          共通の趣味で自然に出会いたいなら<strong>タップル</strong>がおすすめです。
+        </p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          本診断では、あなたの回答をもとにアルゴリズムが最適なアプリをスコアリングし、
+          相性ランキングとともにご提示します。診断結果を参考に、あなたの婚活・恋活を
+          スタートさせましょう！
+        </p>
+      </div>
+
+      <!-- マッチングアプリ紹介 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+          <i class="fas fa-mobile-alt text-rose-500 mr-2"></i>診断対象のマッチングアプリ
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3 p-3 bg-rose-50 rounded-xl">
+            <div class="text-2xl">💑</div>
+            <div>
+              <div class="font-bold text-gray-800">Pairs（ペアーズ）</div>
+              <div class="text-xs text-gray-600">国内最大級・累計2,000万人登録。真剣な交際・結婚を目指す方に最適。コミュニティ機能で共通の趣味を持つ相手を探せます。</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-xl">
+            <div class="text-2xl">🧠</div>
+            <div>
+              <div class="font-bold text-gray-800">with（ウィズ）</div>
+              <div class="text-xs text-gray-600">心理学×AIで深い相性マッチング。価値観・性格重視の出会いを求める方に人気。心理テストや診断コンテンツが充実。</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-xl">
+            <div class="text-2xl">✨</div>
+            <div>
+              <div class="font-bold text-gray-800">タップル</div>
+              <div class="text-xs text-gray-600">趣味・興味でつながるマッチングアプリ。カジュアルな出会いから真剣交際まで対応。若い世代に特に人気があります。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+          <i class="fas fa-question-circle text-rose-500 mr-2"></i>よくある質問
+        </h2>
+        <div class="space-y-4">
+          <details class="border border-rose-100 rounded-xl overflow-hidden">
+            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
+              マッチングアプリは安全ですか？
+            </summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
+              大手マッチングアプリ（Pairs・with・タップルなど）は年齢確認・本人確認が義務付けられており、24時間365日の監視体制が整っています。ただし、個人情報の管理や会う際の注意など基本的なリテラシーは必要です。
+            </div>
+          </details>
+          <details class="border border-rose-100 rounded-xl overflow-hidden">
+            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
+              有料プランは必ず必要ですか？
+            </summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
+              女性は多くのアプリで無料でメッセージまで利用できます。男性はメッセージ送受信に有料プランが必要なアプリが多いですが、月額3,000〜4,000円程度が相場です。まずは無料登録してプロフィールを見てみるのがおすすめです。
+            </div>
+          </details>
+          <details class="border border-rose-100 rounded-xl overflow-hidden">
+            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
+              プロフィール写真は必ず必要ですか？
+            </summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
+              写真ありのプロフィールはマッチング率が大幅に上がるため、できれば用意することをおすすめします。ただし、写真を非公開にして特定の相手にだけ見せる「鍵付き写真」機能を持つアプリもあります。
+            </div>
+          </details>
+          <details class="border border-rose-100 rounded-xl overflow-hidden">
+            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
+              どのマッチングアプリがおすすめですか？
+            </summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
+              目的によって異なります。結婚・真剣交際を求めるなら「Pairs」「with」、気軽な出会いなら「タップル」、共通の趣味で出会いたいなら「タップル」「with」がおすすめです。本診断で自分に合ったアプリを探してみましょう。
+            </div>
+          </details>
+          <details class="border border-rose-100 rounded-xl overflow-hidden">
+            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
+              初めてでも使いやすいですか？
+            </summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
+              はい、初めての方でも安心して使えます。大手アプリはUI/UXが洗練されており、チュートリアルも充実しています。まずは無料登録してプロフィールを作り、相手のプロフィールを眺めることから始められます。
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- 内部リンク -->
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+          <i class="fas fa-link text-rose-500 mr-2"></i>関連診断ツール
+        </h2>
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a href="https://appadaycreator.github.io/job-change-advisor/" class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors text-blue-700">
+            <i class="fas fa-briefcase text-blue-500 text-xl"></i>
+            <div>
+              <div class="font-semibold text-sm">転職アドバイザー診断</div>
+              <div class="text-xs text-blue-600">あなたに合う転職サービスを提案</div>
+            </div>
+          </a>
+          <a href="https://appadaycreator.github.io/side-job-aptitude-test/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
+            <i class="fas fa-yen-sign text-green-500 text-xl"></i>
+            <div>
+              <div class="font-semibold text-sm">副業適性診断</div>
+              <div class="text-xs text-green-600">あなたに向いている副業が分かる</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 診断画面 -->
+    <div id="quiz-screen" class="hidden">
+      <!-- 進捗バー -->
+      <div class="bg-white rounded-2xl shadow-md p-4 mb-4">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm text-gray-600">質問 <span id="current-q">1</span> / 10</span>
+          <span class="text-sm font-bold text-rose-500"><span id="progress-pct">10</span>%</span>
+        </div>
+        <div class="w-full bg-rose-100 rounded-full h-3">
+          <div id="progress-bar" class="progress-bar h-3 rounded-full gradient-btn" style="width: 10%"></div>
+        </div>
+      </div>
+
+      <!-- 質問カード群 -->
+      <div id="questions-container" class="fade-in">
+
+        <!-- Q1 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4" data-q="1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q1</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">あなたの性別は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(1, 'male', this)">
+              <i class="fas fa-mars text-blue-400 mr-2"></i>男性
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(1, 'female', this)">
+              <i class="fas fa-venus text-pink-400 mr-2"></i>女性
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(1, 'other', this)">
+              <i class="fas fa-genderless text-purple-400 mr-2"></i>その他・回答しない
+            </button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q2</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">年齢層は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'early20s', this)">
+              <i class="fas fa-seedling text-green-400 mr-2"></i>20代前半（20〜24歳）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'late20s', this)">
+              <i class="fas fa-leaf text-green-500 mr-2"></i>20代後半（25〜29歳）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'early30s', this)">
+              <i class="fas fa-tree text-green-600 mr-2"></i>30代前半（30〜34歳）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'late30s', this)">
+              <i class="fas fa-mountain text-gray-500 mr-2"></i>30代後半以上（35歳〜）
+            </button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="3">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q3</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">恋愛・婚活の目標は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(3, 'marriage', this)">
+              <i class="fas fa-ring text-yellow-400 mr-2"></i>真剣な交際・結婚を目指したい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(3, 'casual', this)">
+              <i class="fas fa-heart text-rose-400 mr-2"></i>気軽な出会い・恋愛を楽しみたい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(3, 'friend', this)">
+              <i class="fas fa-hands-helping text-blue-400 mr-2"></i>まずは友達から始めたい
+            </button>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q4</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">理想の出会い方は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'hobby', this)">
+              <i class="fas fa-guitar text-purple-400 mr-2"></i>共通の趣味・興味で出会いたい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'values', this)">
+              <i class="fas fa-balance-scale text-blue-400 mr-2"></i>価値観・人柄を重視したい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'looks', this)">
+              <i class="fas fa-star text-yellow-400 mr-2"></i>外見・第一印象を重視したい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'stability', this)">
+              <i class="fas fa-coins text-green-400 mr-2"></i>年収・安定性・将来性を重視したい
+            </button>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="5">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q5</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">デートの頻度の希望は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'weekly', this)">
+              <i class="fas fa-calendar-week text-rose-400 mr-2"></i>週1回以上会いたい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'biweekly', this)">
+              <i class="fas fa-calendar-alt text-orange-400 mr-2"></i>月2〜3回ペースがいい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'monthly', this)">
+              <i class="fas fa-calendar text-blue-400 mr-2"></i>月1回程度でゆっくり
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'slow', this)">
+              <i class="fas fa-clock text-gray-400 mr-2"></i>ゆっくりマイペースに進めたい
+            </button>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q6</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">活動できる時間帯は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(6, 'weekday_night', this)">
+              <i class="fas fa-moon text-indigo-400 mr-2"></i>平日の夜（21時以降）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(6, 'weekend', this)">
+              <i class="fas fa-sun text-yellow-400 mr-2"></i>週末・休日中心
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(6, 'irregular', this)">
+              <i class="fas fa-random text-pink-400 mr-2"></i>不規則・シフト制
+            </button>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="7">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q7</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">過去の交際経験は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(7, 'none', this)">
+              <i class="fas fa-seedling text-green-400 mr-2"></i>ほとんどない（0〜1回）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(7, 'some', this)">
+              <i class="fas fa-heart text-rose-400 mr-2"></i>数回ある（2〜4回）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(7, 'many', this)">
+              <i class="fas fa-fire text-orange-400 mr-2"></i>多い方（5回以上）
+            </button>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q8</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">スマホのアプリ確認頻度は？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'always', this)">
+              <i class="fas fa-mobile-alt text-rose-400 mr-2"></i>常にチェックしている
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'several', this)">
+              <i class="fas fa-bell text-yellow-400 mr-2"></i>1日数回チェックする
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'rarely', this)">
+              <i class="fas fa-battery-quarter text-gray-400 mr-2"></i>あまり見ない・マイペース
+            </button>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="9">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q9</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">初対面で最も重視することは？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'talk', this)">
+              <i class="fas fa-comments text-blue-400 mr-2"></i>話題の豊富さ・会話力
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'vibe', this)">
+              <i class="fas fa-wind text-teal-400 mr-2"></i>雰囲気・全体的な感じ
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'values', this)">
+              <i class="fas fa-handshake text-green-400 mr-2"></i>価値観・考え方の一致
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'appearance', this)">
+              <i class="fas fa-eye text-purple-400 mr-2"></i>見た目・外見
+            </button>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="10">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q10</div>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">今の気持ちは？</h3>
+          </div>
+          <div class="space-y-3">
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(10, 'now', this)">
+              <i class="fas fa-bolt text-yellow-400 mr-2"></i>すぐにでも始めたい！
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(10, 'soon', this)">
+              <i class="fas fa-calendar-check text-green-400 mr-2"></i>3ヶ月以内には始めたい
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(10, 'maybe', this)">
+              <i class="fas fa-hourglass-half text-blue-400 mr-2"></i>半年以内に考えている
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ナビゲーションボタン -->
+      <div class="flex gap-3 mt-4">
+        <button id="prev-btn" onclick="prevQuestion()" class="hidden flex-1 py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
+          <i class="fas fa-chevron-left mr-1"></i>前の質問
+        </button>
+        <button id="next-btn" onclick="nextQuestion()" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
+          次の質問<i class="fas fa-chevron-right ml-1"></i>
+        </button>
+        <button id="result-btn" onclick="showResult()" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
+          <i class="fas fa-heart mr-1"></i>診断結果を見る！
+        </button>
+      </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="result-screen" class="hidden fade-in">
+      <div class="bg-white rounded-2xl shadow-md p-6 mb-4 text-center">
+        <div class="text-5xl mb-3">🎉</div>
+        <h2 class="text-xl font-bold text-gray-800 mb-1">診断完了！</h2>
+        <p class="text-gray-500 text-sm">あなたの婚活スタイルが分かりました</p>
+      </div>
+
+      <!-- タイプ表示 -->
+      <div id="result-type-card" class="bg-white rounded-2xl shadow-md p-6 mb-4 text-center"></div>
+
+      <!-- アプリランキング -->
+      <div id="result-apps" class="mb-4"></div>
+
+      <!-- AdSense 下部 -->
+      <div class="mb-4">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8427583028015858"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- Amazon リンク -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+          <i class="fab fa-amazon text-yellow-500 mr-2 text-xl"></i>婚活・恋活おすすめ書籍
+        </h3>
+        <a href="https://www.amazon.co.jp/s?k=婚活+恋活+マッチングアプリ+本&tag=appadaycrea0f-22"
+           rel="nofollow sponsored" target="_blank"
+           class="flex items-center gap-3 p-3 bg-yellow-50 rounded-xl hover:bg-yellow-100 transition-colors border border-yellow-200">
+          <i class="fab fa-amazon text-yellow-600 text-2xl"></i>
+          <div class="text-left">
+            <div class="font-semibold text-gray-800 text-sm">婚活・恋活・マッチングアプリ関連書籍を見る</div>
+            <div class="text-xs text-gray-500">Amazon で検索 →</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- もう一度 -->
+      <div class="mb-4">
+        <button onclick="retryDiagnosis()" class="w-full py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
+          <i class="fas fa-redo mr-2"></i>もう一度診断する
+        </button>
+      </div>
+
+      <!-- 内部リンク -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+          <i class="fas fa-compass text-rose-400 mr-2"></i>他の診断ツールも試してみよう
+        </h3>
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a href="https://appadaycreator.github.io/job-change-advisor/" class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors text-blue-700">
+            <i class="fas fa-briefcase text-blue-500 text-xl"></i>
+            <div>
+              <div class="font-semibold text-sm">転職アドバイザー診断</div>
+              <div class="text-xs text-blue-600">転職サービスを提案</div>
+            </div>
+          </a>
+          <a href="https://appadaycreator.github.io/side-job-aptitude-test/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
+            <i class="fas fa-yen-sign text-green-500 text-xl"></i>
+            <div>
+              <div class="font-semibold text-sm">副業適性診断</div>
+              <div class="text-xs text-green-600">向いている副業が分かる</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8 px-4 mt-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="text-rose-400 text-2xl mb-3"><i class="fas fa-heart"></i></div>
+      <p class="font-bold text-white mb-2">婚活スタイル診断</p>
+      <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+        本サービスは情報提供を目的としており、特定のマッチングアプリの利用を強制するものではありません。
+        アフィリエイトリンクを含む場合があります。
+      </p>
+      <div class="flex justify-center gap-4 text-xs text-gray-500">
+        <span>&copy; 2026 AppADayCreator</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // State
+    const answers = {};
+    let currentQ = 1;
+    const totalQ = 10;
+
+    function startDiagnosis() {
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+      updateProgress(1);
+    }
+
+    function selectOption(qNum, value, btn) {
+      answers[qNum] = value;
+      // Reset selected state
+      const parent = btn.closest('.question-card');
+      parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      // Show navigation buttons
+      document.getElementById('prev-btn').classList.toggle('hidden', qNum === 1);
+      if (qNum < totalQ) {
+        document.getElementById('next-btn').classList.remove('hidden');
+        document.getElementById('result-btn').classList.add('hidden');
+      } else {
+        document.getElementById('next-btn').classList.add('hidden');
+        document.getElementById('result-btn').classList.remove('hidden');
+      }
+    }
+
+    function nextQuestion() {
+      if (!answers[currentQ]) {
+        alert('選択肢を選んでください');
+        return;
+      }
+      if (currentQ < totalQ) {
+        hideQuestion(currentQ);
+        currentQ++;
+        showQuestion(currentQ);
+        updateProgress(currentQ);
+        document.getElementById('prev-btn').classList.remove('hidden');
+        if (currentQ < totalQ) {
+          document.getElementById('next-btn').classList.add('hidden');
+          document.getElementById('result-btn').classList.add('hidden');
+        }
+        if (answers[currentQ]) {
+          selectOption(currentQ, answers[currentQ], getSelectedBtn(currentQ));
+        } else {
+          document.getElementById('next-btn').classList.add('hidden');
+          document.getElementById('result-btn').classList.add('hidden');
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQ > 1) {
+        hideQuestion(currentQ);
+        currentQ--;
+        showQuestion(currentQ);
+        updateProgress(currentQ);
+        document.getElementById('prev-btn').classList.toggle('hidden', currentQ === 1);
+        document.getElementById('next-btn').classList.remove('hidden');
+        document.getElementById('result-btn').classList.add('hidden');
+        if (answers[currentQ]) {
+          const btn = getSelectedBtn(currentQ);
+          if (btn) selectOption(currentQ, answers[currentQ], btn);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function hideQuestion(q) {
+      document.querySelector(`.question-card[data-q="${q}"]`).classList.add('hidden');
+    }
+
+    function showQuestion(q) {
+      const card = document.querySelector(`.question-card[data-q="${q}"]`);
+      card.classList.remove('hidden');
+      card.classList.add('fade-in');
+    }
+
+    function getSelectedBtn(q) {
+      const card = document.querySelector(`.question-card[data-q="${q}"]`);
+      return card ? card.querySelector('.option-btn.selected') : null;
+    }
+
+    function updateProgress(q) {
+      const pct = Math.round((q / totalQ) * 100);
+      document.getElementById('current-q').textContent = q;
+      document.getElementById('progress-pct').textContent = pct;
+      document.getElementById('progress-bar').style.width = pct + '%';
+    }
+
+    function calcScores() {
+      const scores = { pairs: 0, with: 0, tapple: 0 };
+
+      // Q3: 目標
+      if (answers[3] === 'marriage') { scores.pairs += 3; scores.with += 2; }
+      else if (answers[3] === 'casual') { scores.tapple += 3; scores.with += 1; }
+      else if (answers[3] === 'friend') { scores.tapple += 2; scores.with += 2; }
+
+      // Q4: 出会い方
+      if (answers[4] === 'hobby') { scores.tapple += 3; scores.with += 1; }
+      else if (answers[4] === 'values') { scores.with += 3; scores.pairs += 1; }
+      else if (answers[4] === 'looks') { scores.tapple += 2; scores.pairs += 1; }
+      else if (answers[4] === 'stability') { scores.pairs += 3; scores.with += 1; }
+
+      // Q5: デート頻度
+      if (answers[5] === 'weekly') { scores.tapple += 2; scores.with += 1; }
+      else if (answers[5] === 'biweekly') { scores.pairs += 2; scores.tapple += 1; }
+      else if (answers[5] === 'monthly') { scores.pairs += 2; scores.with += 1; }
+      else if (answers[5] === 'slow') { scores.with += 3; }
+
+      // Q7: 交際経験
+      if (answers[7] === 'none') { scores.with += 2; scores.pairs += 1; }
+      else if (answers[7] === 'some') { scores.pairs += 2; scores.tapple += 1; }
+      else if (answers[7] === 'many') { scores.tapple += 2; }
+
+      // Q8: スマホ頻度
+      if (answers[8] === 'always') { scores.tapple += 2; scores.with += 1; }
+      else if (answers[8] === 'several') { scores.pairs += 2; scores.with += 1; }
+      else if (answers[8] === 'rarely') { scores.with += 2; scores.pairs += 1; }
+
+      // Q9: 初対面で重視
+      if (answers[9] === 'talk') { scores.with += 3; scores.tapple += 1; }
+      else if (answers[9] === 'vibe') { scores.tapple += 2; scores.pairs += 1; }
+      else if (answers[9] === 'values') { scores.with += 3; scores.pairs += 2; }
+      else if (answers[9] === 'appearance') { scores.tapple += 3; }
+
+      // Q10: 気持ち
+      if (answers[10] === 'now') { scores.tapple += 2; scores.pairs += 1; }
+      else if (answers[10] === 'soon') { scores.pairs += 2; scores.with += 1; }
+      else if (answers[10] === 'maybe') { scores.with += 2; }
+
+      return scores;
+    }
+
+    function getType(scores) {
+      const top = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+      if (scores.pairs >= scores.with && scores.pairs >= scores.tapple) return 'marriage';
+      if (scores.with >= scores.tapple) return 'values';
+      return 'casual';
+    }
+
+    const appInfo = {
+      pairs: {
+        name: 'Pairs（ペアーズ）',
+        icon: '💑',
+        color: 'rose',
+        tagline: '国内最大級・累計2,000万人登録',
+        features: ['会員数No.1で出会いの機会が多い', 'コミュニティ機能で共通趣味の相手を探せる', '身分証明書による本人確認で安心'],
+        link: 'A8_PAIRS_URL_PLACEHOLDER',
+        cta: '【Pairs（ペアーズ）】国内最大級マッチングアプリ 無料登録 →'
+      },
+      with: {
+        name: 'with（ウィズ）',
+        icon: '🧠',
+        color: 'pink',
+        tagline: '心理学×AIで深い相性マッチング',
+        features: ['心理テストで価値観が合う相手を発見', 'AIがあなたに合う相手を提案', '深い絆を築きたい方に人気'],
+        link: 'A8_WITH_URL_PLACEHOLDER',
+        cta: '【with】心理学×AI婚活アプリ 無料登録 →'
+      },
+      tapple: {
+        name: 'タップル',
+        icon: '✨',
+        color: 'red',
+        tagline: '趣味で出会えるマッチングアプリ',
+        features: ['共通の趣味カードで自然に出会える', '若い世代に特に人気・活発なコミュニティ', 'サクサク使えるシンプルなUI'],
+        link: 'A8_TAPPLE_URL_PLACEHOLDER',
+        cta: '【タップル】趣味で出会えるマッチングアプリ 無料登録 →'
+      }
+    };
+
+    const typeInfo = {
+      marriage: {
+        label: '婚活・真剣交際タイプ',
+        emoji: '💍',
+        desc: 'あなたは真剣な交際・結婚を視野に入れた出会いを求めています。価値観や将来のビジョンが合う相手との深い関係を大切にするタイプ。じっくりと相手を見極め、長く続く関係を築きたいと思っています。',
+        badge: 'bg-rose-100 text-rose-700'
+      },
+      values: {
+        label: '価値観重視・じっくり恋愛タイプ',
+        emoji: '💝',
+        desc: 'あなたは相手の内面・価値観・人柄を最も大切にするタイプ。外見より中身を重視し、ゆっくりと信頼関係を築いていきたいと考えています。心理学的なアプローチで深い相性を見つけることが得意です。',
+        badge: 'bg-pink-100 text-pink-700'
+      },
+      casual: {
+        label: '恋活・自然な出会いタイプ',
+        emoji: '💖',
+        desc: 'あなたは共通の趣味や自然な雰囲気から始まる出会いを求めています。気軽に楽しみながら、気が合う相手と自然に距離を縮めていくスタイル。フットワーク軽く、積極的に出会いを楽しめるタイプです。',
+        badge: 'bg-red-100 text-red-700'
+      }
+    };
+
+    function showResult() {
+      if (!answers[currentQ]) {
+        alert('選択肢を選んでください');
+        return;
+      }
+
+      const scores = calcScores();
+      const type = getType(scores);
+      const info = typeInfo[type];
+
+      // タイプカード
+      document.getElementById('result-type-card').innerHTML = `
+        <div class="text-5xl mb-3">${info.emoji}</div>
+        <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3 ${info.badge}">${info.label}</span>
+        <p class="text-gray-600 text-sm leading-relaxed">${info.desc}</p>
+      `;
+
+      // アプリランキング
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const maxScore = sorted[0][1];
+
+      let appsHTML = `<div class="bg-white rounded-2xl shadow-md p-6 mb-4">
+        <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+          <i class="fas fa-trophy text-yellow-400 mr-2 text-lg"></i>あなたへのおすすめアプリ TOP3
+        </h3>
+        <div class="space-y-4">`;
+
+      sorted.forEach(([key, score], idx) => {
+        const app = appInfo[key];
+        const pct = maxScore > 0 ? Math.round((score / (maxScore * 1.2)) * 100) : 60;
+        const cappedPct = Math.min(pct, 98);
+        const medals = ['🥇', '🥈', '🥉'];
+        const rankColors = ['border-yellow-300 bg-yellow-50', 'border-gray-300 bg-gray-50', 'border-orange-200 bg-orange-50'];
+
+        appsHTML += `
+          <div class="app-card rounded-xl p-4 ${rankColors[idx]}">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">${medals[idx]}</span>
+                <span class="text-xl">${app.icon}</span>
+                <div>
+                  <div class="font-bold text-gray-800 text-sm">${app.name}</div>
+                  <div class="text-xs text-gray-500">${app.tagline}</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-rose-600 text-lg">${cappedPct}%</div>
+                <div class="text-xs text-gray-500">マッチ度</div>
+              </div>
+            </div>
+            <div class="w-full bg-white rounded-full h-2 mb-3">
+              <div class="h-2 rounded-full gradient-btn" style="width: ${cappedPct}%"></div>
+            </div>
+            <ul class="text-xs text-gray-600 space-y-1 mb-3">
+              ${app.features.map(f => `<li class="flex items-start gap-1"><i class="fas fa-check text-rose-400 mt-0.5 flex-shrink-0"></i>${f}</li>`).join('')}
+            </ul>
+            <!-- ${app.name} A8.net - 提携後に差し替え -->
+            <a href="${app.link}" rel="nofollow sponsored" target="_blank"
+               class="block text-center gradient-btn text-white py-2.5 px-4 rounded-lg text-sm font-bold hover:shadow-md transition-all">
+              ${app.cta}
+            </a>
+          </div>`;
+      });
+
+      appsHTML += `</div></div>`;
+      document.getElementById('result-apps').innerHTML = appsHTML;
+
+      // 画面切り替え
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function retryDiagnosis() {
+      Object.keys(answers).forEach(k => delete answers[k]);
+      currentQ = 1;
+      document.getElementById('result-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+
+      // Reset questions
+      document.querySelectorAll('.question-card').forEach((card, i) => {
+        if (i === 0) card.classList.remove('hidden');
+        else card.classList.add('hidden');
+        card.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      });
+      document.getElementById('prev-btn').classList.add('hidden');
+      document.getElementById('next-btn').classList.add('hidden');
+      document.getElementById('result-btn').classList.add('hidden');
+      updateProgress(1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
