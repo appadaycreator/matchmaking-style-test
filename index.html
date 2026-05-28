@@ -24,7 +24,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -106,6 +105,7 @@
     .option-btn {
       transition: all 0.2s ease;
       border: 2px solid #fda4af;
+      user-select: none;
     }
     .option-btn:hover {
       border-color: #f43f5e;
@@ -148,12 +148,24 @@
       50% { transform: translateY(-8px); }
     }
   
+.card { background: white; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+
 /* Phase 8: Mobile Optimization */
 input, select, textarea { font-size: 16px !important; }
 button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min-width: 48px; touch-action: manipulation; }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .max-w-lg { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media print{
+  header,footer,nav,button,.no-print,
+  [class*="share"],[class*="affiliate"],[id*="share"],
+  [id*="affiliate"],[id*="banner"],
+  script,noscript{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:12pt}
+  [id*="result"],[id*="output"],[id*="advice"],[id*="diagnosis"],[class*="result"]{display:block!important}
+  a[href]::after{content:none!important}
 }
 </style>
 <script type="application/ld+json">
@@ -181,12 +193,14 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
       "@type": "ListItem",
       "position": 2,
       "name": "サービス一覧",
-      "item": "https://appadaycreator.github.io"
+      "item": "https://appadaycreator.com"
     }
   ]
 }
 </script>
+<meta property="og:title" content="マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP" />
 <meta property="og:image" content="https://appadaycreator.com/og-image.png">
 <meta property="og:description" content="性格・恋愛観・目的から最適なマッチングアプリを無料診断。Pairs・with・タップル・ゼクシィ縁結びなど人気アプリを比較。登録不要・すぐ分かる。">
 <meta property="og:url" content="https://appadaycreator.com/matchmaking-style-test/">
@@ -197,8 +211,8 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
   "@type": "WebPage",
   "mainEntity": {
     "@type": "Article",
-    "headline": "診断ツール",
-    "description": "無料の診断ツール。簡単な質問にお答えいただくだけで、最適なアドバイスを提供します。",
+    "headline": "マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる",
+    "description": "性格・恋愛観・目的から最適なマッチングアプリを無料診断。Pairs・with・タップル・ゼクシィ縁結びなど人気アプリを比較。登録不要・すぐ分かる。",
     "datePublished": "2026-05-23",
     "dateModified": "2026-05-23",
     "author": {
@@ -217,7 +231,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
 }
 </script>
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="無料診断ツール">
+<meta name="twitter:title" content="マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる">
 <meta name="twitter:description" content="簡単な質問に答えるだけで、最適なアドバイスを提供します。">
 <meta name="twitter:image" content="https://appadaycreator.com/twitter-card.png">
 <meta name="twitter:site" content="@appadaycreator">
@@ -245,14 +259,14 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
   <header class="gradient-header text-white py-6 px-4 shadow-lg">
     <div class="max-w-2xl mx-auto text-center">
       <div class="text-4xl mb-2 heart-float">
-        <i class="fas fa-heart"></i>
+        <span>❤️</span>
       </div>
       <h1 class="text-2xl md:text-3xl font-bold mb-2">婚活スタイル診断</h1>
       <p class="text-rose-100 text-sm md:text-base">あなたにぴったりのマッチングアプリが10問で分かる！</p>
     </div>
   </header>
 
-  <main role="main" class="max-w-2xl mx-auto px-4 py-6">
+  <main id="main" role="main" class="max-w-2xl mx-auto px-4 py-6">
 
     <!-- AdSense 上部 -->
     <div class="mb-6 text-center">
@@ -270,7 +284,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
         <div class="text-center mb-6">
           <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-rose-100 text-rose-500 text-4xl mb-4">
-            <i class="fas fa-search-heart"></i>
+            <span>🔍</span>
           </div>
           <h2 class="text-xl font-bold text-gray-800 mb-3">あなたの婚活スタイルを診断します</h2>
           <p class="text-gray-600 text-sm leading-relaxed">
@@ -282,28 +296,28 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
         <div class="grid grid-cols-3 gap-4 mb-6">
           <div class="text-center">
-            <div class="text-2xl text-rose-500 mb-1"><i class="fas fa-clock"></i></div>
+            <div class="text-2xl text-rose-500 mb-1"><span>⏰</span></div>
             <div class="text-xs text-gray-600">所要時間<br><strong class="text-gray-800">約2分</strong></div>
           </div>
           <div class="text-center">
-            <div class="text-2xl text-rose-500 mb-1"><i class="fas fa-question-circle"></i></div>
+            <div class="text-2xl text-rose-500 mb-1"><span>❓</span></div>
             <div class="text-xs text-gray-600">質問数<br><strong class="text-gray-800">10問</strong></div>
           </div>
           <div class="text-center">
-            <div class="text-2xl text-rose-500 mb-1"><i class="fas fa-gift"></i></div>
+            <div class="text-2xl text-rose-500 mb-1"><span>🎁</span></div>
             <div class="text-xs text-gray-600">利用料金<br><strong class="text-gray-800">完全無料</strong></div>
           </div>
         </div>
 
-        <button onclick="startDiagnosis()" class="gradient-btn text-white w-full py-4 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
-          <i class="fas fa-heart mr-2"></i>診断スタート！
+        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-4 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
+          <span class="mr-2">❤️</span>診断スタート！
         </button>
       </div>
 
       <!-- サービス説明 -->
       <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
         <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <i class="fas fa-info-circle text-rose-500 mr-2"></i>このサービスについて
+          <span class="text-rose-500 mr-2">ℹ️</span>このサービスについて
         </h2>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
           「婚活スタイル診断」は、マッチングアプリ選びで迷っているあなたのための無料診断ツールです。
@@ -326,7 +340,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       <!-- マッチングアプリ紹介 -->
       <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
         <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <i class="fas fa-mobile-alt text-rose-500 mr-2"></i>診断対象のマッチングアプリ
+          <span class="text-rose-500 mr-2">📱</span>診断対象のマッチングアプリ
         </h2>
         <div class="space-y-4">
           <div class="flex items-start gap-3 p-3 bg-rose-50 rounded-xl">
@@ -356,7 +370,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       <!-- FAQ -->
       <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
         <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <i class="fas fa-question-circle text-rose-500 mr-2"></i>よくある質問
+          <span class="text-rose-500 mr-2">❓</span>よくある質問
         </h2>
         <div class="space-y-4">
           <details class="border border-rose-100 rounded-xl overflow-hidden">
@@ -405,18 +419,18 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       <!-- 内部リンク -->
       <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
         <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <i class="fas fa-link text-rose-500 mr-2"></i>関連診断ツール
+          <span class="text-rose-500 mr-2">🔗</span>関連診断ツール
         </h2>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <a href="https://appadaycreator.com/job-change-advisor/" class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors text-blue-700">
-            <i class="fas fa-briefcase text-blue-500 text-xl"></i>
+            <span class="text-blue-500 text-xl">💼</span>
             <div>
               <div class="font-semibold text-sm">転職アドバイザー診断</div>
               <div class="text-xs text-blue-600">あなたに合う転職サービスを提案</div>
             </div>
           </a>
           <a href="https://appadaycreator.com/side-job-aptitude-test/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
-            <i class="fas fa-yen-sign text-green-500 text-xl"></i>
+            <span class="text-green-500 text-xl">¥</span>
             <div>
               <div class="font-semibold text-sm">副業適性診断</div>
               <div class="text-xs text-green-600">あなたに向いている副業が分かる</div>
@@ -450,13 +464,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(1, 'male', this)">
-              <i class="fas fa-mars text-blue-400 mr-2"></i>男性
+              <span class="text-blue-400 mr-2">♂</span>男性
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(1, 'female', this)">
-              <i class="fas fa-venus text-pink-400 mr-2"></i>女性
+              <span class="text-pink-400 mr-2">♀</span>女性
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(1, 'other', this)">
-              <i class="fas fa-genderless text-purple-400 mr-2"></i>その他・回答しない
+              <span class="text-purple-400 mr-2">🌈</span>その他・回答しない
             </button>
           </div>
         </div>
@@ -469,16 +483,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'early20s', this)">
-              <i class="fas fa-seedling text-green-400 mr-2"></i>20代前半（20〜24歳）
+              <span class="text-green-400 mr-2">🌱</span>20代前半（20〜24歳）
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'late20s', this)">
-              <i class="fas fa-leaf text-green-500 mr-2"></i>20代後半（25〜29歳）
+              <span class="text-green-500 mr-2">🌿</span>20代後半（25〜29歳）
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'early30s', this)">
-              <i class="fas fa-tree text-green-600 mr-2"></i>30代前半（30〜34歳）
+              <span class="text-green-600 mr-2">🌳</span>30代前半（30〜34歳）
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(2, 'late30s', this)">
-              <i class="fas fa-mountain text-gray-500 mr-2"></i>30代後半以上（35歳〜）
+              <span class="text-gray-500 mr-2">⛰️</span>30代後半以上（35歳〜）
             </button>
           </div>
         </div>
@@ -491,13 +505,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(3, 'marriage', this)">
-              <i class="fas fa-ring text-yellow-400 mr-2"></i>真剣な交際・結婚を目指したい
+              <span class="text-yellow-400 mr-2">💍</span>真剣な交際・結婚を目指したい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(3, 'casual', this)">
-              <i class="fas fa-heart text-rose-400 mr-2"></i>気軽な出会い・恋愛を楽しみたい
+              <span class="text-rose-400 mr-2">❤️</span>気軽な出会い・恋愛を楽しみたい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(3, 'friend', this)">
-              <i class="fas fa-hands-helping text-blue-400 mr-2"></i>まずは友達から始めたい
+              <span class="text-blue-400 mr-2">🤝</span>まずは友達から始めたい
             </button>
           </div>
         </div>
@@ -510,16 +524,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'hobby', this)">
-              <i class="fas fa-guitar text-purple-400 mr-2"></i>共通の趣味・興味で出会いたい
+              <span class="text-purple-400 mr-2">🎵</span>共通の趣味・興味で出会いたい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'values', this)">
-              <i class="fas fa-balance-scale text-blue-400 mr-2"></i>価値観・人柄を重視したい
+              <span class="text-blue-400 mr-2">⚖️</span>価値観・人柄を重視したい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'looks', this)">
-              <i class="fas fa-star text-yellow-400 mr-2"></i>外見・第一印象を重視したい
+              <span class="text-yellow-400 mr-2">⭐</span>外見・第一印象を重視したい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(4, 'stability', this)">
-              <i class="fas fa-coins text-green-400 mr-2"></i>年収・安定性・将来性を重視したい
+              <span class="text-green-400 mr-2">💰</span>年収・安定性・将来性を重視したい
             </button>
           </div>
         </div>
@@ -532,16 +546,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'weekly', this)">
-              <i class="fas fa-calendar-week text-rose-400 mr-2"></i>週1回以上会いたい
+              <span class="text-rose-400 mr-2">📅</span>週1回以上会いたい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'biweekly', this)">
-              <i class="fas fa-calendar-alt text-orange-400 mr-2"></i>月2〜3回ペースがいい
+              <span class="text-orange-400 mr-2">📅</span>月2〜3回ペースがいい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'monthly', this)">
-              <i class="fas fa-calendar text-blue-400 mr-2"></i>月1回程度でゆっくり
+              <span class="text-blue-400 mr-2">📅</span>月1回程度でゆっくり
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'slow', this)">
-              <i class="fas fa-clock text-gray-400 mr-2"></i>ゆっくりマイペースに進めたい
+              <span class="text-gray-400 mr-2">⏰</span>ゆっくりマイペースに進めたい
             </button>
           </div>
         </div>
@@ -554,13 +568,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(6, 'weekday_night', this)">
-              <i class="fas fa-moon text-indigo-400 mr-2"></i>平日の夜（21時以降）
+              <span class="text-indigo-400 mr-2">🌙</span>平日の夜（21時以降）
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(6, 'weekend', this)">
-              <i class="fas fa-sun text-yellow-400 mr-2"></i>週末・休日中心
+              <span class="text-yellow-400 mr-2">☀️</span>週末・休日中心
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(6, 'irregular', this)">
-              <i class="fas fa-random text-pink-400 mr-2"></i>不規則・シフト制
+              <span class="text-pink-400 mr-2">🔀</span>不規則・シフト制
             </button>
           </div>
         </div>
@@ -573,13 +587,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(7, 'none', this)">
-              <i class="fas fa-seedling text-green-400 mr-2"></i>ほとんどない（0〜1回）
+              <span class="text-green-400 mr-2">🌱</span>ほとんどない（0〜1回）
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(7, 'some', this)">
-              <i class="fas fa-heart text-rose-400 mr-2"></i>数回ある（2〜4回）
+              <span class="text-rose-400 mr-2">❤️</span>数回ある（2〜4回）
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(7, 'many', this)">
-              <i class="fas fa-fire text-orange-400 mr-2"></i>多い方（5回以上）
+              <span class="text-orange-400 mr-2">🔥</span>多い方（5回以上）
             </button>
           </div>
         </div>
@@ -592,13 +606,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'always', this)">
-              <i class="fas fa-mobile-alt text-rose-400 mr-2"></i>常にチェックしている
+              <span class="text-rose-400 mr-2">📱</span>常にチェックしている
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'several', this)">
-              <i class="fas fa-bell text-yellow-400 mr-2"></i>1日数回チェックする
+              <span class="text-yellow-400 mr-2">🔔</span>1日数回チェックする
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'rarely', this)">
-              <i class="fas fa-battery-quarter text-gray-400 mr-2"></i>あまり見ない・マイペース
+              <span class="text-gray-400 mr-2">🔕</span>あまり見ない・マイペース
             </button>
           </div>
         </div>
@@ -611,16 +625,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'talk', this)">
-              <i class="fas fa-comments text-blue-400 mr-2"></i>話題の豊富さ・会話力
+              <span class="text-blue-400 mr-2">💬</span>話題の豊富さ・会話力
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'vibe', this)">
-              <i class="fas fa-wind text-teal-400 mr-2"></i>雰囲気・全体的な感じ
+              <span class="text-teal-400 mr-2">✨</span>雰囲気・全体的な感じ
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'values', this)">
-              <i class="fas fa-handshake text-green-400 mr-2"></i>価値観・考え方の一致
+              <span class="text-green-400 mr-2">🤝</span>価値観・考え方の一致
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(9, 'appearance', this)">
-              <i class="fas fa-eye text-purple-400 mr-2"></i>見た目・外見
+              <span class="text-purple-400 mr-2">👁️</span>見た目・外見
             </button>
           </div>
         </div>
@@ -633,13 +647,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
           <div class="space-y-3">
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(10, 'now', this)">
-              <i class="fas fa-bolt text-yellow-400 mr-2"></i>すぐにでも始めたい！
+              <span class="text-yellow-400 mr-2">⚡</span>すぐにでも始めたい！
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(10, 'soon', this)">
-              <i class="fas fa-calendar-check text-green-400 mr-2"></i>3ヶ月以内には始めたい
+              <span class="text-green-400 mr-2">📅</span>3ヶ月以内には始めたい
             </button>
             <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(10, 'maybe', this)">
-              <i class="fas fa-hourglass-half text-blue-400 mr-2"></i>半年以内に考えている
+              <span class="text-blue-400 mr-2">⏳</span>半年以内に考えている
             </button>
           </div>
         </div>
@@ -648,14 +662,14 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
       <!-- ナビゲーションボタン -->
       <div class="flex gap-3 mt-4">
-        <button id="prev-btn" onclick="prevQuestion()" class="hidden flex-1 py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
-          <i class="fas fa-chevron-left mr-1"></i>前の質問
+        <button id="prev-btn" onclick="prevQuestion()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
+          <span class="mr-1">◀</span>前の質問
         </button>
-        <button id="next-btn" onclick="nextQuestion()" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
-          次の質問<i class="fas fa-chevron-right ml-1"></i>
+        <button id="next-btn" onclick="nextQuestion()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
+          次の質問<span class="ml-1">▶</span>
         </button>
-        <button id="result-btn" onclick="showResult()" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
-          <i class="fas fa-heart mr-1"></i>診断結果を見る！
+        <button id="result-btn" onclick="showResult()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
+          <span class="mr-1">❤️</span>診断結果を見る！
         </button>
       </div>
     </div>
@@ -688,12 +702,12 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       <!-- Amazon リンク -->
       <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
         <h3 class="font-bold text-gray-800 mb-3 flex items-center">
-          <i class="fab fa-amazon text-yellow-500 mr-2 text-xl"></i>婚活・恋活おすすめ書籍
+          <span class="text-yellow-500 mr-2 text-xl">📦</span>婚活・恋活おすすめ書籍
         </h3>
         <a href="https://www.amazon.co.jp/s?k=婚活+恋活+マッチングアプリ+本&tag=appadaycrea0f-22"
-           rel="nofollow sponsored" target="_blank"
-           class="flex items-center gap-3 p-3 bg-yellow-50 rounded-xl hover:bg-yellow-100 transition-colors border border-yellow-200">
-          <i class="fab fa-amazon text-yellow-600 text-2xl"></i>
+           rel="nofollow sponsored noopener noreferrer" target="_blank"
+           class="flex items-center gap-3 p-3 bg-yellow-50 rounded-xl hover:bg-yellow-100 transition-colors border border-yellow-200 js-track-affiliate" data-platform="Amazon" data-item-name="婚活恋活マッチングアプリ" data-link-type="affiliate_link">
+          <span class="text-yellow-600 text-2xl">📦</span>
           <div class="text-left">
             <div class="font-semibold text-gray-800 text-sm">婚活・恋活・マッチングアプリ関連書籍を見る</div>
             <div class="text-xs text-gray-500">Amazon で検索 →</div>
@@ -702,27 +716,44 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       </div>
 
       <!-- もう一度 -->
+      <!-- 結果シェアボタン -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center">
+          <span class="mr-2">📣</span>診断結果をシェアする
+        </h3>
+        <div class="flex gap-2">
+          <a href="https://line.me/R/share?text=マッチングアプリ 比較診断あなたに合うアプリが1分で分かる%20https://appadaycreator.com/matchmaking-style-test/" target="_blank" rel="noopener"
+             style="flex:1;display:block;text-align:center;background:#06C755;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;">
+            LINEでシェア
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=マッチングアプリ 比較診断あなたに合うアプリが1分で分かる&url=https://appadaycreator.com/matchmaking-style-test/&via=appadaycreator" target="_blank" rel="noopener"
+             style="flex:1;display:block;text-align:center;background:#000;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;">
+            Xでシェア
+          </a>
+        </div>
+      </div>
+
       <div class="mb-4">
-        <button onclick="retryDiagnosis()" class="w-full py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
-          <i class="fas fa-redo mr-2"></i>もう一度診断する
+        <button onclick="retryDiagnosis()" data-ux="1" class="w-full py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
+          <span class="mr-2">🔄</span>もう一度診断する
         </button>
       </div>
 
       <!-- 内部リンク -->
       <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
         <h3 class="font-bold text-gray-800 mb-3 flex items-center">
-          <i class="fas fa-compass text-rose-400 mr-2"></i>他の診断ツールも試してみよう
+          <span class="text-rose-400 mr-2">🧭</span>他の診断ツールも試してみよう
         </h3>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <a href="https://appadaycreator.com/job-change-advisor/" class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors text-blue-700">
-            <i class="fas fa-briefcase text-blue-500 text-xl"></i>
+            <span class="text-blue-500 text-xl">💼</span>
             <div>
               <div class="font-semibold text-sm">転職アドバイザー診断</div>
               <div class="text-xs text-blue-600">転職サービスを提案</div>
             </div>
           </a>
           <a href="https://appadaycreator.com/side-job-aptitude-test/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
-            <i class="fas fa-yen-sign text-green-500 text-xl"></i>
+            <span class="text-green-500 text-xl">¥</span>
             <div>
               <div class="font-semibold text-sm">副業適性診断</div>
               <div class="text-xs text-green-600">向いている副業が分かる</div>
@@ -789,7 +820,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:14px;margin:10px 0;"><h2 style="font-size:14px;font-weight:700;margin-bottom:8px;color:#0369a1;">📖 使い方</h2><ol style="padding-left:18px;font-size:12px;color:#475569;line-height:1.8;"><li><strong>入力</strong>：フォームに必要な情報を入力してください</li><li><strong>実行</strong>：ボタンをクリックすると結果が表示されます</li><li><strong>活用</strong>：結果を参考に次のアクションを検討してください</li></ol></div>
 <footer class="bg-gray-800 text-gray-300 py-8 px-4 mt-8">
     <div class="max-w-2xl mx-auto text-center">
-      <div class="text-rose-400 text-2xl mb-3"><i class="fas fa-heart"></i></div>
+      <div class="text-rose-400 text-2xl mb-3"><span>❤️</span></div>
       <p class="font-bold text-white mb-2">婚活スタイル診断</p>
       <p class="text-xs text-gray-400 mb-4 leading-relaxed">
         本サービスは情報提供を目的としており、特定のマッチングアプリの利用を強制するものではありません。
@@ -904,6 +935,14 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     function calcScores() {
       const scores = { pairs: 0, with: 0, tapple: 0 };
 
+      // Q1: 性別（女性はwithが人気、男性はPairsの会員数が有利）
+      if (answers[1] === 'female') { scores.with += 1; }
+      else if (answers[1] === 'male') { scores.pairs += 1; }
+
+      // Q6: 活動時間（不規則な人はタップルのスワイプ型が使いやすい）
+      if (answers[6] === 'irregular') { scores.tapple += 1; }
+      else if (answers[6] === 'weekday_night') { scores.with += 1; }
+
       // Q3: 目標
       if (answers[3] === 'marriage') { scores.pairs += 3; scores.with += 2; }
       else if (answers[3] === 'casual') { scores.tapple += 3; scores.with += 1; }
@@ -946,7 +985,6 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     }
 
     function getType(scores) {
-      const top = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
       if (scores.pairs >= scores.with && scores.pairs >= scores.tapple) return 'marriage';
       if (scores.with >= scores.tapple) return 'values';
       return 'casual';
@@ -959,7 +997,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'rose',
         tagline: '国内最大級・累計2,000万人登録',
         features: ['会員数No.1で出会いの機会が多い', 'コミュニティ機能で共通趣味の相手を探せる', '身分証明書による本人確認で安心'],
-        link: 'A8_PAIRS_URL_PLACEHOLDER',
+        link: 'https://pairs.lv/',  // TODO: A8.net提携後にアフィリエイトURLへ差し替え
         cta: '【Pairs（ペアーズ）】国内最大級マッチングアプリ 無料登録 →'
       },
       with: {
@@ -968,7 +1006,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'pink',
         tagline: '心理学×AIで深い相性マッチング',
         features: ['心理テストで価値観が合う相手を発見', 'AIがあなたに合う相手を提案', '深い絆を築きたい方に人気'],
-        link: 'A8_WITH_URL_PLACEHOLDER',
+        link: 'https://with-app.net/',  // TODO: A8.net提携後にアフィリエイトURLへ差し替え
         cta: '【with】心理学×AI婚活アプリ 無料登録 →'
       },
       tapple: {
@@ -977,7 +1015,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'red',
         tagline: '趣味で出会えるマッチングアプリ',
         features: ['共通の趣味カードで自然に出会える', '若い世代に特に人気・活発なコミュニティ', 'サクサク使えるシンプルなUI'],
-        link: 'A8_TAPPLE_URL_PLACEHOLDER',
+        link: 'https://tapple.me/',  // TODO: A8.net提携後にアフィリエイトURLへ差し替え
         cta: '【タップル】趣味で出会えるマッチングアプリ 無料登録 →'
       }
     };
@@ -1026,7 +1064,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
       let appsHTML = `<div class="bg-white rounded-2xl shadow-md p-6 mb-4">
         <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-          <i class="fas fa-trophy text-yellow-400 mr-2 text-lg"></i>あなたへのおすすめアプリ TOP3
+          <span class="text-yellow-400 mr-2 text-lg">🏆</span>あなたへのおすすめアプリ TOP3
         </h3>
         <div class="space-y-4">`;
 
@@ -1057,10 +1095,10 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
               <div class="h-2 rounded-full gradient-btn" style="width: ${cappedPct}%"></div>
             </div>
             <ul class="text-xs text-gray-600 space-y-1 mb-3">
-              ${app.features.map(f => `<li class="flex items-start gap-1"><i class="fas fa-check text-rose-400 mt-0.5 flex-shrink-0"></i>${f}</li>`).join('')}
+              ${app.features.map(f => `<li class="flex items-start gap-1"><span class="text-rose-400 mt-0.5 flex-shrink-0">✓</span>${f}</li>`).join('')}
             </ul>
             <!-- ${app.name} A8.net - 提携後に差し替え -->
-            <a href="${app.link}" rel="nofollow sponsored" target="_blank"
+            <a href="${app.link}" rel="nofollow sponsored noopener noreferrer" target="_blank"
                class="block text-center gradient-btn text-white py-2.5 px-4 rounded-lg text-sm font-bold hover:shadow-md transition-all">
               ${app.cta}
             </a>
@@ -1113,7 +1151,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 'use strict';
 function init(){
   // ローディング状態
-  document.querySelectorAll('button:not([type=reset]):not([data-ux]),input[type=submit]').forEach(function(b){
+  document.querySelectorAll('button:not([type=reset]):not([data-ux]):not(.option-btn):not(#prev-btn):not(#next-btn),input[type=submit]').forEach(function(b){
     b.dataset.ux='1';
     var orig=b.tagName==='BUTTON'?b.textContent:(b.value||'実行');
     b.addEventListener('click',function(){
