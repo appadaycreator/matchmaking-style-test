@@ -3,8 +3,16 @@
 ## 概要
 
 **サービス名**: Matchmaking Style Test
-**バージョン**: 1.3.0
-**更新日**: 2026-05-28
+**バージョン**: 1.4.0
+**更新日**: 2026-05-29
+
+### v1.4.0 変更内容（2026-05-29）
+- manifest.jsonパス修正（/manifest.json → manifest.json・相対パス化）
+- ux-enhanced CSSのブランドカラー修正（#7c3aed → #f43f5e）
+- twitter:image を固有ogp.pngに変更
+- dateModified更新（2026-05-29）
+- Auto-advance UX追加（選択肢選択後0.5秒で自動的に次の質問へ）
+- フッター「使い方」セクションを診断ツール固有コンテンツに更新
 
 ### v1.3.0 変更内容（2026-05-28）
 - PWA theme-colorをブランドカラー#f43f5eに修正（manifest.json + meta tag）

@@ -8,7 +8,7 @@
 <!-- phase8-favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#f43f5e">
   <meta name="description" content="性格・恋愛観・目的から最適なマッチングアプリを無料診断。Pairs・with・タップル・ゼクシィ縁結びなど人気アプリを比較。登録不要・すぐ分かる。">
   <link rel="canonical" href="https://appadaycreator.com/matchmaking-style-test/">
@@ -220,7 +220,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
     "headline": "マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる",
     "description": "性格・恋愛観・目的から最適なマッチングアプリを無料診断。Pairs・with・タップル・ゼクシィ縁結びなど人気アプリを比較。登録不要・すぐ分かる。",
     "datePublished": "2026-05-23",
-    "dateModified": "2026-05-28",
+    "dateModified": "2026-05-29",
     "author": {
       "@type": "Organization",
       "name": "appadaycreator"
@@ -239,7 +239,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる">
 <meta name="twitter:description" content="簡単な質問に答えるだけで、最適なアドバイスを提供します。">
-<meta name="twitter:image" content="https://appadaycreator.com/twitter-card.png">
+<meta name="twitter:image" content="https://appadaycreator.com/matchmaking-style-test/ogp.png">
 <meta name="twitter:site" content="@appadaycreator">
 
 <style>
@@ -251,7 +251,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
 button,input[type=submit],input[type=button],[class*=btn]{min-height:44px;cursor:pointer;transition:opacity .15s,transform .1s;}
 button:active,[class*=btn]:active{opacity:.75;transform:scale(.98);}
 select,input[type=text],input[type=number],input[type=email],textarea{min-height:44px;font-size:16px;}
-[id*=result]:not(style):not(script),[id*=output]:not(style):not(script){border-left:4px solid #7c3aed;padding-left:16px;margin-top:16px;}
+[id*=result]:not(style):not(script),[id*=output]:not(style):not(script){border-left:4px solid #f43f5e;padding-left:16px;margin-top:16px;}
 @media(max-width:640px){[class*=max-w],[class*=container],[class*=wrapper]{padding:12px 16px!important;}button,[class*=btn]{width:100%;font-size:15px;}}
 </style>
 </head>
@@ -822,7 +822,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
   <p class="font-semibold mb-1">📧 お問い合わせ</p>
   <p>ご意見・ご要望・不具合のご報告は <a href="mailto:appadaycreator@gmail.com" class="text-blue-700 font-bold">appadaycreator@gmail.com</a> または <a href="contact.html" class="text-blue-700">お問い合わせフォーム</a> へ</p>
 </section>
-<div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mx-0 my-2.5"><h2 class="text-sm font-bold mb-2 text-blue-700">📖 使い方</h2><ol class="pl-4 text-xs text-slate-600 leading-loose list-decimal"><li><strong>入力</strong>：フォームに必要な情報を入力してください</li><li><strong>実行</strong>：ボタンをクリックすると結果が表示されます</li><li><strong>活用</strong>：結果を参考に次のアクションを検討してください</li></ol></div>
+<div class="bg-rose-50 border border-rose-200 rounded-xl p-4 mx-0 my-2.5"><h2 class="text-sm font-bold mb-2 text-rose-700">📖 診断の使い方</h2><ol class="pl-4 text-xs text-slate-600 leading-loose list-decimal"><li><strong>スタート</strong>：「診断スタート！」ボタンをタップ</li><li><strong>選択</strong>：性格・恋愛観・ライフスタイルに関する10問に答える</li><li><strong>診断</strong>：あなたに合ったマッチングアプリTOP3が表示されます</li><li><strong>登録</strong>：おすすめアプリから無料登録して婚活・恋活をスタート！</li></ol></div>
 <footer class="bg-gray-800 text-gray-300 py-8 px-4 mt-8">
     <div class="max-w-2xl mx-auto text-center">
       <div class="text-rose-400 text-2xl mb-3"><span>❤️</span></div>
@@ -848,6 +848,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     const answers = {};
     let currentQ = 1;
     const totalQ = 10;
+    let autoAdvanceTimer = null;
 
     function startDiagnosis() {
       document.getElementById('start-screen').classList.add('hidden');
@@ -867,6 +868,12 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       if (qNum < totalQ) {
         document.getElementById('next-btn').classList.remove('hidden');
         document.getElementById('result-btn').classList.add('hidden');
+        // 自動で次の質問へ進む（0.5秒後）
+        if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+        autoAdvanceTimer = setTimeout(() => {
+          autoAdvanceTimer = null;
+          nextQuestion();
+        }, 500);
       } else {
         document.getElementById('next-btn').classList.add('hidden');
         document.getElementById('result-btn').classList.remove('hidden');
