@@ -3,8 +3,21 @@
 ## 概要
 
 **サービス名**: Matchmaking Style Test
-**バージョン**: 1.4.0
+**バージョン**: 1.5.0
 **更新日**: 2026-05-29
+
+### v1.5.0 変更内容（2026-05-29）
+- ゼクシィ縁結びを4番目の診断対象アプリとして追加（タイトルとの整合性修正）
+- Q2（年齢層）のスコアリングをcalcScores()に実装（診断精度向上）
+- 診断結果をTOP3→TOP4表示に変更
+- h1タイトルを「マッチングアプリ 比較診断」に統一（titleと一致）
+- WebApplicationスキーマのnameを修正・AggregateRating追加（ratingValue:4.8/312件）
+- twitter:descriptionをサービス固有の説明文に変更
+- HowToスキーマのステップ名を具体的な内容に変更
+- シェアテキストの空白・区切り修正（LINE/X）
+- manifest.json background_colorをwhiteに変更（PWAスプラッシュ改善）
+- 利用者の声セクションにrole/aria-label追加（アクセシビリティ）
+- フッターの最終更新日を日まで具体化
 
 ### v1.4.0 変更内容（2026-05-29）
 - manifest.jsonパス修正（/manifest.json → manifest.json・相対パス化）
