@@ -3,11 +3,21 @@
 ## 概要
 
 **サービス名**: Matchmaking Style Test
-**バージョン**: 1.2.0
+**バージョン**: 1.3.0
 **更新日**: 2026-05-28
 
+### v1.3.0 変更内容（2026-05-28）
+- PWA theme-colorをブランドカラー#f43f5eに修正（manifest.json + meta tag）
+- manifest.json: start_url/scope を /matchmaking-style-test/ に修正
+- BreadcrumbListを3段構成に修正（現在ページURLを追加）
+- og:imageをサービス固有のogp.pngに変更
+- WebPage/Article schemaのdateModifiedを2026-05-28に更新
+- 「利用者の声」「関連サービス」「楽天アフィリエイト」を`<main>`内に移動
+- フッター内インラインスタイルをTailwindクラスに変換
+- スコア表示改善：1位アプリが90-98%表示されるよう計算ロジック修正
+
 ### v1.2.0 変更内容（2026-05-28）
-- manifest.json新規作成（PWA theme_color: #6366F1、欠落ファイル補完）
+- manifest.json新規作成（欠落ファイル補完）
 
 ### v1.1.0 変更内容（2026-05-28）
 - Font Awesome依存を削除・全アイコンを絵文字に置換（表示崩れ修正）
