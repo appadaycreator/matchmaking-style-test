@@ -6,7 +6,7 @@
   "scope": "/matchmaking-style-test/",
   "display": "standalone",
   "theme_color": "#f43f5e",
-  "background_color": "#ffffff",
+  "background_color": "#f43f5e",
   "icons": [
     {
       "src": "/apple-touch-icon.png",
