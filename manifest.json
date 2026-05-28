@@ -1,0 +1,16 @@
+{
+  "name": "マッチングアプリ 比較診断",
+  "short_name": "マッチング診断",
+  "description": "性格・恋愛観・目的から最適なマッチングアプリを無料診断",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6366F1",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
