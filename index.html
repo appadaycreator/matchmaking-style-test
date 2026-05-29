@@ -182,6 +182,13 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
   a[href]::after{content:none!important}
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+/* モバイルでクイズナビゲーションを画面下部に固定 */
+#quiz-nav{position:sticky;bottom:0;background:white;padding:12px 0;box-shadow:0 -4px 12px rgba(0,0,0,.08);z-index:10;}
+@media(min-width:641px){#quiz-nav{position:static;box-shadow:none;padding:0;}}
+/* キーボードフォーカス視認性 */
+.option-btn:focus-visible,button:focus-visible{outline:3px solid #f43f5e;outline-offset:2px;}
+/* 選択確定アニメーション */
+.option-btn.selected{transition:all 0.15s ease;box-shadow:0 2px 8px rgba(244,63,94,.2);}
 </style>
 <script type="application/ld+json">
 {
@@ -596,20 +603,20 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="5">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q5</div>
-            <h3 class="text-gray-800 font-bold text-base leading-snug">デートの頻度の希望は？</h3>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">月額費用はどのくらいまで出せますか？</h3>
           </div>
           <div class="space-y-3">
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'weekly', this)">
-              <span class="text-rose-400 mr-2">📅</span>週1回以上会いたい
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'free', this)">
+              <span class="text-green-400 mr-2">🆓</span>できるだけ無料か格安がいい
             </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'biweekly', this)">
-              <span class="text-orange-400 mr-2">📅</span>月2〜3回ペースがいい
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'low', this)">
+              <span class="text-blue-400 mr-2">💴</span>月2,000円程度なら出せる
             </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'monthly', this)">
-              <span class="text-blue-400 mr-2">📅</span>月1回程度でゆっくり
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'mid', this)">
+              <span class="text-orange-400 mr-2">💳</span>月3,500〜4,000円は問題ない
             </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'slow', this)">
-              <span class="text-gray-400 mr-2">⏰</span>ゆっくりマイペースに進めたい
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'high', this)">
+              <span class="text-rose-400 mr-2">💎</span>婚活投資として月5,000円以上でも使いたい
             </button>
           </div>
         </div>
@@ -656,17 +663,20 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         <div class="question-card bg-white rounded-2xl shadow-md p-6 mb-4 hidden" data-q="8">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-9 h-9 rounded-full gradient-btn text-white flex items-center justify-center font-bold text-sm flex-shrink-0">Q8</div>
-            <h3 class="text-gray-800 font-bold text-base leading-snug">スマホのアプリ確認頻度は？</h3>
+            <h3 class="text-gray-800 font-bold text-base leading-snug">出会いのスタイルはどちら派？</h3>
           </div>
           <div class="space-y-3">
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'always', this)">
-              <span class="text-rose-400 mr-2">📱</span>常にチェックしている
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'swipe', this)">
+              <span class="text-rose-400 mr-2">👆</span>写真を見てパッと判断したい（スワイプ型）
             </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'several', this)">
-              <span class="text-yellow-400 mr-2">🔔</span>1日数回チェックする
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'search', this)">
+              <span class="text-blue-400 mr-2">🔍</span>条件を細かく設定して探したい（検索型）
             </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'rarely', this)">
-              <span class="text-gray-400 mr-2">🔕</span>あまり見ない・マイペース
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'hobby', this)">
+              <span class="text-green-400 mr-2">🎯</span>共通の趣味・コミュニティで出会いたい（趣味型）
+            </button>
+            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'ai', this)">
+              <span class="text-purple-400 mr-2">🤖</span>AIや診断が相手を選んでくれると安心（AI型）
             </button>
           </div>
         </div>
@@ -715,7 +725,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       </div>
 
       <!-- ナビゲーションボタン -->
-      <div class="flex gap-3 mt-4">
+      <div id="quiz-nav" class="flex gap-3 mt-4">
         <button id="prev-btn" onclick="prevQuestion()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
           <span class="mr-1">◀</span>前の質問
         </button>
@@ -869,6 +879,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     let currentQ = 1;
     const totalQ = 10;
     let autoAdvanceTimer = null;
+    let currentDiagnosisType = '';
 
     // 回答ラベルマップ（結果まとめ表示用）
     const answerLabels = {
@@ -876,10 +887,10 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       2: { q: '年齢層', early20s: '20代前半', late20s: '20代後半', early30s: '30代前半', late30s: '30代後半以上' },
       3: { q: '恋愛・婚活の目標', marriage: '真剣な交際・結婚', casual: '気軽な出会い・恋愛', friend: '友達から始めたい' },
       4: { q: '理想の出会い方', hobby: '共通の趣味・興味', values: '価値観・人柄重視', looks: '外見・第一印象重視', stability: '年収・安定性重視' },
-      5: { q: 'デートの頻度', weekly: '週1回以上', biweekly: '月2〜3回', monthly: '月1回程度', slow: 'ゆっくりマイペース' },
+      5: { q: '月額予算', free: 'できるだけ無料・格安', low: '月2,000円程度', mid: '月3,500〜4,000円', high: '月5,000円以上' },
       6: { q: '活動できる時間帯', weekday_night: '平日の夜（21時以降）', weekend: '週末・休日中心', irregular: '不規則・シフト制' },
       7: { q: '交際経験', none: 'ほとんどない（0〜1回）', some: '数回ある（2〜4回）', many: '多い方（5回以上）' },
-      8: { q: 'スマホ確認頻度', always: '常にチェックしている', several: '1日数回チェック', rarely: 'あまり見ない・マイペース' },
+      8: { q: '出会いのスタイル', swipe: 'スワイプ型', search: '検索型', hobby: '趣味型', ai: 'AI診断型' },
       9: { q: '初対面で重視すること', talk: '話題の豊富さ・会話力', vibe: '雰囲気・全体的な感じ', values: '価値観・考え方の一致', appearance: '見た目・外見' },
       10: { q: '今の気持ち', now: 'すぐにでも始めたい！', soon: '3ヶ月以内には始めたい', maybe: '半年以内に考えている' }
     };
@@ -910,18 +921,18 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           autoAdvanceTimer = setTimeout(() => {
             autoAdvanceTimer = null;
             nextQuestion();
-          }, 500);
+          }, 900);
         }
       } else {
         document.getElementById('next-btn').classList.add('hidden');
         document.getElementById('result-btn').classList.remove('hidden');
-        // Q10選択後1.5秒で自動的に結果画面へ
+        // Q10選択後2秒で自動的に結果画面へ（選択確認時間を確保）
         if (!noAutoAdvance) {
           if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
           autoAdvanceTimer = setTimeout(() => {
             autoAdvanceTimer = null;
             showResult();
-          }, 1500);
+          }, 2000);
         }
       }
     }
@@ -1001,8 +1012,10 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       const goal = answers[3] || '';
       const meetingStyle = answers[4] || '';
       const gender = answers[1] || '';
+      const budget = answers[5] || '';
+      const style = answers[8] || '';
 
-      const reasons = { pairs: [], with: [], tapple: [], zexy: [] };
+      const reasons = { pairs: [], with: [], tapple: [], zexy: [], omiai: [] };
 
       if (age === 'early20s') {
         reasons.tapple.push('20代前半の若い会員が最も多く、同世代との出会いが豊富');
@@ -1013,15 +1026,18 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       } else if (age === 'early30s') {
         reasons.pairs.push('30代前半でも活発な会員層がおり、真剣な出会いを求める人が多い');
         reasons.zexy.push('30代前半の結婚意欲の高い会員が集まっており、同世代と出会いやすい');
+        reasons.omiai.push('30代前半の真剣交際志向の会員が多く、同世代と出会いやすい');
       } else if (age === 'late30s') {
         reasons.zexy.push('30代後半以上の結婚意欲の高い会員層が充実しており、同世代が多い');
         reasons.pairs.push('幅広い年齢層の会員がいるため、30代後半でも十分な出会いの機会がある');
+        reasons.omiai.push('30代後半の婚活真剣層が多く、年齢層とニーズが一致している');
       }
 
       if (goal === 'marriage') {
         reasons.pairs.push('真剣な交際・結婚を目指す会員が多く、目的が一致した出会いが期待できる');
         reasons.zexy.push('婚活特化アプリで、結婚を前提にした真剣な出会いを求める会員が集まっている');
         reasons.with.push('価値観診断で相性の深い相手との、長続きする真剣な関係を築きやすい');
+        reasons.omiai.push('婚活に真剣な会員が集まり、結婚を前提にした出会いにフォーカスしている');
       } else if (goal === 'casual') {
         reasons.tapple.push('気軽に始められる趣味カード機能で、自然な出会いからスタートできる');
         reasons.with.push('心理テストを楽しみながら、無理なく相性の良い相手と距離を縮められる');
@@ -1036,88 +1052,110 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       } else if (meetingStyle === 'values') {
         reasons.with.push('心理テストとAIで価値観の深い一致を重視したマッチングが可能');
         reasons.zexy.push('相性診断で価値観の合うパートナーと出会える仕組みが整っている');
+        reasons.omiai.push('価値観一致を重視したプロフィール設計で、内面から相性の良い相手が見つかりやすい');
       } else if (meetingStyle === 'stability') {
         reasons.pairs.push('職業・年収などの条件で絞り込める詳細検索機能が充実');
         reasons.zexy.push('高学歴・安定収入の会員比率が高く、安定した相手と出会いやすい');
+        reasons.omiai.push('職業・年収・学歴など条件を細かく絞り込める検索機能が充実している');
       } else if (meetingStyle === 'looks') {
         reasons.tapple.push('カードスワイプ形式で第一印象から始める出会い方が得意');
         reasons.pairs.push('豊富なプロフィール写真で相手の雰囲気を事前に確認しやすい');
       }
 
+      if (budget === 'free' || budget === 'low') {
+        reasons.with.push('月額2,000円程度のプランがあり、コスパよく使い始められる');
+        reasons.tapple.push('無料でも十分使えるカード機能があり、低コストから始められる');
+      } else if (budget === 'high') {
+        reasons.zexy.push('コストを惜しまず本気で婚活するあなたに合う、高品質な会員層が揃っている');
+        reasons.omiai.push('婚活に本気投資するあなたのニーズに応える、真剣な会員層が集まっている');
+      }
+
+      if (style === 'swipe') {
+        reasons.tapple.push('スワイプ型UIが使いやすく、直感的なマッチングが楽しめる');
+      } else if (style === 'search') {
+        reasons.pairs.push('年齢・職業・趣味など細かい条件で相手を絞り込める検索機能が充実');
+        reasons.zexy.push('条件検索に特化した機能で、理想の相手を効率よく探せる');
+        reasons.omiai.push('豊富な検索条件で理想の相手を効率的に絞り込める');
+      } else if (style === 'ai') {
+        reasons.with.push('AIが相性の高い相手をレコメンドしてくれるので、自分で探す手間が省ける');
+      }
+
       const appReasons = reasons[appKey];
-      if (appReasons.length > 0) return appReasons[0];
+      if (appReasons && appReasons.length > 0) return appReasons[0];
 
       const fallbacks = {
         pairs: 'あなたの回答パターンに最も合う会員層が多く、出会いの機会が豊富',
         with: '価値観重視の出会いを求めるあなたに適した診断・マッチング機能が揃っている',
         tapple: '気軽に始められる環境があなたのライフスタイルとペースに合っている',
-        zexy: '真剣な出会いを求めるあなたにふさわしい高品質な会員層が集まっている'
+        zexy: '真剣な出会いを求めるあなたにふさわしい高品質な会員層が集まっている',
+        omiai: '婚活に真剣なあなたの条件を満たす、本気の会員層が集まっている'
       };
       return fallbacks[appKey] || '';
     }
 
     function calcScores() {
-      const scores = { pairs: 0, with: 0, tapple: 0, zexy: 0 };
+      const scores = { pairs: 0, with: 0, tapple: 0, zexy: 0, omiai: 0 };
 
-      // Q1: 性別
-      if (answers[1] === 'female') { scores.with += 1; scores.zexy += 1; }
-      else if (answers[1] === 'male') { scores.pairs += 1; }
+      // Q1: 性別（強化・実際の会員層を反映）
+      if (answers[1] === 'female') { scores.with += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (answers[1] === 'male') { scores.pairs += 2; scores.tapple += 1; }
 
       // Q2: 年齢層
       if (answers[2] === 'early20s') { scores.tapple += 3; scores.with += 1; }
       else if (answers[2] === 'late20s') { scores.pairs += 2; scores.tapple += 1; }
-      else if (answers[2] === 'early30s') { scores.pairs += 2; scores.zexy += 2; }
-      else if (answers[2] === 'late30s') { scores.zexy += 4; scores.pairs += 1; }
+      else if (answers[2] === 'early30s') { scores.pairs += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (answers[2] === 'late30s') { scores.zexy += 4; scores.pairs += 1; scores.omiai += 2; }
 
       // Q3: 目標
-      if (answers[3] === 'marriage') { scores.pairs += 3; scores.with += 2; scores.zexy += 3; }
+      if (answers[3] === 'marriage') { scores.pairs += 3; scores.with += 2; scores.zexy += 3; scores.omiai += 3; }
       else if (answers[3] === 'casual') { scores.tapple += 3; scores.with += 1; }
       else if (answers[3] === 'friend') { scores.tapple += 2; scores.with += 2; }
 
       // Q4: 出会い方
       if (answers[4] === 'hobby') { scores.tapple += 3; scores.with += 1; }
-      else if (answers[4] === 'values') { scores.with += 3; scores.pairs += 1; scores.zexy += 1; }
+      else if (answers[4] === 'values') { scores.with += 3; scores.pairs += 1; scores.zexy += 1; scores.omiai += 1; }
       else if (answers[4] === 'looks') { scores.tapple += 2; scores.pairs += 1; }
-      else if (answers[4] === 'stability') { scores.pairs += 3; scores.with += 1; scores.zexy += 2; }
+      else if (answers[4] === 'stability') { scores.pairs += 3; scores.with += 1; scores.zexy += 2; scores.omiai += 2; }
 
-      // Q5: デート頻度
-      if (answers[5] === 'weekly') { scores.tapple += 2; scores.with += 1; }
-      else if (answers[5] === 'biweekly') { scores.pairs += 2; scores.tapple += 1; }
-      else if (answers[5] === 'monthly') { scores.pairs += 2; scores.with += 1; scores.zexy += 1; }
-      else if (answers[5] === 'slow') { scores.with += 3; scores.zexy += 2; }
+      // Q5: 月額予算（診断精度向上）
+      if (answers[5] === 'free') { scores.tapple += 2; scores.with += 1; }
+      else if (answers[5] === 'low') { scores.with += 2; scores.tapple += 1; }
+      else if (answers[5] === 'mid') { scores.pairs += 2; scores.tapple += 1; scores.omiai += 1; }
+      else if (answers[5] === 'high') { scores.zexy += 3; scores.pairs += 1; scores.omiai += 2; }
 
-      // Q6: 活動時間（スコア強化・weekend追加）
+      // Q6: 活動時間
       if (answers[6] === 'irregular') { scores.tapple += 2; scores.with += 1; }
       else if (answers[6] === 'weekday_night') { scores.with += 2; scores.pairs += 1; }
-      else if (answers[6] === 'weekend') { scores.pairs += 2; scores.zexy += 1; }
+      else if (answers[6] === 'weekend') { scores.pairs += 2; scores.zexy += 1; scores.omiai += 1; }
 
-      // Q7: 交際経験（manyにゼクシィ追加）
+      // Q7: 交際経験
       if (answers[7] === 'none') { scores.with += 2; scores.pairs += 1; }
       else if (answers[7] === 'some') { scores.pairs += 2; scores.tapple += 1; }
       else if (answers[7] === 'many') { scores.tapple += 2; scores.zexy += 1; }
 
-      // Q8: スマホ頻度
-      if (answers[8] === 'always') { scores.tapple += 2; scores.with += 1; }
-      else if (answers[8] === 'several') { scores.pairs += 2; scores.with += 1; }
-      else if (answers[8] === 'rarely') { scores.with += 2; scores.pairs += 1; scores.zexy += 1; }
+      // Q8: 出会いスタイル（診断精度向上）
+      if (answers[8] === 'swipe') { scores.tapple += 3; scores.pairs += 1; }
+      else if (answers[8] === 'search') { scores.pairs += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (answers[8] === 'hobby') { scores.tapple += 3; scores.pairs += 1; }
+      else if (answers[8] === 'ai') { scores.with += 3; scores.pairs += 1; }
 
       // Q9: 初対面で重視
       if (answers[9] === 'talk') { scores.with += 3; scores.tapple += 1; }
       else if (answers[9] === 'vibe') { scores.tapple += 2; scores.pairs += 1; }
-      else if (answers[9] === 'values') { scores.with += 3; scores.pairs += 2; scores.zexy += 2; }
+      else if (answers[9] === 'values') { scores.with += 3; scores.pairs += 2; scores.zexy += 2; scores.omiai += 1; }
       else if (answers[9] === 'appearance') { scores.tapple += 3; }
 
       // Q10: 気持ち
       if (answers[10] === 'now') { scores.tapple += 2; scores.pairs += 1; }
-      else if (answers[10] === 'soon') { scores.pairs += 2; scores.with += 1; scores.zexy += 1; }
-      else if (answers[10] === 'maybe') { scores.with += 2; scores.zexy += 2; }
+      else if (answers[10] === 'soon') { scores.pairs += 2; scores.with += 1; scores.zexy += 1; scores.omiai += 1; }
+      else if (answers[10] === 'maybe') { scores.with += 2; scores.zexy += 2; scores.omiai += 1; }
 
       return scores;
     }
 
     function getType(scores) {
       const top = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
-      if (top === 'zexy') return 'zexy';
+      if (top === 'zexy' || top === 'omiai') return 'zexy';
       if (top === 'pairs') return 'marriage';
       if (top === 'with') return 'values';
       return 'casual';
@@ -1173,8 +1211,21 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         cta: '無料で登録する →',
         monthlyFee: '約4,378円〜',
         targetAge: '30代中心',
-        feeNote: '有料（プレミアム）',
+        feeNote: '男女とも有料',
         nextSteps: ['相性診断を完了してマッチング精度を上げる', '希望条件（年齢・職業・価値観）を詳細に設定する', '丁寧な自己紹介メッセージを準備する']
+      },
+      omiai: {
+        name: 'Omiai（おみあい）',
+        icon: '💝',
+        color: 'blue',
+        tagline: '婚活特化・累計1,000万組マッチング実績',
+        features: ['真剣な交際・婚活を求める会員が多い', '詳細な条件検索で理想の相手を効率よく発見', '身元確認・厳格な審査で安心安全'],
+        link: 'https://fb.omiai-jp.com/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
+        cta: '無料で登録する →',
+        monthlyFee: '約4,100円〜',
+        targetAge: '20〜30代',
+        feeNote: '女性無料',
+        nextSteps: ['希望条件（年齢・職業・価値観）を詳細に設定する', '自己紹介文を400文字以上書いて誠意を伝える', '毎日プロフィールを閲覧・いいね！して積極的に活動する']
       }
     };
 
@@ -1248,12 +1299,23 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       setTimeout(function() {
         const scores = calcScores();
         const type = getType(scores);
+        currentDiagnosisType = type;
         const info = typeInfo[type];
         const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+        const top4 = sorted.slice(0, 4);
         const maxScore = sorted[0][1];
         const topApp = appInfo[sorted[0][0]];
         // 1位のマッチ度（シェアテキスト用）
         const topPct = 90 + Math.round((sorted[0][1] / (maxScore || 1)) * 8);
+
+        // GTMに診断完了イベントを送信
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          event: 'diagnosis_complete',
+          diagnosis_type: type,
+          top_app: sorted[0][0],
+          gender: answers[1] || ''
+        });
 
         // 診断済み人数をカウントアップ
         const curCount = parseInt(localStorage.getItem('matchmaking_count') || '12847', 10) + 1;
@@ -1269,14 +1331,25 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           ${buildAnswerSummary()}
         `;
 
-        // アプリランキング（マッチ度をスコア比率で正規化）
-        let appsHTML = `<div class="bg-white rounded-2xl shadow-md p-6 mb-4">
+        // 性別によるコンテンツ分岐
+        const genderNote = answers[1] === 'female'
+          ? '<p class="text-xs text-rose-600 font-medium mt-2">✨ 女性の方：Pairs・with・タップル・Omiaiは女性無料で登録できます</p>'
+          : answers[1] === 'male'
+          ? '<p class="text-xs text-blue-600 font-medium mt-2">💡 男性の方：まず複数アプリに無料登録し、メッセージを送りたい相手が見つかったら有料プランを検討するのがおすすめです</p>'
+          : '';
+
+        // アフィリエイト開示バナー＋アプリランキング
+        let appsHTML = `<div class="text-xs text-gray-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-3 flex items-start gap-1.5">
+          <span class="flex-shrink-0">📣</span>
+          <span>本ページはアフィリエイト広告（成果報酬型広告）を含みます。診断結果は中立的なアルゴリズムで算出しています。</span>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md p-6 mb-4">
           <h3 class="font-bold text-gray-800 mb-4 flex items-center">
             <span class="text-yellow-400 mr-2 text-lg">🏆</span>あなたへのおすすめアプリ TOP4
           </h3>
           <div class="space-y-4">`;
 
-        sorted.forEach(([key, score], idx) => {
+        top4.forEach(([key, score], idx) => {
           const app = appInfo[key];
           // 1位: 90-98%、2〜4位: スコア比率で10-85%（0スコアは10%下限、実際の差を反映）
           let cappedPct;
@@ -1334,7 +1407,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         // 料金比較ミニテーブル
         appsHTML += `<div class="bg-white rounded-2xl shadow-md p-5 mb-4">
           <h3 class="font-bold text-gray-800 mb-3 flex items-center text-sm">
-            <span class="mr-2">📊</span>4アプリ料金・特徴 早見表
+            <span class="mr-2">📊</span>おすすめアプリ 料金・特徴 早見表
           </h3>
           <div class="overflow-x-auto">
             <table class="w-full text-xs border-collapse min-w-max">
@@ -1344,25 +1417,36 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
                   <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">月額（男性）</th>
                   <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">女性利用</th>
                   <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">メイン層</th>
+                  <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">公式サイト</th>
                 </tr>
               </thead>
               <tbody>
-                ${sorted.map(([key]) => {
+                ${top4.map(([key]) => {
                   const a = appInfo[key];
                   return `<tr class="hover:bg-rose-50 transition-colors">
                     <td class="p-2 border border-rose-100 font-medium">${a.icon} ${a.name}</td>
                     <td class="p-2 border border-rose-100 text-center">${a.monthlyFee}</td>
                     <td class="p-2 border border-rose-100 text-center">${a.feeNote}</td>
                     <td class="p-2 border border-rose-100 text-center">${a.targetAge}</td>
+                    <td class="p-2 border border-rose-100 text-center"><a href="${a.link}&utm_content=table" rel="nofollow sponsored noopener" target="_blank" class="js-track-affiliate text-rose-500 underline" data-platform="${a.name}" data-rank="table" data-link-type="table_link">詳細を見る</a></td>
                   </tr>`;
                 }).join('')}
               </tbody>
             </table>
           </div>
           <p class="text-xs text-gray-400 mt-2">※料金は公式サイト記載の標準プラン。変動する場合があります。</p>
+          ${genderNote}
         </div>`;
 
         document.getElementById('result-apps').innerHTML = appsHTML;
+
+        // 診断結果をURLパラメータで共有可能にする
+        try {
+          const p = new URLSearchParams();
+          p.set('type', type);
+          p.set('top', sorted[0][0]);
+          history.pushState(null, '', '?' + p.toString());
+        } catch(e) {}
 
         // シェアテキストを診断結果に合わせて動的更新
         const shareText = encodeURIComponent(`私は"${info.label}"！${topApp.name}がマッチ度${topPct}%と診断されました。あなたも試してみて #マッチングアプリ診断`);
@@ -1379,6 +1463,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     function retryDiagnosis() {
       Object.keys(answers).forEach(k => delete answers[k]);
       currentQ = 1;
+      currentDiagnosisType = '';
+      try { history.pushState(null, '', window.location.pathname); } catch(e) {}
       document.getElementById('result-screen').classList.add('hidden');
       document.getElementById('quiz-screen').classList.add('hidden');
       document.getElementById('start-screen').classList.remove('hidden');
@@ -1419,6 +1505,49 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       }
       const el = document.getElementById('diagnosis-count');
       if (el) el.textContent = n.toLocaleString('ja-JP');
+    })();
+
+    // アフィリエイトリンク クリック時にGTMイベントを送信（委譲）
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('.js-track-affiliate');
+      if (!link) return;
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'affiliate_click',
+        platform: link.dataset.platform || '',
+        rank: link.dataset.rank || '',
+        link_type: link.dataset.linkType || 'affiliate_link',
+        diagnosis_type: currentDiagnosisType
+      });
+    }, true);
+
+    // URLパラメータから直接結果を表示（シェアURLへの対応）
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const typeParam = params.get('type');
+      const topParam = params.get('top');
+      const validTypes = /^(marriage|zexy|values|casual)$/;
+      const validApps = /^(pairs|with|tapple|zexy|omiai)$/;
+      if (typeParam && validTypes.test(typeParam) && topParam && validApps.test(topParam)) {
+        const info = typeInfo[typeParam];
+        const topApp = appInfo[topParam];
+        if (info && topApp) {
+          document.getElementById('start-screen').classList.add('hidden');
+          document.getElementById('result-screen').classList.remove('hidden');
+          document.getElementById('result-type-card').innerHTML = `
+            <div class="text-5xl mb-3">${info.emoji}</div>
+            <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3 ${info.badge}">${info.label}</span>
+            <p class="text-gray-600 text-sm leading-relaxed">${info.desc}</p>
+            <p class="text-center mt-3 text-xs text-gray-400">※これはシェアされた診断結果のプレビューです</p>
+          `;
+          document.getElementById('result-apps').innerHTML = `
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 text-center">
+              <p class="text-sm text-gray-700 mb-4 font-medium">あなた自身の診断をしてみませんか？<br><span class="text-xs text-gray-500">10問・約2分・完全無料</span></p>
+              <button onclick="retryDiagnosis()" class="gradient-btn text-white px-8 py-3 rounded-xl font-bold pulse-cta">❤️ 無料で診断スタート</button>
+            </div>
+          `;
+        }
+      }
     })();
   </script>
 
