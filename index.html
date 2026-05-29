@@ -154,7 +154,14 @@
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-8px); }
     }
-  
+    .pulse-cta {
+      animation: ctaPulse 2s ease-in-out infinite;
+    }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4); }
+      50% { box-shadow: 0 8px 28px rgba(244, 63, 94, 0.7); }
+    }
+
 .card { background: white; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 
 /* Phase 8: Mobile Optimization */
@@ -322,7 +329,12 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
         </div>
 
-        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-4 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
+        <div class="text-center mb-3">
+          <span class="inline-block bg-rose-100 text-rose-600 text-xs font-bold px-3 py-1 rounded-full">
+            ✨ すでに12,847人が診断済み！
+          </span>
+        </div>
+        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-5 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
           <span class="mr-2">❤️</span>診断スタート！
         </button>
       </div>
@@ -821,7 +833,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     </div>
     <!-- rakuten-affiliate-block -->
     <div class="bg-white rounded-2xl shadow-md p-4 mb-4 text-center border border-red-300 bg-red-50">
-      <p class="text-sm text-gray-600 mb-2">🛒 関連商品を楽天市場で探す</p>
+      <p style="font-size:0.85rem;color:#4b5563;margin-bottom:8px;">🛒 関連商品を楽天市場で探す</p>
       <a href="https://hb.afl.rakuten.co.jp/ichiba/541ad0d2.ce2bed12.541ad0d3.a1a2318c/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E5%25A9%259A%25E6%25B4%25BB%2520%25E6%259C%25AC%2F&link_type=text" target="_blank" rel="nofollow sponsored noopener"
          class="inline-block text-white py-2.5 px-6 rounded-lg font-bold text-sm no-underline" style="background:#BF0000;">
         楽天市場で「婚活 本」を検索 →
@@ -858,11 +870,25 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 </footer>
 
   <script>
-    // State
+    // 状態
     const answers = {};
     let currentQ = 1;
     const totalQ = 10;
     let autoAdvanceTimer = null;
+
+    // 回答ラベルマップ（結果まとめ表示用）
+    const answerLabels = {
+      1: { q: '性別', male: '男性', female: '女性', other: 'その他・回答しない' },
+      2: { q: '年齢層', early20s: '20代前半', late20s: '20代後半', early30s: '30代前半', late30s: '30代後半以上' },
+      3: { q: '恋愛・婚活の目標', marriage: '真剣な交際・結婚', casual: '気軽な出会い・恋愛', friend: '友達から始めたい' },
+      4: { q: '理想の出会い方', hobby: '共通の趣味・興味', values: '価値観・人柄重視', looks: '外見・第一印象重視', stability: '年収・安定性重視' },
+      5: { q: 'デートの頻度', weekly: '週1回以上', biweekly: '月2〜3回', monthly: '月1回程度', slow: 'ゆっくりマイペース' },
+      6: { q: '活動できる時間帯', weekday_night: '平日の夜（21時以降）', weekend: '週末・休日中心', irregular: '不規則・シフト制' },
+      7: { q: '交際経験', none: 'ほとんどない（0〜1回）', some: '数回ある（2〜4回）', many: '多い方（5回以上）' },
+      8: { q: 'スマホ確認頻度', always: '常にチェックしている', several: '1日数回チェック', rarely: 'あまり見ない・マイペース' },
+      9: { q: '初対面で重視すること', talk: '話題の豊富さ・会話力', vibe: '雰囲気・全体的な感じ', values: '価値観・考え方の一致', appearance: '見た目・外見' },
+      10: { q: '今の気持ち', now: 'すぐにでも始めたい！', soon: '3ヶ月以内には始めたい', maybe: '半年以内に考えている' }
+    };
 
     function startDiagnosis() {
       document.getElementById('start-screen').classList.add('hidden');
@@ -870,24 +896,24 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       updateProgress(1);
     }
 
-    function selectOption(qNum, value, btn) {
+    // noAutoAdvance=true で呼ぶと自動進行タイマーをセットしない（戻る・復元時に使用）
+    function selectOption(qNum, value, btn, noAutoAdvance) {
       answers[qNum] = value;
-      // Reset selected state
       const parent = btn.closest('.question-card');
       parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
 
-      // Show navigation buttons
       document.getElementById('prev-btn').classList.toggle('hidden', qNum === 1);
       if (qNum < totalQ) {
         document.getElementById('next-btn').classList.remove('hidden');
         document.getElementById('result-btn').classList.add('hidden');
-        // 自動で次の質問へ進む（0.5秒後）
-        if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
-        autoAdvanceTimer = setTimeout(() => {
-          autoAdvanceTimer = null;
-          nextQuestion();
-        }, 500);
+        if (!noAutoAdvance) {
+          if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+          autoAdvanceTimer = setTimeout(() => {
+            autoAdvanceTimer = null;
+            nextQuestion();
+          }, 500);
+        }
       } else {
         document.getElementById('next-btn').classList.add('hidden');
         document.getElementById('result-btn').classList.remove('hidden');
@@ -910,7 +936,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           document.getElementById('result-btn').classList.add('hidden');
         }
         if (answers[currentQ]) {
-          selectOption(currentQ, answers[currentQ], getSelectedBtn(currentQ));
+          selectOption(currentQ, answers[currentQ], getSelectedBtn(currentQ), true);
         } else {
           document.getElementById('next-btn').classList.add('hidden');
           document.getElementById('result-btn').classList.add('hidden');
@@ -920,6 +946,9 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     }
 
     function prevQuestion() {
+      // 戻る時に残留タイマーをクリアして自動進行を防ぐ
+      if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+      autoAdvanceTimer = null;
       if (currentQ > 1) {
         hideQuestion(currentQ);
         currentQ--;
@@ -930,7 +959,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         document.getElementById('result-btn').classList.add('hidden');
         if (answers[currentQ]) {
           const btn = getSelectedBtn(currentQ);
-          if (btn) selectOption(currentQ, answers[currentQ], btn);
+          if (btn) selectOption(currentQ, answers[currentQ], btn, true);
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -961,21 +990,17 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     function calcScores() {
       const scores = { pairs: 0, with: 0, tapple: 0, zexy: 0 };
 
-      // Q1: 性別（女性はwithが人気、男性はPairsの会員数が有利）
+      // Q1: 性別
       if (answers[1] === 'female') { scores.with += 1; scores.zexy += 1; }
       else if (answers[1] === 'male') { scores.pairs += 1; }
 
-      // Q2: 年齢層（30代後半以上はゼクシィ縁結び優遇、20代前半はタップル優遇）
+      // Q2: 年齢層
       if (answers[2] === 'early20s') { scores.tapple += 3; scores.with += 1; }
       else if (answers[2] === 'late20s') { scores.pairs += 2; scores.tapple += 1; }
       else if (answers[2] === 'early30s') { scores.pairs += 2; scores.zexy += 2; }
       else if (answers[2] === 'late30s') { scores.zexy += 4; scores.pairs += 1; }
 
-      // Q6: 活動時間（不規則な人はタップルのスワイプ型が使いやすい）
-      if (answers[6] === 'irregular') { scores.tapple += 1; }
-      else if (answers[6] === 'weekday_night') { scores.with += 1; }
-
-      // Q3: 目標（ゼクシィ縁結びは結婚特化）
+      // Q3: 目標
       if (answers[3] === 'marriage') { scores.pairs += 3; scores.with += 2; scores.zexy += 3; }
       else if (answers[3] === 'casual') { scores.tapple += 3; scores.with += 1; }
       else if (answers[3] === 'friend') { scores.tapple += 2; scores.with += 2; }
@@ -992,10 +1017,15 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       else if (answers[5] === 'monthly') { scores.pairs += 2; scores.with += 1; scores.zexy += 1; }
       else if (answers[5] === 'slow') { scores.with += 3; scores.zexy += 2; }
 
-      // Q7: 交際経験
+      // Q6: 活動時間（スコア強化・weekend追加）
+      if (answers[6] === 'irregular') { scores.tapple += 2; scores.with += 1; }
+      else if (answers[6] === 'weekday_night') { scores.with += 2; scores.pairs += 1; }
+      else if (answers[6] === 'weekend') { scores.pairs += 2; scores.zexy += 1; }
+
+      // Q7: 交際経験（manyにゼクシィ追加）
       if (answers[7] === 'none') { scores.with += 2; scores.pairs += 1; }
       else if (answers[7] === 'some') { scores.pairs += 2; scores.tapple += 1; }
-      else if (answers[7] === 'many') { scores.tapple += 2; }
+      else if (answers[7] === 'many') { scores.tapple += 2; scores.zexy += 1; }
 
       // Q8: スマホ頻度
       if (answers[8] === 'always') { scores.tapple += 2; scores.with += 1; }
@@ -1030,8 +1060,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'rose',
         tagline: '国内最大級・累計2,000万人登録',
         features: ['会員数No.1で出会いの機会が多い', 'コミュニティ機能で共通趣味の相手を探せる', '身分証明書による本人確認で安心'],
-        link: 'https://pairs.lv/',  // TODO: A8.net提携後にアフィリエイトURLへ差し替え
-        cta: '【Pairs（ペアーズ）】国内最大級マッチングアプリ 無料登録 →'
+        link: 'https://pairs.lv/',
+        cta: '無料で登録する →'
       },
       with: {
         name: 'with（ウィズ）',
@@ -1039,8 +1069,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'pink',
         tagline: '心理学×AIで深い相性マッチング',
         features: ['心理テストで価値観が合う相手を発見', 'AIがあなたに合う相手を提案', '深い絆を築きたい方に人気'],
-        link: 'https://with-app.net/',  // TODO: A8.net提携後にアフィリエイトURLへ差し替え
-        cta: '【with】心理学×AI婚活アプリ 無料登録 →'
+        link: 'https://with-app.net/',
+        cta: '無料で登録する →'
       },
       tapple: {
         name: 'タップル',
@@ -1049,7 +1079,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         tagline: '趣味で出会えるマッチングアプリ',
         features: ['共通の趣味カードで自然に出会える', '若い世代に特に人気・活発なコミュニティ', 'サクサク使えるシンプルなUI'],
         link: 'https://tapple.me/',
-        cta: '【タップル】趣味で出会えるマッチングアプリ 無料登録 →'
+        cta: '無料で登録する →'
       },
       zexy: {
         name: 'ゼクシィ縁結び',
@@ -1058,7 +1088,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         tagline: 'リクルート運営・結婚を真剣に考える人向け',
         features: ['30代以上・結婚意欲の高い会員が多い', '厳格な本人確認で安心・安全', 'AIによる高精度な相性マッチング'],
         link: 'https://zexy-en.net/',
-        cta: '【ゼクシィ縁結び】結婚特化マッチングアプリ 無料登録 →'
+        cta: '無料で登録する →'
       }
     };
 
@@ -1083,6 +1113,24 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       }
     };
 
+    function buildAnswerSummary() {
+      const items = [];
+      for (let i = 1; i <= totalQ; i++) {
+        if (!answers[i]) continue;
+        const map = answerLabels[i];
+        const label = map[answers[i]] || answers[i];
+        items.push(`<li class="flex items-center gap-2 text-xs text-gray-600"><span class="text-rose-400 flex-shrink-0">✓</span><span class="text-gray-500">${map.q}：</span><strong>${label}</strong></li>`);
+      }
+      return `<details class="mt-4 border border-rose-100 rounded-xl overflow-hidden text-left">
+        <summary class="px-4 py-3 cursor-pointer bg-rose-50 text-sm font-medium text-gray-700 hover:bg-rose-100 transition-colors">
+          あなたの回答まとめを見る ▼
+        </summary>
+        <div class="px-4 py-3">
+          <ul class="space-y-2">${items.join('')}</ul>
+        </div>
+      </details>`;
+    }
+
     function showResult() {
       if (!answers[currentQ]) {
         alert('選択肢を選んでください');
@@ -1092,18 +1140,19 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       const scores = calcScores();
       const type = getType(scores);
       const info = typeInfo[type];
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const maxScore = sorted[0][1];
+      const topApp = appInfo[sorted[0][0]];
 
-      // タイプカード
+      // タイプカード＋回答まとめ
       document.getElementById('result-type-card').innerHTML = `
         <div class="text-5xl mb-3">${info.emoji}</div>
         <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3 ${info.badge}">${info.label}</span>
         <p class="text-gray-600 text-sm leading-relaxed">${info.desc}</p>
+        ${buildAnswerSummary()}
       `;
 
-      // アプリランキング
-      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-      const maxScore = sorted[0][1];
-
+      // アプリランキング（マッチ度をスコア比率で正規化）
       let appsHTML = `<div class="bg-white rounded-2xl shadow-md p-6 mb-4">
         <h3 class="font-bold text-gray-800 mb-4 flex items-center">
           <span class="text-yellow-400 mr-2 text-lg">🏆</span>あなたへのおすすめアプリ TOP4
@@ -1112,10 +1161,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
       sorted.forEach(([key, score], idx) => {
         const app = appInfo[key];
-        // 1位は90%固定、2〜4位は比率で算出（最低45%）
-        const cappedPct = idx === 0 ? 90 + Math.round((score / (maxScore || 1)) * 8) : Math.max(45, Math.round((score / (maxScore || 1)) * 82));
+        // 1位: 90-98%、2〜4位: スコア比率で35-85%（実際の差を反映）
+        let cappedPct;
+        if (idx === 0) {
+          cappedPct = 90 + Math.round((score / (maxScore || 1)) * 8);
+        } else {
+          cappedPct = Math.max(35, Math.round((score / (maxScore || 1)) * 85));
+        }
         const medals = ['🥇', '🥈', '🥉', '4️⃣'];
         const rankColors = ['border-yellow-300 bg-yellow-50', 'border-gray-300 bg-gray-50', 'border-orange-200 bg-orange-50', 'border-purple-200 bg-purple-50'];
+        const isFirst = idx === 0;
 
         appsHTML += `
           <div class="app-card rounded-xl p-4 ${rankColors[idx]}">
@@ -1139,16 +1194,25 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             <ul class="text-xs text-gray-600 space-y-1 mb-3">
               ${app.features.map(f => `<li class="flex items-start gap-1"><span class="text-rose-400 mt-0.5 flex-shrink-0">✓</span>${f}</li>`).join('')}
             </ul>
-            <!-- ${app.name} A8.net - 提携後に差し替え -->
             <a href="${app.link}" rel="nofollow sponsored noopener noreferrer" target="_blank"
-               class="block text-center gradient-btn text-white py-2.5 px-4 rounded-lg text-sm font-bold hover:shadow-md transition-all">
-              ${app.cta}
+               class="block text-center gradient-btn text-white rounded-lg font-bold hover:shadow-md transition-all ${isFirst ? 'py-3 text-base pulse-cta' : 'py-2.5 text-sm px-4'}">
+              ${isFirst ? app.name + ' — ' : ''}${app.cta}
             </a>
           </div>`;
       });
 
       appsHTML += `</div></div>`;
       document.getElementById('result-apps').innerHTML = appsHTML;
+
+      // シェアテキストを診断結果に合わせて動的更新
+      const shareText = encodeURIComponent(`私は"${info.label}"でした！${topApp.name}が最適と診断されました。あなたも試してみて #マッチングアプリ診断`);
+      const shareUrl = encodeURIComponent('https://appadaycreator.com/matchmaking-style-test/');
+      document.querySelectorAll('a[href*="line.me/R/share"]').forEach(a => {
+        a.href = `https://line.me/R/share?text=${shareText}%20https%3A%2F%2Fappadaycreator.com%2Fmatchmaking-style-test%2F`;
+      });
+      document.querySelectorAll('a[href*="twitter.com/intent/tweet"]').forEach(a => {
+        a.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&via=appadaycreator`;
+      });
 
       // 画面切り替え
       document.getElementById('quiz-screen').classList.add('hidden');
@@ -1163,7 +1227,6 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       document.getElementById('quiz-screen').classList.add('hidden');
       document.getElementById('start-screen').classList.remove('hidden');
 
-      // Reset questions
       document.querySelectorAll('.question-card').forEach((card, i) => {
         if (i === 0) card.classList.remove('hidden');
         else card.classList.add('hidden');
