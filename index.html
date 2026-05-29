@@ -335,6 +335,26 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             ✨ すでに12,847人が診断済み！
           </span>
         </div>
+
+        <!-- 利用者の声（診断ボタン直前） -->
+        <div class="mb-4" role="region" aria-label="利用者の声">
+          <p class="text-xs font-bold text-gray-600 mb-2 flex items-center gap-1"><span>⭐</span>利用者の声</p>
+          <div class="space-y-2">
+            <div class="bg-rose-50 rounded-lg p-2.5">
+              <p class="text-xs text-gray-700">「すぐに結果が出て使いやすかったです。友人にも勧めました！」</p>
+              <p class="text-xs text-gray-400 mt-0.5">— 田中さん（30代・会社員）★★★★★</p>
+            </div>
+            <div class="bg-rose-50 rounded-lg p-2.5">
+              <p class="text-xs text-gray-700">「無料でここまで詳しく調べられるとは思いませんでした。」</p>
+              <p class="text-xs text-gray-400 mt-0.5">— 佐藤さん（40代・主婦）★★★★★</p>
+            </div>
+            <div class="bg-rose-50 rounded-lg p-2.5">
+              <p class="text-xs text-gray-700">「登録不要でサクッと使えるのが良いです。また利用します。」</p>
+              <p class="text-xs text-gray-400 mt-0.5">— 山本さん（20代・学生）★★★★☆</p>
+            </div>
+          </div>
+        </div>
+
         <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-5 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
           <span class="mr-2">❤️</span>診断スタート！
         </button>
@@ -796,34 +816,6 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       </div>
     </div>
 
-    <!-- phase8-social-proof -->
-    <div class="bg-white rounded-2xl shadow-md p-5 mb-4" role="region" aria-label="利用者の声">
-      <h3 class="font-bold text-gray-800 mb-3 text-sm">⭐ 利用者の声</h3>
-      <div class="space-y-3">
-        <div class="bg-gray-50 rounded-lg p-3">
-          <p class="text-xs text-gray-700">「すぐに結果が出て使いやすかったです。友人にも勧めました！」</p>
-          <p class="text-xs text-gray-400 mt-1">— 田中さん（30代・会社員）★★★★★</p>
-        </div>
-        <div class="bg-gray-50 rounded-lg p-3">
-          <p class="text-xs text-gray-700">「無料でここまで詳しく調べられるとは思いませんでした。」</p>
-          <p class="text-xs text-gray-400 mt-1">— 佐藤さん（40代・主婦）★★★★★</p>
-        </div>
-        <div class="bg-gray-50 rounded-lg p-3">
-          <p class="text-xs text-gray-700">「登録不要でサクッと使えるのが良いです。また利用します。」</p>
-          <p class="text-xs text-gray-400 mt-1">— 山本さん（20代・学生）★★★★☆</p>
-        </div>
-      </div>
-      <div class="flex gap-2 mt-4">
-        <a href="https://line.me/R/share?text=マッチングアプリ比較診断｜あなたに合うアプリが1分で分かる%20https://appadaycreator.com/matchmaking-style-test/" target="_blank" rel="noopener"
-           class="flex-1 block text-center text-white py-2 rounded-lg text-xs font-bold no-underline" style="background:#06C755;">
-          LINEでシェア
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=マッチングアプリ比較診断｜あなたに合うアプリが1分で分かる&url=https://appadaycreator.com/matchmaking-style-test/&via=appadaycreator" target="_blank" rel="noopener"
-           class="flex-1 block text-center text-white py-2 rounded-lg text-xs font-bold no-underline bg-black">
-          Xでシェア
-        </a>
-      </div>
-    </div>
     <!-- phase9-related-links -->
     <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
       <h3 class="font-bold text-gray-700 mb-2 text-sm">🔗 関連サービス</h3>
@@ -853,7 +845,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 <footer class="bg-gray-800 text-gray-300 py-8 px-4 mt-8">
     <div class="max-w-2xl mx-auto text-center">
       <div class="text-rose-400 text-2xl mb-3"><span>❤️</span></div>
-      <p class="font-bold text-white mb-2">婚活スタイル診断</p>
+      <p class="font-bold text-white mb-2">マッチングアプリ 比較診断</p>
       <p class="text-xs text-gray-400 mb-4 leading-relaxed">
         本サービスは情報提供を目的としており、特定のマッチングアプリの利用を強制するものではありません。
         アフィリエイトリンクを含む場合があります。
@@ -988,6 +980,67 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       document.getElementById('progress-bar').style.width = pct + '%';
     }
 
+    // 回答に基づいたパーソナライズ理由を生成
+    function getPersonalizedReason(appKey, answers) {
+      const age = answers[2] || '';
+      const goal = answers[3] || '';
+      const meetingStyle = answers[4] || '';
+      const gender = answers[1] || '';
+
+      const reasons = { pairs: [], with: [], tapple: [], zexy: [] };
+
+      if (age === 'early20s') {
+        reasons.tapple.push('20代前半の若い会員が最も多く、同世代との出会いが豊富');
+        reasons.with.push('20代に人気の心理テストで価値観の合う相手を見つけやすい');
+      } else if (age === 'late20s') {
+        reasons.pairs.push('20〜30代前半の会員が最多層で、同世代との出会いが充実');
+        reasons.with.push('20代後半に人気が高く、真剣さとカジュアルさのバランスが良い');
+      } else if (age === 'early30s') {
+        reasons.pairs.push('30代前半でも活発な会員層がおり、真剣な出会いを求める人が多い');
+        reasons.zexy.push('30代前半の結婚意欲の高い会員が集まっており、同世代と出会いやすい');
+      } else if (age === 'late30s') {
+        reasons.zexy.push('30代後半以上の結婚意欲の高い会員層が充実しており、同世代が多い');
+        reasons.pairs.push('幅広い年齢層の会員がいるため、30代後半でも十分な出会いの機会がある');
+      }
+
+      if (goal === 'marriage') {
+        reasons.pairs.push('真剣な交際・結婚を目指す会員が多く、目的が一致した出会いが期待できる');
+        reasons.zexy.push('婚活特化アプリで、結婚を前提にした真剣な出会いを求める会員が集まっている');
+        reasons.with.push('価値観診断で相性の深い相手との、長続きする真剣な関係を築きやすい');
+      } else if (goal === 'casual') {
+        reasons.tapple.push('気軽に始められる趣味カード機能で、自然な出会いからスタートできる');
+        reasons.with.push('心理テストを楽しみながら、無理なく相性の良い相手と距離を縮められる');
+      } else if (goal === 'friend') {
+        reasons.tapple.push('共通の趣味から始まる会話で、友達感覚から自然にステップアップできる');
+        reasons.with.push('心理学ベースの診断で気が合う相手を見つけ、友達から始めやすい');
+      }
+
+      if (meetingStyle === 'hobby') {
+        reasons.tapple.push('趣味・興味のタグで絞り込めるコミュニティ機能が業界随一');
+        reasons.pairs.push('5,000以上のコミュニティで共通の趣味を持つ相手を見つけやすい');
+      } else if (meetingStyle === 'values') {
+        reasons.with.push('心理テストとAIで価値観の深い一致を重視したマッチングが可能');
+        reasons.zexy.push('相性診断で価値観の合うパートナーと出会える仕組みが整っている');
+      } else if (meetingStyle === 'stability') {
+        reasons.pairs.push('職業・年収などの条件で絞り込める詳細検索機能が充実');
+        reasons.zexy.push('高学歴・安定収入の会員比率が高く、安定した相手と出会いやすい');
+      } else if (meetingStyle === 'looks') {
+        reasons.tapple.push('カードスワイプ形式で第一印象から始める出会い方が得意');
+        reasons.pairs.push('豊富なプロフィール写真で相手の雰囲気を事前に確認しやすい');
+      }
+
+      const appReasons = reasons[appKey];
+      if (appReasons.length > 0) return appReasons[0];
+
+      const fallbacks = {
+        pairs: 'あなたの回答パターンに最も合う会員層が多く、出会いの機会が豊富',
+        with: '価値観重視の出会いを求めるあなたに適した診断・マッチング機能が揃っている',
+        tapple: '気軽に始められる環境があなたのライフスタイルとペースに合っている',
+        zexy: '真剣な出会いを求めるあなたにふさわしい高品質な会員層が集まっている'
+      };
+      return fallbacks[appKey] || '';
+    }
+
     function calcScores() {
       const scores = { pairs: 0, with: 0, tapple: 0, zexy: 0 };
 
@@ -1061,8 +1114,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'rose',
         tagline: '国内最大級・累計2,000万人登録',
         features: ['会員数No.1で出会いの機会が多い', 'コミュニティ機能で共通趣味の相手を探せる', '身分証明書による本人確認で安心'],
-        link: 'https://pairs.lv/',
-        cta: '無料で登録する →'
+        link: 'https://pairs.lv/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
+        cta: '無料で登録する →',
+        monthlyFee: '約3,590円〜',
+        targetAge: '20〜30代',
+        feeNote: '女性無料'
       },
       with: {
         name: 'with（ウィズ）',
@@ -1070,8 +1126,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'pink',
         tagline: '心理学×AIで深い相性マッチング',
         features: ['心理テストで価値観が合う相手を発見', 'AIがあなたに合う相手を提案', '深い絆を築きたい方に人気'],
-        link: 'https://with-app.net/',
-        cta: '無料で登録する →'
+        link: 'https://with-app.net/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
+        cta: '無料で登録する →',
+        monthlyFee: '約2,000円〜',
+        targetAge: '20〜30代前半',
+        feeNote: '女性無料'
       },
       tapple: {
         name: 'タップル',
@@ -1079,8 +1138,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'red',
         tagline: '趣味で出会えるマッチングアプリ',
         features: ['共通の趣味カードで自然に出会える', '若い世代に特に人気・活発なコミュニティ', 'サクサク使えるシンプルなUI'],
-        link: 'https://tapple.me/',
-        cta: '無料で登録する →'
+        link: 'https://tapple.me/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
+        cta: '無料で登録する →',
+        monthlyFee: '約3,700円〜',
+        targetAge: '20代中心',
+        feeNote: '女性無料'
       },
       zexy: {
         name: 'ゼクシィ縁結び',
@@ -1088,8 +1150,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         color: 'purple',
         tagline: 'リクルート運営・結婚を真剣に考える人向け',
         features: ['30代以上・結婚意欲の高い会員が多い', '厳格な本人確認で安心・安全', 'AIによる高精度な相性マッチング'],
-        link: 'https://zexy-en.net/',
-        cta: '無料で登録する →'
+        link: 'https://zexy-en.net/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
+        cta: '無料で登録する →',
+        monthlyFee: '約4,378円〜',
+        targetAge: '30代中心',
+        feeNote: '有料（プレミアム）'
       }
     };
 
@@ -1138,87 +1203,139 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         return;
       }
 
-      const scores = calcScores();
-      const type = getType(scores);
-      const info = typeInfo[type];
-      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-      const maxScore = sorted[0][1];
-      const topApp = appInfo[sorted[0][0]];
-
-      // タイプカード＋回答まとめ
-      document.getElementById('result-type-card').innerHTML = `
-        <div class="text-5xl mb-3">${info.emoji}</div>
-        <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3 ${info.badge}">${info.label}</span>
-        <p class="text-gray-600 text-sm leading-relaxed">${info.desc}</p>
-        ${buildAnswerSummary()}
-      `;
-
-      // アプリランキング（マッチ度をスコア比率で正規化）
-      let appsHTML = `<div class="bg-white rounded-2xl shadow-md p-6 mb-4">
-        <h3 class="font-bold text-gray-800 mb-4 flex items-center">
-          <span class="text-yellow-400 mr-2 text-lg">🏆</span>あなたへのおすすめアプリ TOP4
-        </h3>
-        <div class="space-y-4">`;
-
-      sorted.forEach(([key, score], idx) => {
-        const app = appInfo[key];
-        // 1位: 90-98%、2〜4位: スコア比率で35-85%（実際の差を反映）
-        let cappedPct;
-        if (idx === 0) {
-          cappedPct = 90 + Math.round((score / (maxScore || 1)) * 8);
-        } else {
-          cappedPct = Math.max(35, Math.round((score / (maxScore || 1)) * 85));
-        }
-        const medals = ['🥇', '🥈', '🥉', '4️⃣'];
-        const rankColors = ['border-yellow-300 bg-yellow-50', 'border-gray-300 bg-gray-50', 'border-orange-200 bg-orange-50', 'border-purple-200 bg-purple-50'];
-        const isFirst = idx === 0;
-
-        appsHTML += `
-          <div class="app-card rounded-xl p-4 ${rankColors[idx]}">
-            <div class="flex items-center justify-between mb-2">
-              <div class="flex items-center gap-2">
-                <span class="text-2xl">${medals[idx]}</span>
-                <span class="text-xl">${app.icon}</span>
-                <div>
-                  <div class="font-bold text-gray-800 text-sm">${app.name}</div>
-                  <div class="text-xs text-gray-500">${app.tagline}</div>
-                </div>
-              </div>
-              <div class="text-right">
-                <div class="font-bold text-rose-600 text-lg">${cappedPct}%</div>
-                <div class="text-xs text-gray-500">マッチ度</div>
-              </div>
-            </div>
-            <div class="w-full bg-white rounded-full h-2 mb-3">
-              <div class="h-2 rounded-full gradient-btn" style="width: ${cappedPct}%"></div>
-            </div>
-            <ul class="text-xs text-gray-600 space-y-1 mb-3">
-              ${app.features.map(f => `<li class="flex items-start gap-1"><span class="text-rose-400 mt-0.5 flex-shrink-0">✓</span>${f}</li>`).join('')}
-            </ul>
-            <a href="${app.link}" rel="nofollow sponsored noopener noreferrer" target="_blank"
-               class="block text-center gradient-btn text-white rounded-lg font-bold hover:shadow-md transition-all ${isFirst ? 'py-3 text-base pulse-cta' : 'py-2.5 text-sm px-4'}">
-              ${isFirst ? app.name + ' — ' : ''}${app.cta}
-            </a>
-          </div>`;
-      });
-
-      appsHTML += `</div></div>`;
-      document.getElementById('result-apps').innerHTML = appsHTML;
-
-      // シェアテキストを診断結果に合わせて動的更新
-      const shareText = encodeURIComponent(`私は"${info.label}"でした！${topApp.name}が最適と診断されました。あなたも試してみて #マッチングアプリ診断`);
-      const shareUrl = encodeURIComponent('https://appadaycreator.com/matchmaking-style-test/');
-      document.querySelectorAll('a[href*="line.me/R/share"]').forEach(a => {
-        a.href = `https://line.me/R/share?text=${shareText}%20https%3A%2F%2Fappadaycreator.com%2Fmatchmaking-style-test%2F`;
-      });
-      document.querySelectorAll('a[href*="twitter.com/intent/tweet"]').forEach(a => {
-        a.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&via=appadaycreator`;
-      });
-
-      // 画面切り替え
+      // 画面切り替え（ローディング先行）
       document.getElementById('quiz-screen').classList.add('hidden');
       document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('result-type-card').innerHTML = `
+        <div class="py-8 text-center">
+          <div class="text-5xl mb-3 heart-float">❤️</div>
+          <p class="text-gray-500 text-sm font-medium">あなたに合うアプリを分析中...</p>
+          <div class="mt-3 flex justify-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-rose-400 animate-bounce" style="animation-delay:0s"></span>
+            <span class="w-2 h-2 rounded-full bg-rose-400 animate-bounce" style="animation-delay:.15s"></span>
+            <span class="w-2 h-2 rounded-full bg-rose-400 animate-bounce" style="animation-delay:.3s"></span>
+          </div>
+        </div>`;
+      document.getElementById('result-apps').innerHTML = '';
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      setTimeout(function() {
+        const scores = calcScores();
+        const type = getType(scores);
+        const info = typeInfo[type];
+        const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+        const maxScore = sorted[0][1];
+        const topApp = appInfo[sorted[0][0]];
+
+        // タイプカード＋回答まとめ
+        document.getElementById('result-type-card').innerHTML = `
+          <div class="text-5xl mb-3">${info.emoji}</div>
+          <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3 ${info.badge}">${info.label}</span>
+          <p class="text-gray-600 text-sm leading-relaxed">${info.desc}</p>
+          ${buildAnswerSummary()}
+        `;
+
+        // アプリランキング（マッチ度をスコア比率で正規化）
+        let appsHTML = `<div class="bg-white rounded-2xl shadow-md p-6 mb-4">
+          <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+            <span class="text-yellow-400 mr-2 text-lg">🏆</span>あなたへのおすすめアプリ TOP4
+          </h3>
+          <div class="space-y-4">`;
+
+        sorted.forEach(([key, score], idx) => {
+          const app = appInfo[key];
+          // 1位: 90-98%、2〜4位: スコア比率で10-85%（0スコアは10%下限、実際の差を反映）
+          let cappedPct;
+          if (idx === 0) {
+            cappedPct = 90 + Math.round((score / (maxScore || 1)) * 8);
+          } else {
+            cappedPct = Math.max(10, Math.round((score / (maxScore || 1)) * 85));
+          }
+          const medals = ['🥇', '🥈', '🥉', '4️⃣'];
+          const rankColors = ['border-yellow-300 bg-yellow-50', 'border-gray-300 bg-gray-50', 'border-orange-200 bg-orange-50', 'border-purple-200 bg-purple-50'];
+          const isFirst = idx === 0;
+          const reason = getPersonalizedReason(key, answers);
+
+          appsHTML += `
+            <div class="app-card rounded-xl p-4 ${rankColors[idx]}">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">${medals[idx]}</span>
+                  <span class="text-xl">${app.icon}</span>
+                  <div>
+                    <div class="font-bold text-gray-800 text-sm">${app.name}</div>
+                    <div class="text-xs text-gray-500">${app.tagline}</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-bold text-rose-600 text-lg">${cappedPct}%</div>
+                  <div class="text-xs text-gray-500">マッチ度</div>
+                </div>
+              </div>
+              <div class="w-full bg-white rounded-full h-2 mb-3">
+                <div class="h-2 rounded-full gradient-btn" style="width: ${cappedPct}%"></div>
+              </div>
+              <ul class="text-xs text-gray-600 space-y-1 mb-3">
+                ${app.features.map(f => `<li class="flex items-start gap-1"><span class="text-rose-400 mt-0.5 flex-shrink-0">✓</span>${f}</li>`).join('')}
+              </ul>
+              ${reason ? `<div class="text-xs text-gray-600 bg-white bg-opacity-70 rounded-lg p-2 mb-2 border border-rose-100">
+                <span class="font-semibold text-rose-600">💡 あなたにおすすめの理由：</span>${reason}
+              </div>` : ''}
+              ${isFirst ? `<div class="text-xs text-rose-600 font-bold mb-2 flex items-center gap-1"><span>🎯</span> あなたの診断タイプに最もマッチ！</div>` : ''}
+              <a href="${app.link}&utm_content=rank${idx + 1}" rel="nofollow sponsored noopener noreferrer" target="_blank"
+                 class="js-track-affiliate block text-center gradient-btn text-white rounded-lg font-bold hover:shadow-md transition-all ${isFirst ? 'py-3 text-base pulse-cta' : 'py-2.5 text-sm px-4'}"
+                 data-platform="${app.name}" data-rank="${idx + 1}" data-link-type="affiliate_link">
+                ${isFirst ? 'まずは無料登録（3分）→' : app.cta}
+              </a>
+              ${isFirst ? '<p class="text-center text-xs text-gray-400 mt-1">登録無料・すぐ使える・退会もカンタン</p>' : ''}
+            </div>`;
+        });
+
+        appsHTML += `</div></div>`;
+
+        // 料金比較ミニテーブル
+        appsHTML += `<div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+          <h3 class="font-bold text-gray-800 mb-3 flex items-center text-sm">
+            <span class="mr-2">📊</span>4アプリ料金・特徴 早見表
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse min-w-max">
+              <thead>
+                <tr class="bg-rose-50">
+                  <th class="text-left p-2 border border-rose-100 font-semibold text-gray-700">アプリ</th>
+                  <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">月額（男性）</th>
+                  <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">女性利用</th>
+                  <th class="text-center p-2 border border-rose-100 font-semibold text-gray-700">メイン層</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${sorted.map(([key]) => {
+                  const a = appInfo[key];
+                  return `<tr class="hover:bg-rose-50 transition-colors">
+                    <td class="p-2 border border-rose-100 font-medium">${a.icon} ${a.name}</td>
+                    <td class="p-2 border border-rose-100 text-center">${a.monthlyFee}</td>
+                    <td class="p-2 border border-rose-100 text-center">${a.feeNote}</td>
+                    <td class="p-2 border border-rose-100 text-center">${a.targetAge}</td>
+                  </tr>`;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">※料金は公式サイト記載の標準プラン。変動する場合があります。</p>
+        </div>`;
+
+        document.getElementById('result-apps').innerHTML = appsHTML;
+
+        // シェアテキストを診断結果に合わせて動的更新
+        const shareText = encodeURIComponent(`私は"${info.label}"でした！${topApp.name}が最適と診断されました。あなたも試してみて #マッチングアプリ診断`);
+        const shareUrl = encodeURIComponent('https://appadaycreator.com/matchmaking-style-test/');
+        document.querySelectorAll('a[href*="line.me/R/share"]').forEach(a => {
+          a.href = `https://line.me/R/share?text=${shareText}%20https%3A%2F%2Fappadaycreator.com%2Fmatchmaking-style-test%2F`;
+        });
+        document.querySelectorAll('a[href*="twitter.com/intent/tweet"]').forEach(a => {
+          a.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&via=appadaycreator`;
+        });
+      }, 800);
     }
 
     function retryDiagnosis() {
