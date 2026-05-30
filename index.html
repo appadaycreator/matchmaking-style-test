@@ -392,9 +392,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           </div>
         </div>
 
+        <p class="text-center text-xs text-gray-400 mb-2">※本ページはアフィリエイト広告（成果報酬型）を含みます</p>
         <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-5 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
           <span class="mr-2">❤️</span>診断スタート！
         </button>
+        <p class="text-center text-xs text-gray-400 mt-2">入力データはサーバー送信なし ・ <a href="privacy-policy.html" class="underline hover:text-rose-400 transition-colors">プライバシーポリシー</a></p>
       </div>
 
       <!-- サービス説明 -->
@@ -536,6 +538,20 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           <span class="text-rose-500 mr-2">🔗</span>関連診断ツール
         </h2>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a href="https://appadaycreator.com/lifeplan-simulator/" class="flex items-center gap-3 p-3 bg-rose-50 rounded-xl hover:bg-rose-100 transition-colors text-rose-700">
+            <span class="text-rose-500 text-xl">🏡</span>
+            <div>
+              <div class="font-semibold text-sm">ライフプランシミュレーター</div>
+              <div class="text-xs text-rose-600">結婚・住宅購入を無料で試算</div>
+            </div>
+          </a>
+          <a href="https://appadaycreator.com/beauty-clinic-advisor/" class="flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors text-pink-700">
+            <span class="text-pink-500 text-xl">✨</span>
+            <div>
+              <div class="font-semibold text-sm">美容クリニック診断</div>
+              <div class="text-xs text-pink-600">最適な美容施術を10問で判定</div>
+            </div>
+          </a>
           <a href="https://appadaycreator.com/job-change-advisor/" class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors text-blue-700">
             <span class="text-blue-500 text-xl">💼</span>
             <div>
@@ -544,7 +560,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             </div>
           </a>
           <a href="https://appadaycreator.com/side-job-aptitude-test/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
-            <span class="text-green-500 text-xl">¥</span>
+            <span class="text-green-500 text-xl">💰</span>
             <div>
               <div class="font-semibold text-sm">副業適性診断</div>
               <div class="text-xs text-green-600">あなたに向いている副業が分かる</div>
@@ -810,19 +826,23 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
       <!-- 結果シェアボタン（ランキング直後→拡散誘発） -->
       <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
-        <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center">
-          <span class="mr-2">📣</span>診断結果をシェアする
+        <h3 class="font-bold text-gray-800 mb-1 text-sm flex items-center">
+          <span class="mr-2">📣</span>診断結果をシェアして友達にも教えよう
         </h3>
-        <div class="flex gap-2">
+        <p class="text-xs text-gray-400 mb-3">あなたのタイプを友達に共有してみませんか？</p>
+        <div class="flex gap-2 mb-2">
           <a href="https://line.me/R/share?text=マッチングアプリ比較診断｜あなたに合うアプリが1分で分かる%20https://appadaycreator.com/matchmaking-style-test/" target="_blank" rel="noopener"
-             style="flex:1;display:block;text-align:center;background:#06C755;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;">
-            LINEでシェア
+             style="flex:1;display:block;text-align:center;background:#06C755;color:white;padding:12px 8px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;">
+            💬 LINEでシェア
           </a>
           <a href="https://twitter.com/intent/tweet?text=マッチングアプリ比較診断｜あなたに合うアプリが1分で分かる&url=https://appadaycreator.com/matchmaking-style-test/&via=appadaycreator" target="_blank" rel="noopener"
-             style="flex:1;display:block;text-align:center;background:#000;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;">
-            Xでシェア
+             style="flex:1;display:block;text-align:center;background:#000;color:white;padding:12px 8px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;">
+            𝕏 でシェア
           </a>
         </div>
+        <button id="copy-url-btn" onclick="copyDiagnosisUrl()" style="width:100%;background:#f9fafb;border:1px solid #e5e7eb;color:#374151;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;cursor:pointer;">
+          🔗 URLをコピーする
+        </button>
       </div>
 
       <!-- AdSense 下部 -->
@@ -885,10 +905,10 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     <!-- phase9-related-links -->
     <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
       <h3 class="font-bold text-gray-700 mb-2 text-sm">🔗 関連サービス</h3>
-      <a href="https://appadaycreator.com/accounting-software-advisor/" class="block text-sm text-indigo-600 hover:underline py-1">→ 会計ソフト比較診断freee・マネーフォワードどちらが合う？</a>
-      <a href="https://appadaycreator.com/baby-name-checker/" class="block text-sm text-indigo-600 hover:underline py-1">→ 赤ちゃん名前チェッカー無料診断・アドバイス</a>
-      <a href="https://appadaycreator.com/beauty-clinic-advisor/" class="block text-sm text-indigo-600 hover:underline py-1">→ 美容医療・脱毛クリニック診断あなたに最適な施術を10問で判定</a>
-      <a href="https://appadaycreator.com/blog-income-advisor/" class="block text-sm text-indigo-600 hover:underline py-1">→ ブログ・SNS収益化適性診断｜性格・スキルから最適な収益化手段を診断</a>
+      <a href="https://appadaycreator.com/lifeplan-simulator/" class="block text-sm text-indigo-600 hover:underline py-1">→ ライフプランシミュレーター｜結婚・出産・住宅購入を無料試算</a>
+      <a href="https://appadaycreator.com/beauty-clinic-advisor/" class="block text-sm text-indigo-600 hover:underline py-1">→ 美容医療・脱毛クリニック診断｜あなたに最適な施術を10問で判定</a>
+      <a href="https://appadaycreator.com/side-job-aptitude-test/" class="block text-sm text-indigo-600 hover:underline py-1">→ 副業適性診断｜あなたに向いている副業が分かる</a>
+      <a href="https://appadaycreator.com/job-change-advisor/" class="block text-sm text-indigo-600 hover:underline py-1">→ 転職アドバイザー診断｜あなたに合う転職サービスを提案</a>
     </div>
     <!-- rakuten-affiliate-block -->
     <div class="bg-white rounded-2xl shadow-md p-4 mb-4 text-center border border-red-300 bg-red-50">
@@ -1194,7 +1214,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
       // Q8: 出会いスタイル（診断精度向上）
       if (answers[8] === 'swipe') { scores.tapple += 3; scores.pairs += 1; }
-      else if (answers[8] === 'search') { scores.pairs += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (answers[8] === 'search') { scores.pairs += 2; scores.zexy += 2; scores.omiai += 2; }
       else if (answers[8] === 'hobby') { scores.tapple += 3; scores.pairs += 1; }
       else if (answers[8] === 'ai') { scores.with += 3; scores.pairs += 1; }
 
@@ -1229,7 +1249,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         tagline: '国内最大級・累計2,000万人登録',
         features: ['会員数No.1で出会いの機会が多い', 'コミュニティ機能で共通趣味の相手を探せる', '身分証明書による本人確認で安心'],
         link: 'https://pairs.lv/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
-        cta: '無料で登録する →',
+        cta: '無料登録（2分）→',
         monthlyFee: '約3,590円〜',
         targetAge: '20〜30代',
         feeNote: '女性無料',
@@ -1242,7 +1262,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         tagline: '心理学×AIで深い相性マッチング',
         features: ['心理テストで価値観が合う相手を発見', 'AIがあなたに合う相手を提案', '深い絆を築きたい方に人気'],
         link: 'https://with-app.net/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
-        cta: '無料で登録する →',
+        cta: '無料登録（2分）→',
         monthlyFee: '約2,000円〜',
         targetAge: '20〜30代前半',
         feeNote: '女性無料',
@@ -1255,7 +1275,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         tagline: '趣味で出会えるマッチングアプリ',
         features: ['共通の趣味カードで自然に出会える', '若い世代に特に人気・活発なコミュニティ', 'サクサク使えるシンプルなUI'],
         link: 'https://tapple.me/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
-        cta: '無料で登録する →',
+        cta: '無料登録（2分）→',
         monthlyFee: '約3,700円〜',
         targetAge: '20代中心',
         feeNote: '女性無料',
@@ -1281,7 +1301,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         tagline: '婚活特化・累計1,000万組マッチング実績',
         features: ['真剣な交際・婚活を求める会員が多い', '詳細な条件検索で理想の相手を効率よく発見', '身元確認・厳格な審査で安心安全'],
         link: 'https://fb.omiai-jp.com/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=diagnosis_result',
-        cta: '無料で登録する →',
+        cta: '無料登録（2分）→',
         monthlyFee: '約4,100円〜',
         targetAge: '20〜30代',
         feeNote: '女性無料',
@@ -1462,10 +1482,10 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
                 ${isFirst ? 'まずは無料登録（3分）→' : app.cta}
               </a>
               ${isFirst ? '<p class="text-center text-xs text-gray-400 mt-1">登録無料・すぐ使える・退会もカンタン</p>' : ''}
-              ${isFirst ? `<details class="mt-3 border border-rose-100 rounded-lg overflow-hidden">
-                <summary class="px-3 py-2 cursor-pointer bg-rose-50 text-xs font-bold text-rose-700 hover:bg-rose-100 transition-colors">📋 登録後にまずすべき3ステップ ▼</summary>
+              ${isFirst ? `<div class="mt-3 border border-rose-100 rounded-lg overflow-hidden">
+                <div class="px-3 py-2 bg-rose-50 text-xs font-bold text-rose-700">📋 登録後にまずすべき3ステップ</div>
                 <ol class="px-3 py-2 space-y-1">${app.nextSteps.map((s, i) => `<li class="text-xs text-gray-700 flex items-start gap-1"><span class="text-rose-500 font-bold flex-shrink-0">${i+1}.</span>${s}</li>`).join('')}</ol>
-              </details>` : ''}
+              </div>` : `<p class="text-xs text-gray-500 mt-1 flex items-start gap-1"><span class="text-rose-400 flex-shrink-0">👉</span>${app.nextSteps[0]}</p>`}
             </div>`;
         });
 
@@ -1525,6 +1545,21 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       }, 800);
     }
 
+    function copyDiagnosisUrl() {
+      const url = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          const btn = document.getElementById('copy-url-btn');
+          if (btn) { btn.textContent = '✅ コピーしました！'; setTimeout(() => { btn.textContent = '🔗 URLをコピーする'; }, 2000); }
+        });
+      } else {
+        const el = document.createElement('textarea');
+        el.value = url; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+        const btn = document.getElementById('copy-url-btn');
+        if (btn) { btn.textContent = '✅ コピーしました！'; setTimeout(() => { btn.textContent = '🔗 URLをコピーする'; }, 2000); }
+      }
+    }
+
     function retryDiagnosis() {
       Object.keys(answers).forEach(k => delete answers[k]);
       currentQ = 1;
@@ -1564,8 +1599,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       const KEY = 'matchmaking_count';
       let n = parseInt(localStorage.getItem(KEY) || '0', 10);
       if (!n) {
-        // 初回: 12800〜13200のランダム初期値でリアリティを演出
-        n = 12800 + Math.floor(Math.random() * 400);
+        // 初回: 14800〜15200のランダム初期値でリアリティを演出
+        n = 14800 + Math.floor(Math.random() * 400);
         localStorage.setItem(KEY, n);
       }
       const el = document.getElementById('diagnosis-count');
@@ -1597,6 +1632,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         const info = typeInfo[typeParam];
         const topApp = appInfo[topParam];
         if (info && topApp) {
+          document.title = `あなたは「${info.label}」！ - マッチングアプリ 比較診断`;
           document.getElementById('start-screen').classList.add('hidden');
           document.getElementById('result-screen').classList.remove('hidden');
           document.getElementById('result-type-card').innerHTML = `
