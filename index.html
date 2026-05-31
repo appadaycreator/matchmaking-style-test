@@ -33,7 +33,7 @@
       "@type": "WebApplication",
       "name": "マッチングアプリ 比較診断",
       "url": "https://appadaycreator.com/matchmaking-style-test/",
-      "description": "性格・恋愛観から最適なマッチングアプリを診断。Pairs・with・タップル・ゼクシィ縁結びなど人気アプリを比較して、あなたに合った出会いの場を無料で提案します。",
+      "description": "性格・恋愛観から最適なマッチングアプリを診断。Pairs・with・タップル・ゼクシィ縁結び・Omiaiなど人気アプリを比較して、あなたに合った出会いの場を無料で提案します。",
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "All",
       "offers": {
@@ -83,7 +83,7 @@
           "name": "どのマッチングアプリがおすすめですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "目的によって異なります。結婚・真剣交際を求めるなら「Pairs」「with」、気軽な出会いなら「タップル」、共通の趣味で出会いたいなら「タップル」「with」がおすすめです。本診断で自分に合ったアプリを探してみましょう。"
+            "text": "目的によって異なります。結婚・真剣交際を求めるなら「Pairs」「with」「Omiai」「ゼクシィ縁結び」、気軽な出会いなら「タップル」、共通の趣味で出会いたいなら「タップル」「with」がおすすめです。本診断で自分に合ったアプリを探してみましょう。"
           }
         },
         {
@@ -365,7 +365,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
         <div class="text-center mb-3">
           <span class="inline-block bg-rose-100 text-rose-600 text-xs font-bold px-3 py-1 rounded-full">
-            ✨ すでに<span id="diagnosis-count">12,847</span>人が診断済み！
+            ✨ すでに<span id="diagnosis-count">15,000</span>人が診断済み！
           </span>
         </div>
 
@@ -532,6 +532,14 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         </div>
       </div>
 
+      <!-- FAQ後のCTA（スクロールユーザー向け離脱防止） -->
+      <div class="bg-rose-50 rounded-2xl border border-rose-200 p-5 mb-6 text-center">
+        <p class="text-sm text-gray-700 mb-3 font-medium">気になるアプリが見つかりましたか？<br><span class="text-xs text-gray-500">10問・約2分・完全無料・登録不要</span></p>
+        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-4 rounded-xl text-base font-bold shadow-md hover:shadow-lg transition-all">
+          ❤️ 今すぐ診断スタート（無料）
+        </button>
+      </div>
+
       <!-- 内部リンク -->
       <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
         <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
@@ -567,6 +575,14 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             </div>
           </a>
         </div>
+      </div>
+
+      <!-- 関連ツール後のCTA（最下部CTA） -->
+      <div class="text-center mb-2">
+        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white px-8 py-4 rounded-xl text-base font-bold shadow-md hover:shadow-lg transition-all inline-block">
+          ❤️ 診断スタート！（無料・2分）
+        </button>
+        <p class="text-xs text-gray-400 mt-2">入力データはサーバー送信なし</p>
       </div>
     </div>
 
@@ -1489,7 +1505,12 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             </div>`;
         });
 
-        appsHTML += `</div></div>`;
+        appsHTML += `</div></div>
+        <div class="mb-4 text-center">
+          <button onclick="retryDiagnosis()" data-ux="1" style="background:white;border:2px solid #f43f5e;color:#e11d48;width:100%;padding:12px;border-radius:12px;font-weight:bold;font-size:15px;cursor:pointer;">
+            🔄 条件を変えてもう一度診断する
+          </button>
+        </div>`;
 
         // 料金比較ミニテーブル
         appsHTML += `<div class="bg-white rounded-2xl shadow-md p-5 mb-4">
@@ -1641,6 +1662,15 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             <p class="text-gray-600 text-sm leading-relaxed">${info.desc}</p>
             <p class="text-center mt-3 text-xs text-gray-400">※これはシェアされた診断結果のプレビューです</p>
           `;
+          // プレビュー画面のシェアテキストを動的生成
+          const previewShareText = encodeURIComponent(`「${info.label}」診断済み！${topApp.name}がおすすめと出ました。あなたも試してみて #マッチングアプリ診断`);
+          const previewShareUrl = encodeURIComponent('https://appadaycreator.com/matchmaking-style-test/?type=' + typeParam + '&top=' + topParam);
+          setTimeout(function() {
+            const lineBtn = document.getElementById('preview-line-btn');
+            const xBtn = document.getElementById('preview-x-btn');
+            if (lineBtn) lineBtn.href = 'https://line.me/R/share?text=' + previewShareText + '%20' + previewShareUrl;
+            if (xBtn) xBtn.href = 'https://twitter.com/intent/tweet?text=' + previewShareText + '&url=' + previewShareUrl + '&via=appadaycreator';
+          }, 0);
           document.getElementById('result-apps').innerHTML = `
             <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
               <div class="text-center mb-4">
@@ -1661,14 +1691,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
               <h3 class="font-bold text-gray-800 mb-3 text-sm flex items-center">
                 <span class="mr-2">📣</span>この診断結果をシェアする
               </h3>
-              <div class="flex gap-2 mb-4">
-                <a href="https://line.me/R/share?text=マッチングアプリ比較診断｜あなたに合うアプリが1分で分かる%20https%3A%2F%2Fappadaycreator.com%2Fmatchmaking-style-test%2F" target="_blank" rel="noopener"
+              <div class="flex gap-2 mb-4" id="preview-share-btns">
+                <a href="#" target="_blank" rel="noopener"
+                   id="preview-line-btn"
                    style="flex:1;display:block;text-align:center;background:#06C755;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;">
-                  LINEでシェア
+                  💬 LINEでシェア
                 </a>
-                <a href="https://twitter.com/intent/tweet?text=マッチングアプリ比較診断｜あなたに合うアプリが1分で分かる&url=https%3A%2F%2Fappadaycreator.com%2Fmatchmaking-style-test%2F&via=appadaycreator" target="_blank" rel="noopener"
+                <a href="#" target="_blank" rel="noopener"
+                   id="preview-x-btn"
                    style="flex:1;display:block;text-align:center;background:#000;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;text-decoration:none;">
-                  Xでシェア
+                  𝕏 でシェア
                 </a>
               </div>
             </div>
