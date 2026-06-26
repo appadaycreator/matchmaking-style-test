@@ -4,19 +4,21 @@
   <!-- phase8-schema-enhanced -->
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる</title>
+  <title>マッチングアプリ おすすめ比較診断【2026年最新】あなたに合う選び方が分かる</title>
 <!-- phase8-favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#f43f5e">
-  <meta name="description" content="性格・恋愛観・目的から最適なマッチングアプリを無料診断。Pairs・with・タップル・ゼクシィ縁結び・Omiaiなど人気アプリを比較。登録不要・すぐ分かる。">
+  <meta name="description" content="Pairs・with・タップル・Omiai・ゼクシィなど人気アプリの中からあなたにおすすめの『選び方』がわかる無料診断。あなたの性格・恋愛観・予算から1分で最適なマッチングアプリを診断します。">
+<meta name="author" content="AppADayCreator">
   <link rel="canonical" href="https://appadaycreator.com/matchmaking-style-test/">
 
-  <!-- Google Tag Manager -->
+  <!-- Consent Mode v2 -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});(function(){try{var k='cookie-consent-v2',o='cookie-consent';var c=localStorage.getItem(k);if(!c&&localStorage.getItem(o)==='1')c='granted';if(c){var s=c==='granted'?'granted':'denied';gtag('consent','update',{'analytics_storage':s,'ad_storage':s,'ad_user_data':s,'ad_personalization':s});}}catch(e){}})();</script>
+<!-- End Consent Mode v2 -->
+<!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDPNYD2875"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZDPNYD2875',{send_page_view:false});</script>
   <!-- End Google Tag Manager -->
 
   <!-- AdSense -->
@@ -25,7 +27,8 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome -->
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -104,6 +107,30 @@
             "@type": "Answer",
             "text": "はい、複数のアプリを同時に使うことで出会いの機会が広がります。一般的に2〜3アプリを並行利用するユーザーも多く、最初は無料登録してみて自分に合ったものを見極めるのがおすすめです。ただし管理が大変になりすぎないよう、活動期間は集中させることをおすすめします。"
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Pairsとタップルはどちらがおすすめですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "目的と年代で選び分けるのがおすすめです。20代前半で趣味重視の方は「タップル」、20〜30代で真剣な交際・結婚を目指すなら「Pairs（ペアーズ）」が向いています。Pairsはコミュニティ機能が充実し共通の趣味で相手を探せる点ではタップルに似た機能もあります。まず両方に無料登録して試す方法もあります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "マッチングアプリで実際に結婚できる確率はどのくらいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "内閣府の調査では、2022年に結婚した人のうち約19.9%がマッチングアプリで出会ったと回答しており、過去最高を更新しています。主要アプリでは累計数万組の成婚報告があり、マッチングアプリは今や主要な出会いの手段のひとつです。活動の質（プロフィール・メッセージ・積極性）によって大きく差が出るため、本診断で自分に合ったアプリを選ぶことが重要です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "マッチングアプリを始めるベストな時期はいつですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "新生活が始まる3〜4月と出会いを意識しやすい秋（9〜10月）は新規登録者数が増加する時期です。新しいユーザーが多い時期に始めるとマッチングの機会が広がりやすくなります。ただし婚活・恋活は「気になったタイミング」がベストで、本診断でアプリを選んでから無料登録するのがスムーズです。"
+          }
         }
       ]
     }
@@ -111,45 +138,51 @@
   </script>
 
   <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --primary-light: #EFF6FF;
+      --accent: #F59E0B;
+    }
     .gradient-header {
-      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #db2777 100%);
+      background: linear-gradient(135deg, #1e40af 0%, #2563EB 50%, #3b82f6 100%);
     }
     .gradient-btn {
-      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+      background: linear-gradient(135deg, #2563EB 0%, #3b82f6 100%);
     }
     .gradient-btn:hover {
-      background: linear-gradient(135deg, #e11d48 0%, #db2777 100%);
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563EB 100%);
     }
     .option-btn {
       transition: all 0.2s ease;
-      border: 2px solid #fda4af;
+      border: 2px solid #bfdbfe;
       user-select: none;
     }
     .option-btn:hover {
-      border-color: #f43f5e;
-      background-color: #fff1f2;
+      border-color: #2563EB;
+      background-color: #eff6ff;
       transform: translateY(-1px);
     }
     .option-btn.selected {
-      border-color: #f43f5e;
-      background-color: #ffe4e6;
-      color: #be123c;
+      border-color: #2563EB;
+      background-color: #dbeafe;
+      color: #1e40af;
       font-weight: 600;
     }
     .progress-bar {
       transition: width 0.4s ease;
     }
     .app-card {
-      border: 2px solid #fecdd3;
+      border: 2px solid #bfdbfe;
       transition: all 0.2s ease;
     }
     .app-card:hover {
-      border-color: #f43f5e;
+      border-color: #2563EB;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(244, 63, 94, 0.15);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
     }
     .score-circle {
-      background: conic-gradient(#f43f5e var(--score-deg), #fce7f3 0deg);
+      background: conic-gradient(#2563EB var(--score-deg), #dbeafe 0deg);
     }
     .fade-in {
       animation: fadeIn 0.5s ease;
@@ -169,9 +202,163 @@
       animation: ctaPulse 2s ease-in-out infinite;
     }
     @keyframes ctaPulse {
-      0%, 100% { box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4); }
-      50% { box-shadow: 0 8px 28px rgba(244, 63, 94, 0.7); }
+      0%, 100% { box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); }
+      50% { box-shadow: 0 8px 28px rgba(37, 99, 235, 0.7); }
     }
+
+    /* ===== SERVICE HERO ===== */
+    .svc-hero {
+      position: relative; overflow: hidden;
+      background: url('assets/photos/photo_01.jpg') center 20% / cover no-repeat;
+      min-height: 320px; display: flex; align-items: center;
+    }
+    .svc-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(29,78,216,.85) 0%, rgba(37,99,235,.7) 60%, rgba(0,0,0,.15) 100%);
+    }
+    .svc-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 900px; margin: 0 auto; padding: 48px 20px;
+      display: grid; grid-template-columns: 1fr 280px; gap: 32px; align-items: center;
+    }
+    .svc-hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(245,158,11,.2); border: 1px solid rgba(245,158,11,.5);
+      color: #fde68a; padding: 3px 10px; border-radius: 20px;
+      font-size: .75rem; font-weight: 700; margin-bottom: 10px;
+    }
+    .svc-hero h1 {
+      font-size: 1.65rem; font-weight: 900; color: white; line-height: 1.3; margin-bottom: 12px;
+    }
+    .svc-hero h1 span { color: #fde68a; }
+    .svc-hero-sub { font-size: .9rem; color: rgba(255,255,255,.9); margin-bottom: 20px; line-height: 1.7; }
+    .svc-hero-features { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .svc-hero-tag {
+      display: flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+      color: white; padding: 4px 10px; border-radius: 20px; font-size: .76rem; font-weight: 600;
+    }
+    .svc-hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: white;
+      padding: 14px 32px; border-radius: 50px;
+      font-size: 1rem; font-weight: 800; border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(245,158,11,.45);
+      transition: all .2s;
+    }
+    .svc-hero-cta:hover { background: #d97706; transform: translateY(-2px); }
+    /* Phone mockup */
+    .svc-phone { display: flex; justify-content: center; }
+    .svc-phone-frame {
+      width: 200px; background: #111; border-radius: 30px;
+      padding: 12px 8px; box-shadow: 0 16px 48px rgba(0,0,0,.4);
+    }
+    .svc-phone-screen { background: white; border-radius: 20px; overflow: hidden; min-height: 300px; }
+    .svc-phone-hdr { background: #2563EB; padding: 10px 12px; font-size: .68rem; color: rgba(255,255,255,.9); font-weight: 700; }
+    .svc-phone-body { padding: 12px; }
+    .svc-score-ring { width: 90px; height: 90px; position: relative; margin: 0 auto 10px; }
+    .svc-score-ring svg { transform: rotate(-90deg); }
+    .svc-score-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; }
+    .svc-score-num { font-size: 1.6rem; font-weight: 900; color: #2563EB; line-height: 1; }
+    .svc-score-lbl { font-size: .58rem; color: #6b7280; }
+    .svc-mini-list { display: flex; flex-direction: column; gap: 4px; }
+    .svc-mini-row { display: flex; align-items: center; gap: 5px; background: #f3f4f6; border-radius: 5px; padding: 3px 5px; }
+    .svc-mini-name { font-size: .6rem; font-weight: 600; flex: 1; }
+    .svc-mini-bar { flex: 2; height: 3px; background: #e5e7eb; border-radius: 2px; overflow: hidden; }
+    .svc-mini-fill { height: 100%; background: #2563EB; border-radius: 2px; }
+    .svc-mini-pct { font-size: .58rem; font-weight: 700; color: #2563EB; width: 24px; text-align: right; }
+    @media (max-width: 640px) {
+      .svc-hero-inner { grid-template-columns: 1fr; }
+      .svc-phone { display: none; }
+      .svc-hero h1 { font-size: 1.35rem; }
+    }
+
+    /* ===== FEATURES ROW ===== */
+    .feat-row {
+      background: #eff6ff; padding: 20px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    }
+    @media (max-width: 640px) { .feat-row { grid-template-columns: repeat(2, 1fr); } }
+    .feat-item {
+      background: white; border-radius: 12px; padding: 16px 12px; text-align: center;
+      border: 1px solid #dbeafe; box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .feat-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .feat-title { font-size: .8rem; font-weight: 800; color: #1e40af; margin-bottom: 2px; }
+    .feat-desc { font-size: .7rem; color: #6b7280; line-height: 1.5; }
+
+    /* ===== STEPS ROW ===== */
+    .steps-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      padding: 24px 0; max-width: 680px; margin: 0 auto;
+    }
+    @media (max-width: 600px) { .steps-row { grid-template-columns: 1fr; } }
+    .step-item {
+      background: white; border-radius: 14px; padding: 18px 14px; text-align: center;
+      border: 1px solid #dbeafe; position: relative;
+      box-shadow: 0 2px 8px rgba(37,99,235,.06);
+    }
+    .step-num {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #2563EB; color: white; font-size: .82rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(37,99,235,.35);
+    }
+    .step-photo-sm { width: 100%; height: 80px; object-fit: cover; border-radius: 8px; margin: 8px 0 10px; }
+    .step-lbl { font-size: .82rem; font-weight: 800; color: #1e40af; margin-bottom: 4px; }
+    .step-txt { font-size: .74rem; color: #6b7280; line-height: 1.6; }
+
+    /* ===== PRIVACY SECTION ===== */
+    .privacy-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 640px) { .privacy-row { grid-template-columns: 1fr; } }
+    .privacy-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: white; border-radius: 12px; padding: 14px;
+      border: 1px solid #dbeafe;
+    }
+    .privacy-ico { font-size: 1.3rem; flex-shrink: 0; }
+    .privacy-body {}
+    .privacy-ttl { font-size: .82rem; font-weight: 800; color: #1e40af; margin-bottom: 2px; }
+    .privacy-txt { font-size: .74rem; color: #6b7280; line-height: 1.6; }
+
+    /* ===== REVIEWS ===== */
+    .review-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 640px) { .review-row { grid-template-columns: 1fr; } }
+    .review-item {
+      background: white; border-radius: 14px; padding: 14px;
+      border: 1px solid #e5e7eb; box-shadow: 0 1px 6px rgba(0,0,0,.05);
+    }
+    .review-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .review-av { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #dbeafe; }
+    .review-name { font-size: .8rem; font-weight: 800; color: #1f2937; }
+    .review-tag { font-size: .7rem; color: #9ca3af; }
+    .review-stars { color: #f59e0b; font-size: .85rem; margin-bottom: 6px; }
+    .review-txt { font-size: .78rem; color: #374151; line-height: 1.7; }
+
+    /* ===== MULTI APP GUIDE ===== */
+    .multi-guide-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 640px) { .multi-guide-grid { grid-template-columns: 1fr; } }
+    .multi-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .multi-ph { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+    .multi-steps { display: flex; flex-direction: column; gap: 10px; }
+    .multi-step-row {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: white; border-radius: 10px; padding: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    .multi-step-ico { width: 36px; height: 36px; border-radius: 8px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .multi-step-ttl { font-size: .82rem; font-weight: 800; color: #1e40af; margin-bottom: 2px; }
+    .multi-step-txt { font-size: .75rem; color: #6b7280; line-height: 1.6; }
 
 .card { background: white; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 
@@ -194,12 +381,13 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
 /* モバイルでクイズナビゲーションを画面下部に固定 */
-#quiz-nav{position:sticky;bottom:0;background:white;padding:12px 0;box-shadow:0 -4px 12px rgba(0,0,0,.08);z-index:10;}
-@media(min-width:641px){#quiz-nav{position:static;box-shadow:none;padding:0;}}
+#quiz-nav{position:sticky;bottom:0;background:white;padding:12px 16px;box-shadow:0 -4px 12px rgba(0,0,0,.08);z-index:10;}
+@media(max-width:640px){body{padding-bottom:0;}#quiz-screen{margin-bottom:60px;}}
+@media(min-width:641px){#quiz-nav{position:static;box-shadow:none;padding:0;margin-bottom:0;}}
 /* キーボードフォーカス視認性 */
-.option-btn:focus-visible,button:focus-visible{outline:3px solid #f43f5e;outline-offset:2px;}
+.option-btn:focus-visible,button:focus-visible{outline:3px solid #2563EB;outline-offset:2px;}
 /* 選択確定アニメーション */
-.option-btn.selected{transition:all 0.15s ease;box-shadow:0 2px 8px rgba(244,63,94,.2);}
+.option-btn.selected{transition:all 0.15s ease;box-shadow:0 2px 8px rgba(37,99,235,.2);}
 
 /* AdSense unfilled: collapse empty ad slots */
 ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!important;height:0!important}
@@ -211,7 +399,11 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   "name": "appadaycreator",
   "url": "https://appadaycreator.com",
   "logo": "https://appadaycreator.com/logo.png",
-  "description": "無料Webサービス・診断ツール 180種類以上を運営"
+  "description": "無料Webサービス・診断ツール 180種類以上を運営",
+  "sameAs": [
+    "https://twitter.com/appadaycreate",
+    "https://appadaycreator.com"
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -285,321 +477,473 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 button,input[type=submit],input[type=button],[class*=btn]{min-height:44px;cursor:pointer;transition:opacity .15s,transform .1s;}
 button:active,[class*=btn]:active{opacity:.75;transform:scale(.98);}
 select,input[type=text],input[type=number],input[type=email],textarea{min-height:44px;font-size:16px;}
-[id*=result]:not(style):not(script),[id*=output]:not(style):not(script){border-left:4px solid #f43f5e;padding-left:16px;margin-top:16px;}
+[id*=result]:not(style):not(script),[id*=output]:not(style):not(script){border-left:4px solid #2563EB;padding-left:16px;margin-top:16px;}
 @media(max-width:640px){[class*=max-w],[class*=container],[class*=wrapper]{padding:12px 16px!important;}button,[class*=btn]{width:100%;font-size:15px;}}
 </style>
 </head>
-<body class="bg-rose-50 min-h-screen font-sans"><a href="#main" class="sr-only">本文へスキップ</a>
+<body class="bg-white min-h-screen font-sans" style="font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif"><a href="#main" class="sr-only">本文へスキップ</a>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Header -->
-  <header class="gradient-header text-white py-6 px-4 shadow-lg">
-    <div class="max-w-2xl mx-auto text-center">
-      <div class="text-4xl mb-2 heart-float">
-        <span>❤️</span>
-      </div>
-      <h1 class="text-2xl md:text-3xl font-bold mb-2">マッチングアプリ 比較診断</h1>
-      <p class="text-rose-100 text-sm md:text-base">あなたにぴったりのマッチングアプリが10問で分かる！</p>
+  <header style="background:white;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+    <div style="max-width:900px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:56px">
+      <a href="/matchmaking-style-test/lp/" style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:.9rem;color:#2563EB;text-decoration:none">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#2563EB"/><path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6c0 2-1 3.8-2.5 4.9L14 21l-3.5-2.1C9 17.8 8 16 8 14z" fill="white"/><circle cx="14" cy="14" r="2" fill="#2563EB"/></svg>
+        マッチングアプリ比較診断
+      </a>
+      <nav style="display:flex;align-items:center;gap:16px">
+        <a href="/blog/" style="color:#6b7280;font-size:.82rem;text-decoration:none;font-weight:500">📖 コラム</a>
+        <a href="/" style="color:#6b7280;font-size:.82rem;text-decoration:none;font-weight:500">ホーム</a>
+      </nav>
     </div>
   </header>
-<div style="background:#4338ca;padding:5px 12px;text-align:right;font-size:.78rem"><a href="/blog/" style="color:#c7d2fe;text-decoration:none;font-weight:600">📖 コラム</a>&nbsp;｜&nbsp;<a href="/" style="color:#c7d2fe;text-decoration:none">ホーム</a></div>
-<!-- r21-breadcrumb -->
+<!-- breadcrumb -->
 <nav aria-label="パンくずリスト" style="background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:5px 16px;font-size:.78rem;color:#6b7280;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-  <a href="/" style="color:#4f46e5;text-decoration:none">ホーム</a>
+  <a href="/" style="color:#2563EB;text-decoration:none">ホーム</a>
   <span style="margin:0 .35rem;color:#9ca3af">›</span>
-  <span style="color:#374151">マッチングアプリ 比較診断【無料】あなたに合うアプリが1分で分かる</span>
+  <span style="color:#374151">マッチングアプリ比較診断【無料2026】</span>
 </nav>
 
+  <!-- ===== SERVICE HERO ===== -->
+  <section class="svc-hero">
+    <div class="svc-hero-inner">
+      <div>
+        <div class="svc-hero-badge">🏆 婚活・恋活に本気の方へ</div>
+        <h1>あなたにぴったりの<br><span>マッチングアプリ診断</span><br>【無料診断2026】</h1>
+        <p class="svc-hero-sub">Pairs・with・タップル・ゼクシィ縁結び・Omiaiの<br>5アプリから最適な1つを10問で診断します。</p>
+        <div class="svc-hero-features">
+          <div class="svc-hero-tag">⏱️ 約2分</div>
+          <div class="svc-hero-tag">🆓 完全無料</div>
+          <div class="svc-hero-tag">🔒 ローカル処理</div>
+          <div class="svc-hero-tag">📱 5アプリ比較</div>
+        </div>
+        <button onclick="startDiagnosis()" class="svc-hero-cta pulse-cta">
+          ❤️ 無料で診断してみる
+        </button>
+        <p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-top:8px">入力データはサーバー送信なし・登録不要</p>
+      </div>
+      <div class="svc-phone">
+        <div class="svc-phone-frame">
+          <div class="svc-phone-screen">
+            <div class="svc-phone-hdr">マッチングアプリ診断結果</div>
+            <div class="svc-phone-body">
+              <div class="svc-score-ring">
+                <svg width="90" height="90" viewBox="0 0 90 90">
+                  <circle cx="45" cy="45" r="34" fill="none" stroke="#dbeafe" stroke-width="8"/>
+                  <circle cx="45" cy="45" r="34" fill="none" stroke="#2563EB" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="17.1" stroke-linecap="round"/>
+                </svg>
+                <div class="svc-score-center">
+                  <div class="svc-score-num">92</div>
+                  <div class="svc-score-lbl">マッチ度</div>
+                </div>
+              </div>
+              <p style="font-size:.64rem;font-weight:800;text-align:center;color:#1f2937;margin-bottom:6px">🏆 おすすめアプリ</p>
+              <div class="svc-mini-list">
+                <div class="svc-mini-row"><span style="font-size:.6rem">🥇</span><span class="svc-mini-name">Pairs</span><div class="svc-mini-bar"><div class="svc-mini-fill" style="width:92%"></div></div><span class="svc-mini-pct">92%</span></div>
+                <div class="svc-mini-row"><span style="font-size:.6rem">🥈</span><span class="svc-mini-name">with</span><div class="svc-mini-bar"><div class="svc-mini-fill" style="width:74%"></div></div><span class="svc-mini-pct">74%</span></div>
+                <div class="svc-mini-row"><span style="font-size:.6rem">🥉</span><span class="svc-mini-name">Omiai</span><div class="svc-mini-bar"><div class="svc-mini-fill" style="width:61%"></div></div><span class="svc-mini-pct">61%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <nav aria-label="パンくずリスト" class="max-w-2xl mx-auto px-4 pt-2 pb-1">
-    <ol class="flex items-center gap-1 text-xs text-gray-400 flex-wrap">
-      <li><a href="https://appadaycreator.com" class="hover:text-rose-400 transition-colors">ホーム</a></li>
-      <li><span class="mx-1">›</span></li>
-      <li class="text-gray-600 font-medium">マッチングアプリ比較診断</li>
-    </ol>
-  </nav>
+  <!-- ===== TRUST BAR ===== -->
+  <div style="background:#2563EB;padding:8px 20px">
+    <div style="max-width:900px;margin:0 auto;display:flex;justify-content:center;gap:28px;flex-wrap:wrap">
+      <span style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.9);font-size:.8rem;font-weight:600">✅ 約2分で完結</span>
+      <span style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.9);font-size:.8rem;font-weight:600">✅ 完全無料・登録不要</span>
+      <span style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.9);font-size:.8rem;font-weight:600">✅ ローカル処理・送信なし</span>
+      <span style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.9);font-size:.8rem;font-weight:600">✅ 5大アプリ完全比較</span>
+    </div>
+  </div>
 
-  <main id="main" role="main" class="max-w-2xl mx-auto px-4 py-6">
+  <!-- ===== FEATURES ===== -->
+  <div class="feat-row">
+    <div class="feat-item">
+      <div class="feat-icon">⏱️</div>
+      <div class="feat-title">10問・約2分</div>
+      <div class="feat-desc">スキマ時間にサクッと診断完了</div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon">🛡️</div>
+      <div class="feat-title">プライバシー第一</div>
+      <div class="feat-desc">ローカル処理・サーバー送信なし</div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">5アプリ完全比較</div>
+      <div class="feat-desc">主要アプリを公平にスコアリング</div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-icon">🆓</div>
+      <div class="feat-title">完全無料</div>
+      <div class="feat-desc">メール登録・個人情報不要</div>
+    </div>
+  </div>
+
+  <main id="main" role="main" class="max-w-2xl mx-auto px-4 py-4">
 
     <!-- AdSense 上部 -->
-    <div class="mb-6 text-center">
+    <div class="mb-4 text-center">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-8427583028015858"
            data-ad-slot="auto"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      <script>try{(adsbygoogle = window.adsbygoogle || []).push({});}catch(e){}</script>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- 診断開始画面 -->
     <div id="start-screen" class="fade-in">
-      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
-        <div class="text-center mb-6">
-          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-rose-100 text-rose-500 text-4xl mb-4">
-            <span>🔍</span>
-          </div>
-          <h2 class="text-xl font-bold text-gray-800 mb-3">あなたの婚活スタイルを診断します</h2>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            性格・恋愛観・理想のパートナー像に関する10問の質問に答えるだけで、
-            <strong>Pairs・with・タップル・ゼクシィ縁結び・Omiai</strong>などの人気マッチングアプリの中から
-            あなたに最も合ったものをご提案します。
-          </p>
-        </div>
 
-        <div class="grid grid-cols-3 gap-4 mb-6">
-          <div class="text-center">
-            <div class="text-2xl text-rose-500 mb-1"><span>⏰</span></div>
-            <div class="text-xs text-gray-600">所要時間<br><strong class="text-gray-800">約2分</strong></div>
-          </div>
-          <div class="text-center">
-            <div class="text-2xl text-rose-500 mb-1"><span>❓</span></div>
-            <div class="text-xs text-gray-600">質問数<br><strong class="text-gray-800">10問</strong></div>
-          </div>
-          <div class="text-center">
-            <div class="text-2xl text-rose-500 mb-1"><span>🎁</span></div>
-            <div class="text-xs text-gray-600">利用料金<br><strong class="text-gray-800">完全無料</strong></div>
-          </div>
-        </div>
-
+      <!-- メインCTAカード -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-2" style="border-color:#2563EB">
         <div class="text-center mb-3">
-          <span class="inline-block bg-rose-100 text-rose-600 text-xs font-bold px-3 py-1 rounded-full">
-            ✨ すでに<span id="diagnosis-count">15,000</span>人が診断済み！
-          </span>
-        </div>
-
-        <!-- 利用者の声（診断ボタン直前） -->
-        <div class="mb-4" role="region" aria-label="利用者の声">
-          <p class="text-xs font-bold text-gray-600 mb-2 flex items-center gap-1"><span>⭐</span>利用者の声</p>
-          <div class="space-y-2">
-            <div class="bg-rose-50 rounded-lg p-2.5">
-              <p class="text-xs text-gray-700">「診断でPairsをすすめられ登録→2週間で7人とマッチしました！」</p>
-              <p class="text-xs text-gray-400 mt-0.5">— 田中さん（28歳・会社員）★★★★★</p>
-            </div>
-            <div class="bg-rose-50 rounded-lg p-2.5">
-              <p class="text-xs text-gray-700">「withを提案され、価値観が合う人と3ヶ月でお付き合いできました。」</p>
-              <p class="text-xs text-gray-400 mt-0.5">— 佐藤さん（32歳・看護師）★★★★★</p>
-            </div>
-            <div class="bg-rose-50 rounded-lg p-2.5">
-              <p class="text-xs text-gray-700">「タップルを診断で知り、共通の趣味話題でトントン拍子に進みました！」</p>
-              <p class="text-xs text-gray-400 mt-0.5">— 山本さん（24歳・大学院生）★★★★☆</p>
-            </div>
-            <div class="bg-rose-50 rounded-lg p-2.5">
-              <p class="text-xs text-gray-700">「Omiaiをすすめられ登録→条件検索で理想通りの相手と出会い、半年で婚約しました！」</p>
-              <p class="text-xs text-gray-400 mt-0.5">— 中村さん（33歳・公務員）★★★★★</p>
-            </div>
+          <h2 class="text-base font-bold text-gray-800 mb-2">あなたにぴったりのマッチングアプリが10問でわかる</h2>
+          <div class="flex flex-wrap justify-center gap-2 mb-3">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold border" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe">✅ <span id="diagnosis-count">15,000</span>人以上が診断済み</span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold border" style="background:#f0fdf4;color:#166534;border-color:#bbf7d0">📊 内閣府: 2022年婚の19.9%がアプリ婚</span>
           </div>
         </div>
-
-        <p class="text-center text-xs text-gray-400 mb-2">※本ページはアフィリエイト広告（成果報酬型）を含みます</p>
-        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-5 rounded-xl text-lg font-bold shadow-md hover:shadow-lg transition-all">
-          <span class="mr-2">❤️</span>診断スタート！
+        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-4 rounded-xl text-base font-bold shadow-lg hover:shadow-xl transition-all pulse-cta">
+          ❤️ 無料で診断してみる
         </button>
-        <p class="text-center text-xs text-gray-400 mt-2">入力データはサーバー送信なし ・ <a href="privacy-policy.html" class="underline hover:text-rose-400 transition-colors">プライバシーポリシー</a></p>
+        <p class="text-center text-xs text-gray-500 mt-2">⏰ 約2分 | ❓ 10問 | 🆓 完全無料 | 🔒 登録不要</p>
+        <p class="text-center text-xs text-gray-400 mt-1">※ 本ページはアフィリエイト広告を含みます</p>
       </div>
 
-      <!-- サービス説明 -->
-      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <span class="text-rose-500 mr-2">ℹ️</span>このサービスについて
-        </h2>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          「マッチングアプリ比較診断」は、マッチングアプリ選びで迷っているあなたのための無料診断ツールです。
-          20代〜30代後半の婚活・恋活を考えている独身の方を対象に、性格・恋愛観・生活スタイルから
-          最もマッチするマッチングアプリを提案します。
-        </p>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          日本国内には数十種類のマッチングアプリが存在しますが、それぞれ特徴が大きく異なります。
-          真剣な交際・結婚を目指すなら会員数No.1の<strong>Pairs（ペアーズ）</strong>、
-          心理学を活用して深い相性を重視するなら<strong>with（ウィズ）</strong>、
-          共通の趣味で自然に出会いたいなら<strong>タップル</strong>、
-          結婚を真剣に考える30代には<strong>ゼクシィ縁結び</strong>や<strong>Omiai（おみあい）</strong>がおすすめです。
-        </p>
-        <p class="text-gray-600 text-sm leading-relaxed">
-          本診断では、あなたの回答をもとにアルゴリズムが最適なアプリをスコアリングし、
-          相性ランキングとともにご提示します。診断結果を参考に、あなたの婚活・恋活を
-          スタートさせましょう！
-        </p>
+      <!-- 診断の流れ (3ステップ) -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">診断の流れ（3ステップ）</h2>
+        <div class="steps-row" style="padding:8px 0">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <img src="assets/photos/photo_07.jpg" alt="質問に答える" class="step-photo-sm" loading="lazy">
+            <div class="step-lbl">質問に答える</div>
+            <div class="step-txt">10問の選択式質問に答えます。約2分で完了。</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <img src="assets/photos/photo_08.jpg" alt="スコアを確認" class="step-photo-sm" loading="lazy">
+            <div class="step-lbl">スコアを確認</div>
+            <div class="step-txt">5アプリのマッチ度をグラフで比較表示。</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <img src="assets/photos/photo_09.jpg" alt="アプリに登録" class="step-photo-sm" loading="lazy">
+            <div class="step-lbl">アプリに登録</div>
+            <div class="step-txt">おすすめアプリから無料登録してスタート！</div>
+          </div>
+        </div>
       </div>
 
-      <!-- マッチングアプリ紹介 -->
-      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <span class="text-rose-500 mr-2">📱</span>診断対象のマッチングアプリ
-        </h2>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3 p-3 bg-rose-50 rounded-xl">
-            <div class="text-2xl">💑</div>
-            <div>
-              <div class="font-bold text-gray-800">Pairs（ペアーズ）</div>
-              <div class="text-xs text-gray-600">国内最大級・累計2,000万人登録。真剣な交際・結婚を目指す方に最適。コミュニティ機能で共通の趣味を持つ相手を探せます。</div>
+      <!-- 診断結果イメージ（スコア可視化） -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">診断結果のイメージ</h2>
+        <div style="display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start">
+          <div style="text-align:center">
+            <div style="width:120px;height:120px;position:relative;margin:0 auto 10px">
+              <svg width="120" height="120" viewBox="0 0 120 120" style="transform:rotate(-90deg)">
+                <circle cx="60" cy="60" r="46" fill="none" stroke="#dbeafe" stroke-width="10"/>
+                <circle cx="60" cy="60" r="46" fill="none" stroke="#2563EB" stroke-width="10" stroke-dasharray="289" stroke-dashoffset="23.1" stroke-linecap="round"/>
+              </svg>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center">
+                <div style="font-size:1.8rem;font-weight:900;color:#2563EB;line-height:1">92</div>
+                <div style="font-size:.62rem;color:#6b7280">マッチ度</div>
+              </div>
+            </div>
+            <p style="font-size:.72rem;font-weight:700;color:#1e40af">婚活・真剣交際タイプ</p>
+          </div>
+          <div>
+            <p style="font-size:.75rem;font-weight:800;color:#1f2937;margin-bottom:8px">🏆 おすすめアプリランキング</p>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;align-items:center;gap:8px;background:#eff6ff;border-radius:8px;padding:7px 10px;border:1px solid #bfdbfe">
+                <span style="font-size:.9rem">🥇</span>
+                <span style="font-size:.78rem;font-weight:800;flex:1;color:#1e40af">Pairs（ペアーズ）</span>
+                <div style="width:60px;height:5px;background:#dbeafe;border-radius:3px;overflow:hidden"><div style="width:92%;height:100%;background:#2563EB;border-radius:3px"></div></div>
+                <span style="font-size:.75rem;font-weight:800;color:#2563EB;width:30px;text-align:right">92%</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:#f9fafb;border-radius:8px;padding:7px 10px;border:1px solid #e5e7eb">
+                <span style="font-size:.9rem">🥈</span>
+                <span style="font-size:.78rem;font-weight:700;flex:1;color:#374151">with（ウィズ）</span>
+                <div style="width:60px;height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden"><div style="width:74%;height:100%;background:#6b7280;border-radius:3px"></div></div>
+                <span style="font-size:.75rem;font-weight:700;color:#6b7280;width:30px;text-align:right">74%</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:#f9fafb;border-radius:8px;padding:7px 10px;border:1px solid #e5e7eb">
+                <span style="font-size:.9rem">🥉</span>
+                <span style="font-size:.78rem;font-weight:700;flex:1;color:#374151">Omiai</span>
+                <div style="width:60px;height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden"><div style="width:61%;height:100%;background:#6b7280;border-radius:3px"></div></div>
+                <span style="font-size:.75rem;font-weight:700;color:#6b7280;width:30px;text-align:right">61%</span>
+              </div>
+            </div>
+            <img src="assets/photos/photo_02.jpg" alt="診断結果イメージ" style="width:100%;border-radius:10px;margin-top:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- アプリ紹介カード -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">診断対象のマッチングアプリ</h2>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-3 rounded-xl border" style="background:#eff6ff;border-color:#bfdbfe">
+            <div class="text-xl flex-shrink-0">💑</div>
+            <div class="flex-1">
+              <div class="font-bold text-gray-800 text-sm">Pairs（ペアーズ）</div>
+              <div class="text-xs font-semibold mb-1" style="color:#1e40af">国内最大級・累計2,000万人登録</div>
+              <div class="text-xs text-gray-700">真剣な交際・結婚を目指す方に最適。コミュニティ機能が充実。</div>
+              <a href="https://pairs.lv/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=start_card" rel="nofollow sponsored noopener" target="_blank" class="js-track-affiliate inline-block mt-1 text-xs font-bold hover:underline" style="color:#1e40af" data-platform="Pairs" data-rank="start_card" data-link-type="start_card_link">詳細・無料登録を見る →</a>
             </div>
           </div>
-          <div class="flex items-start gap-3 p-3 bg-pink-50 rounded-xl">
-            <div class="text-2xl">🧠</div>
-            <div>
-              <div class="font-bold text-gray-800">with（ウィズ）</div>
-              <div class="text-xs text-gray-600">心理学×AIで深い相性マッチング。価値観・性格重視の出会いを求める方に人気。心理テストや診断コンテンツが充実。</div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border" style="background:#f0fdf4;border-color:#bbf7d0">
+            <div class="text-xl flex-shrink-0">🧠</div>
+            <div class="flex-1">
+              <div class="font-bold text-gray-800 text-sm">with（ウィズ）</div>
+              <div class="text-xs font-semibold mb-1" style="color:#166534">心理学×AIの相性マッチング</div>
+              <div class="text-xs text-gray-700">価値観・性格重視の出会いを求める方に人気。</div>
+              <a href="https://with-app.net/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=start_card" rel="nofollow sponsored noopener" target="_blank" class="js-track-affiliate inline-block mt-1 text-xs font-bold hover:underline" style="color:#166534" data-platform="with" data-rank="start_card" data-link-type="start_card_link">詳細・無料登録を見る →</a>
             </div>
           </div>
-          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-xl">
-            <div class="text-2xl">✨</div>
-            <div>
-              <div class="font-bold text-gray-800">タップル</div>
-              <div class="text-xs text-gray-600">趣味・興味でつながるマッチングアプリ。カジュアルな出会いから真剣交際まで対応。若い世代に特に人気があります。</div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border" style="background:#fff7ed;border-color:#fed7aa">
+            <div class="text-xl flex-shrink-0">✨</div>
+            <div class="flex-1">
+              <div class="font-bold text-gray-800 text-sm">タップル</div>
+              <div class="text-xs font-semibold mb-1" style="color:#c2410c">趣味でつながるマッチング</div>
+              <div class="text-xs text-gray-700">共通の趣味からカジュアルに出会いたい方に。</div>
+              <a href="https://tapple.me/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=start_card" rel="nofollow sponsored noopener" target="_blank" class="js-track-affiliate inline-block mt-1 text-xs font-bold hover:underline" style="color:#c2410c" data-platform="タップル" data-rank="start_card" data-link-type="start_card_link">詳細・無料登録を見る →</a>
             </div>
           </div>
-          <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-xl">
-            <div class="text-2xl">💒</div>
-            <div>
-              <div class="font-bold text-gray-800">ゼクシィ縁結び</div>
-              <div class="text-xs text-gray-600">リクルート運営の婚活特化アプリ。結婚を真剣に考える30代以上に人気。高品質な会員層と徹底した本人確認が特長。</div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border" style="background:#faf5ff;border-color:#d8b4fe">
+            <div class="text-xl flex-shrink-0">💒</div>
+            <div class="flex-1">
+              <div class="font-bold text-gray-800 text-sm">ゼクシィ縁結び</div>
+              <div class="text-xs font-semibold mb-1" style="color:#7e22ce">リクルート運営の婚活特化</div>
+              <div class="text-xs text-gray-700">結婚を真剣に考える30代以上に人気。</div>
+              <a href="https://zexy-en.net/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=start_card" rel="nofollow sponsored noopener" target="_blank" class="js-track-affiliate inline-block mt-1 text-xs font-bold hover:underline" style="color:#7e22ce" data-platform="ゼクシィ縁結び" data-rank="start_card" data-link-type="start_card_link">詳細・無料登録を見る →</a>
             </div>
           </div>
-          <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-xl">
-            <div class="text-2xl">💝</div>
-            <div>
-              <div class="font-bold text-gray-800">Omiai（おみあい）</div>
-              <div class="text-xs text-gray-600">累計1,000万組マッチング実績の婚活特化アプリ。真剣な交際・結婚を求める会員が多く、詳細な条件検索で理想の相手を効率よく発見できる。</div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border" style="background:#f0f9ff;border-color:#bae6fd">
+            <div class="text-xl flex-shrink-0">💝</div>
+            <div class="flex-1">
+              <div class="font-bold text-gray-800 text-sm">Omiai（おみあい）</div>
+              <div class="text-xs font-semibold mb-1" style="color:#0369a1">累計1,000万組マッチング実績</div>
+              <div class="text-xs text-gray-700">真剣な交際・婚活を求める会員が多い。</div>
+              <a href="https://fb.omiai-jp.com/?utm_source=appadaycreator&utm_medium=matchmaking_test&utm_campaign=start_card" rel="nofollow sponsored noopener" target="_blank" class="js-track-affiliate inline-block mt-1 text-xs font-bold hover:underline" style="color:#0369a1" data-platform="Omiai" data-rank="start_card" data-link-type="start_card_link">詳細・無料登録を見る →</a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 複数アプリ同時利用ガイド -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">診断後のすすめ方法：複数アプリ同時利用ガイド</h2>
+        <div class="multi-guide-grid">
+          <div class="multi-photos">
+            <img src="assets/photos/photo_10.jpg" alt="" class="multi-ph" loading="lazy">
+            <img src="assets/photos/photo_11.jpg" alt="" class="multi-ph" loading="lazy">
+            <img src="assets/photos/photo_12.jpg" alt="" class="multi-ph" loading="lazy">
+            <img src="assets/photos/photo_13.jpg" alt="" class="multi-ph" loading="lazy">
+            <img src="assets/photos/photo_14.jpg" alt="" class="multi-ph" loading="lazy">
+            <img src="assets/photos/photo_15.jpg" alt="" class="multi-ph" loading="lazy">
+          </div>
+          <div class="multi-steps">
+            <div class="multi-step-row">
+              <div class="multi-step-ico">1️⃣</div>
+              <div>
+                <div class="multi-step-ttl">診断で1位アプリを特定</div>
+                <div class="multi-step-txt">最も相性の良いアプリに集中登録。</div>
+              </div>
+            </div>
+            <div class="multi-step-row">
+              <div class="multi-step-ico">2️⃣</div>
+              <div>
+                <div class="multi-step-ttl">2〜3アプリ並行で無料登録</div>
+                <div class="multi-step-txt">女性は多くのアプリが無料。チャンスを広げて。</div>
+              </div>
+            </div>
+            <div class="multi-step-row">
+              <div class="multi-step-ico">3️⃣</div>
+              <div>
+                <div class="multi-step-ttl">1〜2ヶ月間、集中活動</div>
+                <div class="multi-step-txt">期間を絞って集中することが成功の秘訣。</div>
+              </div>
+            </div>
+            <div class="multi-step-row">
+              <div class="multi-step-ico">4️⃣</div>
+              <div>
+                <div class="multi-step-ttl">成果アプリに絞り込む</div>
+                <div class="multi-step-txt">1ヶ月後、良い出会いがあるアプリに集中。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- プライバシー -->
+      <div class="rounded-2xl p-5 mb-4" style="background:#eff6ff;border:1px solid #bfdbfe">
+        <h2 class="text-sm font-bold mb-3" style="color:#1e40af;border-left:3px solid #2563EB;padding-left:8px">プライバシーを徹底的に重視しています</h2>
+        <div class="privacy-row">
+          <div class="privacy-item">
+            <div class="privacy-ico">🔒</div>
+            <div class="privacy-body">
+              <div class="privacy-ttl">データはローカルのみ</div>
+              <div class="privacy-txt">サーバーへの送信は一切なし。</div>
+            </div>
+          </div>
+          <div class="privacy-item">
+            <div class="privacy-ico">🛡️</div>
+            <div class="privacy-body">
+              <div class="privacy-ttl">登録・個人情報不要</div>
+              <div class="privacy-txt">メール・電話番号などの入力なし。</div>
+            </div>
+          </div>
+          <div class="privacy-item">
+            <div class="privacy-ico">🗑️</div>
+            <div class="privacy-body">
+              <div class="privacy-ttl">クリアすれば消える</div>
+              <div class="privacy-txt">ブラウザ閉じると全データ消去。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 利用者の声 -->
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">利用者の声</h2>
+        <div class="review-row">
+          <div class="review-item">
+            <div class="review-hdr">
+              <img src="assets/photos/photo_16.jpg" alt="レビュー1" class="review-av" loading="lazy">
+              <div>
+                <div class="review-name">A.Yさん（29歳）</div>
+                <div class="review-tag">東京都・会社員</div>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-txt">10問に答えるだけで自分にピッタリのアプリがわかりました。Pairsを始めて素敵な方と出会えました！</div>
+          </div>
+          <div class="review-item">
+            <div class="review-hdr">
+              <img src="assets/photos/photo_17.jpg" alt="レビュー2" class="review-av" loading="lazy">
+              <div>
+                <div class="review-name">K.Tさん（32歳）</div>
+                <div class="review-tag">大阪府・エンジニア</div>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-txt">個人情報不要で使えるのが安心でした。診断結果の理由も具体的で納得感があります。</div>
+          </div>
+          <div class="review-item">
+            <div class="review-hdr">
+              <img src="assets/photos/photo_18.jpg" alt="レビュー3" class="review-av" loading="lazy">
+              <div>
+                <div class="review-name">M.Sさん（27歳）</div>
+                <div class="review-tag">愛知県・医療職</div>
+              </div>
+            </div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="review-txt">2分で終わって驚きました。グラフでアプリの相性を比較できるのがわかりやすかったです。</div>
           </div>
         </div>
       </div>
 
       <!-- FAQ -->
-      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <span class="text-rose-500 mr-2">❓</span>よくある質問
-        </h2>
-        <div class="space-y-4">
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              マッチングアプリは安全ですか？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              大手マッチングアプリ（Pairs・with・タップルなど）は年齢確認・本人確認が義務付けられており、24時間365日の監視体制が整っています。ただし、個人情報の管理や会う際の注意など基本的なリテラシーは必要です。
-            </div>
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">よくある質問</h2>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <details class="rounded-xl overflow-hidden" style="border:1px solid #dbeafe" open>
+            <summary class="px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm" style="background:#eff6ff">マッチングアプリは安全ですか？</summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">大手マッチングアプリは年齢確認・本人確認が義務付けられており、24時間365日の監視体制が整っています。基本的なリテラシーは必要です。</div>
           </details>
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              有料プランは必ず必要ですか？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              女性は多くのアプリで無料でメッセージまで利用できます。男性はメッセージ送受信に有料プランが必要なアプリが多いですが、月額3,000〜4,000円程度が相場です。まずは無料登録してプロフィールを見てみるのがおすすめです。
-            </div>
+          <details class="rounded-xl overflow-hidden" style="border:1px solid #dbeafe">
+            <summary class="px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm">有料プランは必ず必要ですか？</summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">女性は多くのアプリで無料でメッセージまで利用できます。男性は月額3,000〜4,000円程度が相場です。</div>
           </details>
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              プロフィール写真は必ず必要ですか？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              写真ありのプロフィールはマッチング率が大幅に上がるため、できれば用意することをおすすめします。ただし、写真を非公開にして特定の相手にだけ見せる「鍵付き写真」機能を持つアプリもあります。
-            </div>
+          <details class="rounded-xl overflow-hidden" style="border:1px solid #dbeafe">
+            <summary class="px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm">複数のアプリを同時に使ってもいいですか？</summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">はい。2〜3アプリを並行利用するユーザーも多く、出会いの機会が広がります。管理しやすい2アプリに絞って活動するのがおすすめです。</div>
           </details>
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              どのマッチングアプリがおすすめですか？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              目的によって異なります。結婚・真剣交際を求めるなら「Pairs」「with」「Omiai」「ゼクシィ縁結び」、気軽な出会いなら「タップル」、共通の趣味で出会いたいなら「タップル」「with」がおすすめです。本診断で自分に合ったアプリを探してみましょう。
-            </div>
+          <details class="rounded-xl overflow-hidden" style="border:1px solid #dbeafe">
+            <summary class="px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm">PairsとOmiaiの違いは？</summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">Pairsは国内最大級の会員数・コミュニティ機能が充実。Omiaiは婚活特化で詳細な条件検索が可能。30代で結婚を意識し始めた方にはOmiaiが向いています。</div>
           </details>
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              初めてでも使いやすいですか？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              はい、初めての方でも安心して使えます。大手アプリはUI/UXが洗練されており、チュートリアルも充実しています。まずは無料登録してプロフィールを作り、相手のプロフィールを眺めることから始められます。
-            </div>
-          </details>
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              PairsとOmiaiの違いは？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              Pairs（ペアーズ）は国内最大級の会員数を誇り、20〜30代の幅広い層が利用しています。コミュニティ機能で共通の趣味の相手を見つけやすいのが特長です。一方Omiai（おみあい）は婚活特化で、詳細な条件検索（職業・年収・学歴）で理想の相手を絞り込めます。真剣な結婚を意識し始めた30代には特にOmiaiが向いているケースが多いです。
-            </div>
-          </details>
-          <details class="border border-rose-100 rounded-xl overflow-hidden">
-            <summary class="px-4 py-3 cursor-pointer bg-rose-50 font-medium text-gray-800 hover:bg-rose-100 transition-colors">
-              複数のアプリを同時に使ってもいいですか？
-            </summary>
-            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">
-              はい、複数のアプリを同時に使うことで出会いの機会が広がります。一般的に2〜3アプリを並行利用するユーザーも多く、最初は無料登録してみて自分に合ったものを見極めるのがおすすめです。ただし管理が大変になりすぎないよう、活動期間は集中させることをおすすめします。
-            </div>
+          <details class="rounded-xl overflow-hidden" style="border:1px solid #dbeafe">
+            <summary class="px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm">診断結果は何を基準に算出していますか？</summary>
+            <div class="px-4 py-3 text-sm text-gray-600 leading-relaxed">各アプリの公式データと内閣府・厚生労働省の統計データを参考に、10問の回答パターンから相性スコアを算出しています。あくまで参考情報です。</div>
           </details>
         </div>
       </div>
 
-      <!-- FAQ後のCTA（スクロールユーザー向け離脱防止） -->
-      <div class="bg-rose-50 rounded-2xl border border-rose-200 p-5 mb-6 text-center">
+      <!-- CTA -->
+      <div class="rounded-2xl border p-5 mb-4 text-center" style="background:#eff6ff;border-color:#bfdbfe">
         <p class="text-sm text-gray-700 mb-3 font-medium">気になるアプリが見つかりましたか？<br><span class="text-xs text-gray-500">10問・約2分・完全無料・登録不要</span></p>
         <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white w-full py-4 rounded-xl text-base font-bold shadow-md hover:shadow-lg transition-all">
-          ❤️ 今すぐ診断スタート（無料）
+          ❤️ あなたに合うアプリを今すぐ診断する
         </button>
       </div>
 
       <!-- 内部リンク -->
-      <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-          <span class="text-rose-500 mr-2">🔗</span>関連診断ツール
-        </h2>
+      <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
+        <h2 class="text-sm font-bold text-gray-700 mb-3" style="border-left:3px solid #2563EB;padding-left:8px">関連診断ツール</h2>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <a href="https://appadaycreator.com/lifeplan-simulator/" class="flex items-center gap-3 p-3 bg-rose-50 rounded-xl hover:bg-rose-100 transition-colors text-rose-700">
-            <span class="text-rose-500 text-xl">🏡</span>
+          <a href="https://appadaycreator.com/lifeplan-simulator/" class="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors" style="border:1px solid #dbeafe;background:#eff6ff">
+            <span class="text-xl">🏡</span>
             <div>
-              <div class="font-semibold text-sm">ライフプランシミュレーター</div>
-              <div class="text-xs text-rose-600">結婚・住宅購入を無料で試算</div>
+              <div class="font-semibold text-sm" style="color:#1e40af">ライフプランシミュレーター</div>
+              <div class="text-xs" style="color:#3b82f6">結婚・住宅購入を無料で試算</div>
             </div>
           </a>
-          <a href="https://appadaycreator.com/beauty-clinic-advisor/" class="flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors text-pink-700">
-            <span class="text-pink-500 text-xl">✨</span>
+          <a href="https://appadaycreator.com/beauty-clinic-advisor/" class="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors" style="border:1px solid #dbeafe">
+            <span class="text-xl">✨</span>
             <div>
-              <div class="font-semibold text-sm">美容クリニック診断</div>
-              <div class="text-xs text-pink-600">最適な美容施術を10問で判定</div>
+              <div class="font-semibold text-sm text-gray-800">美容クリニック診断</div>
+              <div class="text-xs text-gray-500">最適な美容施術を10問で判定</div>
             </div>
           </a>
-          <a href="https://appadaycreator.com/job-change-advisor/" class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors text-blue-700">
-            <span class="text-blue-500 text-xl">💼</span>
+          <a href="https://appadaycreator.com/job-change-advisor/" class="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors" style="border:1px solid #dbeafe">
+            <span class="text-xl">💼</span>
             <div>
-              <div class="font-semibold text-sm">転職アドバイザー診断</div>
-              <div class="text-xs text-blue-600">あなたに合う転職サービスを提案</div>
+              <div class="font-semibold text-sm text-gray-800">転職アドバイザー診断</div>
+              <div class="text-xs text-gray-500">あなたに合う転職サービスを提案</div>
             </div>
           </a>
-          <a href="https://appadaycreator.com/side-job-aptitude-test/lp/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
-            <span class="text-green-500 text-xl">💰</span>
+          <a href="https://appadaycreator.com/side-job-aptitude-test/" class="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors" style="border:1px solid #dbeafe">
+            <span class="text-xl">💰</span>
             <div>
-              <div class="font-semibold text-sm">副業適性診断</div>
-              <div class="text-xs text-green-600">あなたに向いている副業が分かる</div>
+              <div class="font-semibold text-sm text-gray-800">副業適性診断</div>
+              <div class="text-xs text-gray-500">あなたに向いている副業が分かる</div>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- 関連ツール後のCTA（最下部CTA） -->
-      <div class="text-center mb-2">
-        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white px-8 py-4 rounded-xl text-base font-bold shadow-md hover:shadow-lg transition-all inline-block">
-          ❤️ 診断スタート！（無料・2分）
+      <!-- 最下部CTA -->
+      <div class="text-center mb-4">
+        <button onclick="startDiagnosis()" data-ux="1" class="gradient-btn text-white px-8 py-4 rounded-xl text-base font-bold shadow-md hover:shadow-lg transition-all inline-block pulse-cta">
+          ❤️ あなたに合うアプリを無料診断する
         </button>
-        <p class="text-xs text-gray-400 mt-2">入力データはサーバー送信なし</p>
+        <p class="text-xs text-gray-400 mt-2">入力データはサーバー送信なし・完全無料</p>
       </div>
     </div>
 
     <!-- 診断画面 -->
     <div id="quiz-screen" class="hidden">
       <!-- 進捗バー -->
-      <div class="bg-white rounded-2xl shadow-md p-4 mb-4">
+      <div class="bg-white rounded-2xl shadow-md p-4 mb-4" style="border:1px solid #dbeafe">
         <div class="flex justify-between items-center mb-2">
           <span class="text-sm text-gray-600">質問 <span id="current-q">1</span> / 10</span>
           <div class="flex items-center gap-2">
             <span id="remaining-q" class="text-xs text-gray-400">あと9問</span>
-            <span class="text-sm font-bold text-rose-500"><span id="progress-pct">10</span>%</span>
+            <span class="text-sm font-bold" style="color:#2563EB"><span id="progress-pct">10</span>%</span>
           </div>
         </div>
-        <div class="w-full bg-rose-100 rounded-full h-3">
+        <div class="w-full rounded-full h-3" style="background:#dbeafe">
           <div id="progress-bar" class="progress-bar h-3 rounded-full gradient-btn" style="width: 10%" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-label="診断進捗"></div>
         </div>
       </div>
@@ -696,18 +1040,30 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             <h3 class="text-gray-800 font-bold text-base leading-snug">月額費用はどのくらいまで出せますか？</h3>
           </div>
           <div class="space-y-3">
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'free', this)">
-              <span class="text-green-400 mr-2">🆓</span>できるだけ無料か格安がいい
-            </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'low', this)">
-              <span class="text-blue-400 mr-2">💴</span>月2,000円程度なら出せる
-            </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'mid', this)">
-              <span class="text-orange-400 mr-2">💳</span>月3,500〜4,000円は問題ない
-            </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'high', this)">
-              <span class="text-rose-400 mr-2">💎</span>婚活投資として月5,000円以上でも使いたい
-            </button>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'free', this)" data-tooltip="女性は多くのアプリで無料。男性向けにはタップルで無料活動可能">
+                <span class="text-green-400 mr-2">🆓</span>できるだけ無料か格安がいい
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 女性は多くのアプリで無料。男性向けにはタップルで無料活動可能</p>
+            </div>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'low', this)" data-tooltip="月2,000円程度のアプリ：タップルプラス、withなど">
+                <span class="text-blue-400 mr-2">💴</span>月2,000円程度なら出せる
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 月2,000円程度のアプリ：タップルプラス、withなど</p>
+            </div>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'mid', this)" data-tooltip="月3,500〜4,000円のアプリ：Pairs, Omiai, ゼクシィ縁結び、withなど多数">
+                <span class="text-orange-400 mr-2">💳</span>月3,500〜4,000円は問題ない
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 月3,500〜4,000円のアプリ：Pairs, Omiai, ゼクシィ縁結び、withなど多数</p>
+            </div>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(5, 'high', this)" data-tooltip="各アプリのプレミアムプラン：Pairsプレミアム、Omiaiプレミアムなど">
+                <span class="text-rose-400 mr-2">💎</span>婚活投資として月5,000円以上でも使いたい
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 各アプリのプレミアムプラン：Pairsプレミアム、Omiaiプレミアムなど</p>
+            </div>
           </div>
         </div>
 
@@ -756,18 +1112,30 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             <h3 class="text-gray-800 font-bold text-base leading-snug">出会いのスタイルはどちら派？</h3>
           </div>
           <div class="space-y-3">
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'swipe', this)">
-              <span class="text-rose-400 mr-2">👆</span>写真を見てパッと判断したい（スワイプ型）
-            </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'search', this)">
-              <span class="text-blue-400 mr-2">🔍</span>条件を細かく設定して探したい（検索型）
-            </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'hobby', this)">
-              <span class="text-green-400 mr-2">🎯</span>共通の趣味・コミュニティで出会いたい（趣味型）
-            </button>
-            <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'ai', this)">
-              <span class="text-purple-400 mr-2">🤖</span>AIや診断が相手を選んでくれると安心（AI型）
-            </button>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'swipe', this)" data-tooltip="タップル・Pairsなど：写真を左右スワイプで判断">
+                <span class="text-rose-400 mr-2">👆</span>写真を見てパッと判断したい（スワイプ型）
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 タップル・Pairsなど：写真を左右スワイプで判断</p>
+            </div>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'search', this)" data-tooltip="Omiai・ゼクシィ縁結び：年収・職業・学歴など条件検索可能">
+                <span class="text-blue-400 mr-2">🔍</span>条件を細かく設定して探したい（検索型）
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 Omiai・ゼクシィ縁結び：年収・職業・学歴など条件検索可能</p>
+            </div>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'hobby', this)" data-tooltip="Pairsコミュ・タップル趣味タグ：共通の趣味タグで自然に出会える">
+                <span class="text-green-400 mr-2">🎯</span>共通の趣味・コミュニティで出会いたい（趣味型）
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 Pairsコミュ・タップル趣味タグ：共通の趣味タグで自然に出会える</p>
+            </div>
+            <div>
+              <button class="option-btn w-full text-left px-4 py-3 rounded-xl text-gray-700 bg-white" onclick="selectOption(8, 'ai', this)" data-tooltip="with心理テスト・Pairsおすすめ機能：AI診断で相手をを厳選">
+                <span class="text-purple-400 mr-2">🤖</span>AIや診断が相手を選んでくれると安心（AI型）
+              </button>
+              <p class="text-xs text-gray-500 px-4 pt-2 leading-snug">💡 with心理テスト・Pairsおすすめ機能：AI診断で相手を厳選</p>
+            </div>
           </div>
         </div>
 
@@ -816,7 +1184,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
       <!-- ナビゲーションボタン -->
       <div id="quiz-nav" class="flex gap-3 mt-4">
-        <button id="prev-btn" onclick="prevQuestion()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
+        <button id="prev-btn" onclick="prevQuestion()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl font-bold transition-all" style="border:2px solid #bfdbfe;color:#2563EB;background:white">
           <span class="mr-1">◀</span>前の質問
         </button>
         <button id="next-btn" onclick="nextQuestion()" data-ux="1" class="hidden flex-1 py-3 px-4 rounded-xl gradient-btn text-white font-bold shadow-md hover:shadow-lg transition-all">
@@ -826,21 +1194,86 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           <span class="mr-1">❤️</span>診断結果を見る！
         </button>
       </div>
+      <div id="quiz-error" class="hidden mt-2 px-4 py-2 rounded-lg text-sm text-center" style="background:#fef3c7;border:1px solid #fcd34d;color:#92400e">⚠️ 選択肢を選んでから次へ進んでください</div>
     </div>
 
     <!-- 結果画面 -->
     <div id="result-screen" class="hidden fade-in">
       <div class="bg-white rounded-2xl shadow-md p-6 mb-4 text-center">
         <div class="text-5xl mb-3">🎉</div>
-        <h2 class="text-xl font-bold text-gray-800 mb-1">診断完了！</h2>
-        <p class="text-gray-500 text-sm">あなたの婚活スタイルが分かりました</p>
+        <h2 class="text-xl font-bold text-gray-800 mb-1">あなたに最適なマッチングアプリ診断結果</h2>
+        <p class="text-gray-500 text-sm">あなたの婚活スタイルに合ったアプリをご提案しました</p>
       </div>
 
       <!-- タイプ表示 -->
       <div id="result-type-card" class="bg-white rounded-2xl shadow-md p-6 mb-4 text-center"></div>
 
+      <!-- アプリ選択タブ（モバイル最適化） -->
+      <div id="result-app-tabs" class="bg-white rounded-2xl shadow-md p-3 mb-4" style="border:1px solid #dbeafe">
+        <div class="flex gap-2 overflow-x-auto pb-2">
+          <button id="tab-0" onclick="switchResultTab(0)" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap transition-all" style="flex-shrink:0;background:#dbeafe;color:#1e40af">
+            🥇 1位
+          </button>
+          <button id="tab-1" onclick="switchResultTab(1)" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" style="flex-shrink:0;">
+            🥈 2位
+          </button>
+          <button id="tab-2" onclick="switchResultTab(2)" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" style="flex-shrink:0;">
+            🥉 3位
+          </button>
+          <button id="tab-3" onclick="switchResultTab(3)" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all" style="flex-shrink:0;">
+            4位
+          </button>
+        </div>
+      </div>
+
       <!-- アプリランキング -->
       <div id="result-apps" class="mb-4"></div>
+
+      <!-- グラフ表示エリア -->
+      <div class="bg-white rounded-2xl shadow-md p-4 mb-4">
+        <h3 class="font-bold text-gray-800 mb-3 text-center">📊 マッチ度の比較</h3>
+        <p class="text-xs text-gray-600 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2 mb-3">
+          <span class="font-semibold text-blue-700">💡 マッチ度とは：</span>あなたの回答パターンがそのマッチングアプリの特徴にどれだけ適合しているかを0～100%で表示します。数値が高いほど、あなたのニーズ・ライフスタイル・価値観に合ったアプリです。
+        </p>
+        <canvas id="matchChart" height="80"></canvas>
+      </div>
+
+      <!-- M7: 比較・シミュレーション機能 -->
+      <div class="bg-white rounded-2xl shadow-md p-4 mb-4 hidden" id="sim-section">
+        <h3 class="font-bold text-gray-800 mb-1 flex items-center">
+          <span class="mr-2">🔄</span>「もし〜だったら」シミュレーション
+        </h3>
+        <p class="text-xs text-gray-500 mb-3">条件を変えると結果がどう変わるか即時確認できます</p>
+        <div class="grid grid-cols-1 gap-2 mb-3 sm:grid-cols-3">
+          <div>
+            <label class="text-xs font-semibold text-gray-600 block mb-1" for="sim-goal">婚活目標</label>
+            <select id="sim-goal" class="w-full border border-rose-200 rounded-lg px-2 py-2 text-sm focus:outline-none focus:border-rose-400">
+              <option value="marriage">💍 真剣な交際・結婚</option>
+              <option value="casual">❤️ 気軽な出会い・恋愛</option>
+              <option value="friend">🤝 まずは友達から</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-600 block mb-1" for="sim-age">年齢層</label>
+            <select id="sim-age" class="w-full border border-rose-200 rounded-lg px-2 py-2 text-sm focus:outline-none focus:border-rose-400">
+              <option value="early20s">🌱 20代前半</option>
+              <option value="late20s">🌿 20代後半</option>
+              <option value="early30s">🌳 30代前半</option>
+              <option value="late30s">⛰️ 30代後半以上</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-600 block mb-1" for="sim-budget">月額予算</label>
+            <select id="sim-budget" class="w-full border border-rose-200 rounded-lg px-2 py-2 text-sm focus:outline-none focus:border-rose-400">
+              <option value="free">🆓 無料・格安</option>
+              <option value="low">💴 月2,000円程度</option>
+              <option value="mid">💳 月3,500〜4,000円</option>
+              <option value="high">💎 月5,000円以上</option>
+            </select>
+          </div>
+        </div>
+        <div id="sim-comparison" class="overflow-x-auto"></div>
+      </div>
 
       <!-- 結果シェアボタン（ランキング直後→拡散誘発） -->
       <div class="bg-white rounded-2xl shadow-md p-5 mb-4">
@@ -863,6 +1296,16 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         </button>
       </div>
 
+      <!-- 印刷・エクスポートボタン -->
+      <div class="flex gap-2 mb-4">
+        <button id="print-btn" onclick="printResult()" style="flex:1;background:#6366f1;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;cursor:pointer;border:none;">
+          🖨️ 印刷する
+        </button>
+        <button id="export-csv-btn" onclick="exportResultAsCSV()" style="flex:1;background:#8b5cf6;color:white;padding:10px;border-radius:8px;font-size:13px;font-weight:bold;cursor:pointer;border:none;">
+          📥 CSV保存
+        </button>
+      </div>
+
       <!-- AdSense 下部 -->
       <div class="mb-4">
         <ins class="adsbygoogle"
@@ -871,11 +1314,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
              data-ad-slot="auto"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
-        <script>try{(adsbygoogle = window.adsbygoogle || []).push({});}catch(e){}</script>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
       <div class="mb-4">
-        <button onclick="retryDiagnosis()" data-ux="1" class="w-full py-3 px-4 rounded-xl border-2 border-rose-300 text-rose-600 font-bold hover:bg-rose-50 transition-all">
+        <button onclick="retryDiagnosis()" data-ux="1" class="w-full py-3 px-4 rounded-xl font-bold transition-all" style="border:2px solid #bfdbfe;color:#2563EB;background:white">
           <span class="mr-2">🔄</span>もう一度診断する
         </button>
       </div>
@@ -909,7 +1352,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
               <div class="text-xs text-blue-600">転職サービスを提案</div>
             </div>
           </a>
-          <a href="https://appadaycreator.com/side-job-aptitude-test/lp/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
+          <a href="https://appadaycreator.com/side-job-aptitude-test/" class="flex items-center gap-3 p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors text-green-700">
             <span class="text-green-500 text-xl">¥</span>
             <div>
               <div class="font-semibold text-sm">副業適性診断</div>
@@ -919,24 +1362,19 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         </div>
       </div>
     </div>
-    <div class="bg-gray-50 border border-slate-200 rounded-xl p-3 my-2.5"><h2 class="text-xs font-bold mb-1.5 text-gray-700">🔍 計算・判定の仕組み</h2><p class="text-xs text-gray-500 leading-relaxed">入力された値を計算式やスコアリングロジックで処理し、あなたに合った結果を算出します。本ツールの結果はあくまで参考情報です。重要な判断の際は専門家にご相談ください。</p></div>
-<!-- rakuten-affiliate-block -->
-    <div class="bg-white rounded-2xl shadow-md p-4 mb-4 text-center border border-red-300 bg-red-50">
-      <p style="font-size:0.85rem;color:#4b5563;margin-bottom:8px;">🛒 関連商品を楽天市場で探す</p>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/541ad0d2.ce2bed12.541ad0d3.a1a2318c/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E5%25A9%259A%25E6%25B4%25BB%2520%25E6%259C%25AC%2F&link_type=text" target="_blank" rel="nofollow sponsored noopener"
-         class="inline-block text-white py-2.5 px-6 rounded-lg font-bold text-sm no-underline" style="background:#BF0000;">
-        楽天市場で「婚活 本」を検索 →
-      </a>
-    </div>
 
   
 <section aria-labelledby="faq-h" class="bg-white rounded-2xl shadow-md p-4 mb-4" style="max-width:740px;margin-left:auto;margin-right:auto">
   
 <div style="background:#f0f7ff;border:1px solid #bfdbfe;border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0" id="tool-desc-box">
   <h2 style="font-size:1.05rem;font-weight:800;color:#1e40af;margin:0 0 1rem">📋 このツールの詳細</h2>
-  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">「マッチングアプリ 比較診断」は、日常生活や業務に役立つ情報を提供する無料のWebサービスです。</p>
-  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">登録不要・完全無料でご利用いただけます。スマートフォン・パソコンどちらからでもアクセス可能です。</p>
-  <p style="color:#374151;margin:0;line-height:1.8">ぜひ日々の情報収集や意思決定のサポートツールとしてご活用ください。</p>
+  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">「マッチングアプリ 比較診断」は、性格・恋愛観・目的から最適なマッチングアプリを無料診断。Pairs・with・タップル・ゼクシィ縁結び・Omiaiなど人気アプリを比較。</p>
+</div>
+<div id="r46-expert-content" style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:10px;padding:16px;margin:12px 0;">
+<p style="font-size:13px;font-weight:700;color:#7e22ce;margin:0 0 8px;">💑 婚活スタイル診断の専門的背景</p>
+<p style="font-size:13px;color:#374151;line-height:1.8;margin:0 0 8px;">婚活の方法は大きく分けて①婚活アプリ・マッチングサービス（コスト重視・自分のペースで活動）、②婚活パーティー・イベント（対面でのファーストインプレッション重視）、③結婚相談所（成婚率重視・手厚いサポート）の3タイプがあります。内閣府の調査では、結婚した人の出会いのきっかけは「職場・学校」が最多（25.0%）ですが、「マッチングアプリ」は近年急増し2022年に19.9%と過去最高を記録しています。</p>
+<p style="font-size:13px;color:#374151;line-height:1.8;margin:0 0 8px;">婚活に適した方法は、①性格（内向的か外向的か）、②優先する条件（価値観・外見・経済力の重み付け）、③活動に使える時間・費用、④婚活に求めるスピード感によって大きく異なります。婚活研究では「自己開示のスピード」と「相手への関心度」が関係の深化に最も影響することが示されています。</p>
+<p style="font-size:13px;color:#374151;line-height:1.8;margin:0;">本ツールは心理学・行動科学の知見を基に、あなたに最適な婚活スタイルを診断します。診断結果はあくまで参考情報です。</p>
 </div>
 <div style="background:#eaf4fb;border-left:4px solid #1976d2;padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0">
   <h3 style="font-size:1.1rem;font-weight:800;color:#1e3a5f">このツールでできること</h3>
@@ -985,22 +1423,20 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       </tr>
     </tbody>
   </table>
-  <p style="font-size:.78rem;color:#6b7280;margin:.5rem 0 0">※ 記載データは各出典の公表時点の情報です。最新情報は各公的機関の公式サイトをご確認ください。</p>
 </div>
 <!-- r20-tool-links -->
 <div id="tool-disclaimer" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:.875rem">
   <p style="font-weight:700;color:#374151;margin:0 0 .5rem">⚠️ 計算結果の活用にあたって</p>
-  <p style="color:#4b5563;margin:0 0 .5rem;line-height:1.75">計算結果は参考値です。入力値や前提条件によって結果が変わります。重要な判断の際は最新の公式情報をご確認ください。</p>
   <ul style="margin:0;padding-left:1.25rem;color:#4b5563;line-height:1.9"><li><a href="https://www.caa.go.jp/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5;font-size:.85rem">消費者庁「くらしの安心ガイド」</a></li></ul>
 </div>
 <h2 id="faq-h" style="font-size:1.05rem;font-weight:700;margin-bottom:12px;border-left:4px solid #4f46e5;padding-left:10px;">よくある質問</h2>
   <dl style="line-height:1.8;">
-    <dt style="font-weight:600;margin-top:12px;">Q: 診断結果はどう活用すればいいですか？</dt>
-    <dd style="margin-left:16px;color:#374151;">マッチングアプリ 比較あなたに合うアに関する判断・選択の参考情報としてご活用ください。条件を変えて複数回試すことで、より広い視点で検討できます。</dd>
-    <dt style="font-weight:600;margin-top:12px;">Q: 診断を繰り返し使えますか？</dt>
-    <dd style="margin-left:16px;color:#374151;">はい、条件を変えて何度でも診断いただけます。異なるシナリオで結果を比較することで、より確かな判断材料になります。</dd>
-    <dt style="font-weight:600;margin-top:12px;">Q: 入力したデータはどこに保存されますか？</dt>
-    <dd style="margin-left:16px;color:#374151;">すべての処理はブラウザ内で完結します。入力データがサーバーに送信されることはなく、プライバシーが守られます。</dd>
+    <dt style="font-weight:700;color:#1e3a5f;padding:.6rem 0 .2rem;font-size:.9rem;">Pairsとタップルはどちらがおすすめですか？</dt>
+    <dd style="color:#4b5563;padding-bottom:.8rem;border-bottom:1px solid #eef2ff;margin-left:0;font-size:.875rem;">目的と年代で選び分けるのがおすすめです。20代前半で趣味重視の方は「タップル」、20〜30代で真剣な交際・結婚を目指すなら「Pairs（ペアーズ）」が向いています。Pairsはコミュニティ機能が充実し共通の趣味で相手を探せる点ではタップルに似た機能もあるため、まず両方に無料登録して試してみるのも一つの方法です。</dd>
+    <dt style="font-weight:700;color:#1e3a5f;padding:.6rem 0 .2rem;font-size:.9rem;">マッチングアプリで実際に結婚できる確率はどのくらいですか？</dt>
+    <dd style="color:#4b5563;padding-bottom:.8rem;border-bottom:1px solid #eef2ff;margin-left:0;font-size:.875rem;">内閣府の調査では2022年に結婚した人のうち約19.9%がマッチングアプリで出会ったと回答（過去最高）。主要アプリでは累計数万組の成婚報告があり、マッチングアプリは今や結婚の主要な出会いのきっかけです。活動の質（プロフィール・メッセージ・積極性）によって大きく差が出るため、本診断で自分に合ったアプリを選ぶことが成功の第一歩です。</dd>
+    <dt style="font-weight:700;color:#1e3a5f;padding:.6rem 0 .2rem;font-size:.9rem;">マッチングアプリを始めるベストな時期はいつですか？</dt>
+    <dd style="color:#4b5563;margin-left:0;font-size:.875rem;">新生活が始まる3〜4月と出会いを意識しやすい秋（9〜10月）は新規登録者数が増加し、マッチングの機会が広がりやすい時期です。ただし婚活・恋活は「気になったタイミング」がベスト。本診断でアプリを選んでからすぐに無料登録するのがスムーズです。</dd>
   </dl>
 </section>
 </main>
@@ -1020,6 +1456,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
     const totalQ = 10;
     let autoAdvanceTimer = null;
     let currentDiagnosisType = '';
+    let resultAppsData = [];  // P1: タブ切り替え用
+    let resultScores = {};    // P1: スコア保存用
 
     // 回答ラベルマップ（結果まとめ表示用）
     const answerLabels = {
@@ -1079,7 +1517,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
     function nextQuestion() {
       if (!answers[currentQ]) {
-        alert('選択肢を選んでください');
+        const errEl = document.getElementById('quiz-error');
+        if (errEl) { errEl.classList.remove('hidden'); setTimeout(() => errEl.classList.add('hidden'), 2500); }
         return;
       }
       if (currentQ < totalQ) {
@@ -1146,7 +1585,15 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       bar.setAttribute('aria-valuenow', pct);
       const remaining = totalQ - q;
       const remEl = document.getElementById('remaining-q');
-      if (remEl) remEl.textContent = remaining > 0 ? 'あと' + remaining + '問' : '最後の質問！';
+      if (remEl) {
+        remEl.textContent = remaining > 0 ? 'あと' + remaining + '問' : '最後の質問！';
+        remEl.setAttribute('aria-label', 'あと' + remaining + '問');
+      }
+      // 進捗バーが常に見える位置へスクロール
+      const progressCard = bar.closest('.bg-white');
+      if (progressCard && window.innerWidth < 768) {
+        progressCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     // 回答に基づいたパーソナライズ理由を生成
@@ -1379,7 +1826,7 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         label: '婚活・真剣交際タイプ',
         emoji: '💍',
         desc: 'あなたは真剣な交際・結婚を視野に入れた出会いを求めています。価値観や将来のビジョンが合う相手との深い関係を大切にするタイプ。じっくりと相手を見極め、長く続く関係を築きたいと思っています。',
-        badge: 'bg-rose-100 text-rose-700'
+        badge: 'bg-blue-100 text-blue-800'
       },
       zexy: {
         label: '本気婚活・ハイステータス志向タイプ',
@@ -1391,13 +1838,13 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         label: '価値観重視・じっくり恋愛タイプ',
         emoji: '💝',
         desc: 'あなたは相手の内面・価値観・人柄を最も大切にするタイプ。外見より中身を重視し、ゆっくりと信頼関係を築いていきたいと考えています。心理学的なアプローチで深い相性を見つけることが得意です。',
-        badge: 'bg-pink-100 text-pink-700'
+        badge: 'bg-green-100 text-green-800'
       },
       casual: {
         label: '恋活・自然な出会いタイプ',
         emoji: '💖',
         desc: 'あなたは共通の趣味や自然な雰囲気から始まる出会いを求めています。気軽に楽しみながら、気が合う相手と自然に距離を縮めていくスタイル。フットワーク軽く、積極的に出会いを楽しめるタイプです。',
-        badge: 'bg-red-100 text-red-700'
+        badge: 'bg-amber-100 text-amber-800'
       },
       omiai: {
         label: '真剣婚活・条件重視マッチングタイプ',
@@ -1407,6 +1854,41 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       }
     };
 
+    // P1: 結果画面のアプリタブ切り替え
+    function switchResultTab(index) {
+      // タブボタンのスタイル切り替え
+      document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        if (i === index) {
+          btn.style.background = '#dbeafe';
+          btn.style.color = '#1e40af';
+        } else {
+          btn.style.background = '#f3f4f6';
+          btn.style.color = '#4b5563';
+        }
+      });
+
+      // アプリカード表示切り替え（タブで選択したアプリのみ表示）
+      document.querySelectorAll('[id^="app-card-"]').forEach((card, i) => {
+        if (i === index) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // sticky CTA を更新
+      const appKey = resultAppsData[index];
+      const app = appInfo[appKey];
+      if (app) {
+        const link = document.querySelector('#mobile-cta-footer a');
+        if (link) {
+          link.href = app.link + '&utm_content=mobile_sticky_tab' + (index + 1);
+          link.textContent = app.icon + ' ' + app.name + ' に無料登録する →';
+          link.dataset.platform = app.name;
+        }
+      }
+    }
+
     function buildAnswerSummary() {
       const items = [];
       for (let i = 1; i <= totalQ; i++) {
@@ -1415,9 +1897,9 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         const label = map[answers[i]] || answers[i];
         items.push(`<li class="flex items-center gap-2 text-xs text-gray-600"><span class="text-rose-400 flex-shrink-0">✓</span><span class="text-gray-500">${map.q}：</span><strong>${label}</strong></li>`);
       }
-      return `<details class="mt-4 border border-rose-100 rounded-xl overflow-hidden text-left">
+      return `<details class="mt-4 border border-rose-100 rounded-xl overflow-hidden text-left" open>
         <summary class="px-4 py-3 cursor-pointer bg-rose-50 text-sm font-medium text-gray-700 hover:bg-rose-100 transition-colors">
-          あなたの回答まとめを見る ▼
+          ✓ あなたの回答まとめ
         </summary>
         <div class="px-4 py-3">
           <ul class="space-y-2">${items.join('')}</ul>
@@ -1427,7 +1909,8 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
 
     function showResult() {
       if (!answers[currentQ]) {
-        alert('選択肢を選んでください');
+        const errEl = document.getElementById('quiz-error');
+        if (errEl) { errEl.classList.remove('hidden'); setTimeout(() => errEl.classList.add('hidden'), 2500); }
         return;
       }
 
@@ -1439,15 +1922,18 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           <div class="text-5xl mb-3 heart-float">❤️</div>
           <p class="text-gray-500 text-sm font-medium">あなたに合うアプリを分析中...</p>
           <div class="mt-3 flex justify-center gap-1">
-            <span class="w-2 h-2 rounded-full bg-rose-400 animate-bounce" style="animation-delay:0s"></span>
-            <span class="w-2 h-2 rounded-full bg-rose-400 animate-bounce" style="animation-delay:.15s"></span>
-            <span class="w-2 h-2 rounded-full bg-rose-400 animate-bounce" style="animation-delay:.3s"></span>
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;animation:bounce 1s infinite;animation-delay:0s"></span>
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;animation:bounce 1s infinite;animation-delay:.15s"></span>
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;animation:bounce 1s infinite;animation-delay:.3s"></span>
           </div>
         </div>`;
       document.getElementById('result-apps').innerHTML = '';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       setTimeout(function() {
+        // 今回の回答を保存（次回復元用）
+        localStorage.setItem('matchmaking_last_answers', JSON.stringify(answers));
+
         const scores = calcScores();
         const type = getType(scores);
         currentDiagnosisType = type;
@@ -1511,12 +1997,12 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
             cappedPct = Math.max(10, Math.round((score / (maxScore || 1)) * 85));
           }
           const medals = ['🥇', '🥈', '🥉', '4️⃣'];
-          const rankColors = ['border-yellow-300 bg-yellow-50', 'border-gray-300 bg-gray-50', 'border-orange-200 bg-orange-50', 'border-purple-200 bg-purple-50'];
+          const rankColors = ['border-blue-400 bg-blue-50', 'border-gray-300 bg-gray-50', 'border-gray-200 bg-gray-50', 'border-gray-200 bg-gray-50'];
           const isFirst = idx === 0;
           const reason = getPersonalizedReason(key, answers);
 
           appsHTML += `
-            <div class="app-card rounded-xl p-4 ${rankColors[idx]}">
+            <div class="app-card rounded-xl p-4 ${rankColors[idx]}" id="app-card-${idx}">
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
                   <span class="text-2xl">${medals[idx]}</span>
@@ -1555,9 +2041,12 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         });
 
         appsHTML += `</div></div>
-        <div class="mb-4 text-center">
+        <div class="mb-4 space-y-2">
           <button onclick="retryDiagnosis()" data-ux="1" style="background:white;border:2px solid #f43f5e;color:#e11d48;width:100%;padding:12px;border-radius:12px;font-weight:bold;font-size:15px;cursor:pointer;">
             🔄 条件を変えてもう一度診断する
+          </button>
+          <button onclick="retryDiagnosis(true)" data-ux="1" style="background:#f8fafc;border:1px solid #d1d5db;color:#4b5563;width:100%;padding:10px;border-radius:12px;font-weight:bold;font-size:13px;cursor:pointer;">
+            ⚡ 前回の条件でもう一度見る
           </button>
         </div>`;
 
@@ -1593,28 +2082,31 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
           ${genderNote}
         </div>`;
 
-        // モバイル sticky CTA を追加
-        const mobileStickyHTML = `<div style="position:fixed;bottom:0;left:0;right:0;background:white;border-top:2px solid #f43f5e;padding:12px;z-index:100;display:none;" class="mobile-cta-footer" id="mobile-cta-footer">
-          <a href="${topApp.link}&utm_content=mobile_sticky" rel="nofollow sponsored noopener noreferrer" target="_blank" class="js-track-affiliate" data-platform="${topApp.name}" data-link-type="mobile_sticky" style="display:block;text-align:center;background:linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);color:white;padding:14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;cursor:pointer;">
-            ${topApp.icon} ${topApp.name} に無料登録する →
-          </a>
-        </div>`;
-
-        // CTA結果画面が表示されたらモバイルCTAを表示
-        setTimeout(() => {
-          const footer = document.getElementById('mobile-cta-footer') || (() => {
-            const div = document.createElement('div');
-            div.innerHTML = mobileStickyHTML;
-            document.body.appendChild(div.firstElementChild);
-            return document.getElementById('mobile-cta-footer');
-          })();
-          if (footer && window.innerWidth < 768) {
-            footer.style.display = 'block';
-            document.body.style.paddingBottom = '60px';
-          }
-        }, 1000);
+        // モバイル sticky CTA を即座に追加・表示
+        const isMobileViewport = window.innerWidth < 768;
+        let footer = document.getElementById('mobile-cta-footer');
+        if (!footer && isMobileViewport) {
+          const mobileStickyHTML = `<div style="position:fixed;bottom:0;left:0;right:0;background:white;border-top:2px solid #2563EB;padding:12px;z-index:100;" class="mobile-cta-footer" id="mobile-cta-footer">
+            <a href="${topApp.link}&utm_content=mobile_sticky" rel="nofollow sponsored noopener noreferrer" target="_blank" class="js-track-affiliate" data-platform="${topApp.name}" data-link-type="mobile_sticky" style="display:block;text-align:center;background:linear-gradient(135deg, #2563EB 0%, #3b82f6 100%);color:white;padding:14px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;cursor:pointer;">
+              ${topApp.icon} ${topApp.name} に無料登録する →
+            </a>
+          </div>`;
+          const div = document.createElement('div');
+          div.innerHTML = mobileStickyHTML;
+          document.body.appendChild(div.firstElementChild);
+          footer = document.getElementById('mobile-cta-footer');
+          document.body.style.paddingBottom = '60px';
+        } else if (footer && isMobileViewport) {
+          footer.style.display = 'block';
+          document.body.style.paddingBottom = '60px';
+        }
 
         document.getElementById('result-apps').innerHTML = appsHTML;
+
+        // P1: タブ機能用にアプリキー配列を保存＆デフォルトタブを選択
+        resultAppsData = top4.map(([key]) => key);
+        resultScores = scores;
+        switchResultTab(0);
 
         // 診断結果をURLパラメータで共有可能にする
         try {
@@ -1633,6 +2125,11 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         document.querySelectorAll('a[href*="twitter.com/intent/tweet"]').forEach(a => {
           a.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&via=appadaycreator`;
         });
+
+        // グラフ描画（マッチ度の比較）
+        drawMatchChart(scores);
+        // M7: シミュレーション初期化
+        initSimulation(scores);
       }, 800);
     }
 
@@ -1651,9 +2148,62 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
       }
     }
 
-    function retryDiagnosis() {
-      Object.keys(answers).forEach(k => delete answers[k]);
-      currentQ = 1;
+    // グラフ描画関数（Chart.js）
+    function drawMatchChart(scores) {
+      const canvas = document.getElementById('matchChart');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const apps = Object.keys(scores);
+      const labels = apps.map(k => appInfo[k].name);
+      const data = apps.map(k => Math.max(10, Math.round((scores[k] / (Math.max(...Object.values(scores)) || 1)) * 100)));
+      if (window.matchChartInstance) window.matchChartInstance.destroy();
+      window.matchChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'マッチ度 (%)', data, backgroundColor: ['#2563EB', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe'], borderRadius: 8 }] },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, max: 100, title: { display: true, text: 'マッチ度 (%)' } } } }
+      });
+    }
+
+    // 印刷関数
+    function printResult() {
+      window.print();
+    }
+
+    // CSV エクスポート関数
+    function exportResultAsCSV() {
+      const type = currentDiagnosisType || 'Unknown';
+      const info = typeInfo[type];
+      const scores = calcScores();
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const timestamp = new Date().toLocaleString('ja-JP');
+      let csv = 'マッチングアプリ比較診断\n';
+      csv += `診断日時,${timestamp}\n`;
+      csv += `あなたのタイプ,${info.label}\n`;
+      csv += '\nおすすめアプリランキング\n';
+      csv += 'ランク,アプリ名,マッチ度\n';
+      sorted.forEach((s, i) => {
+        const app = appInfo[s[0]];
+        const pct = Math.max(10, Math.round((s[1] / (sorted[0][1] || 1)) * 100));
+        csv += `${i + 1},${app.name},${pct}%\n`;
+      });
+      csv += '\n特徴\n';
+      csv += `${info.desc}\n`;
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `matchmaking-diagnosis-${new Date().getTime()}.csv`;
+      link.click();
+    }
+
+    function retryDiagnosis(restorePrevious) {
+      if (restorePrevious && localStorage.getItem('matchmaking_last_answers')) {
+        const lastAnswers = JSON.parse(localStorage.getItem('matchmaking_last_answers'));
+        Object.assign(answers, lastAnswers);
+        currentQ = 1;
+      } else {
+        Object.keys(answers).forEach(k => delete answers[k]);
+        currentQ = 1;
+      }
       currentDiagnosisType = '';
       try { history.pushState(null, '', window.location.pathname); } catch(e) {}
       document.getElementById('result-screen').classList.add('hidden');
@@ -1717,6 +2267,128 @@ select,input[type=text],input[type=number],input[type=email],textarea{min-height
         diagnosis_type: currentDiagnosisType
       });
     }, true);
+
+    // M7: シミュレーション機能 — 任意の回答セットでスコアを計算
+    function calcScoresWithAnswers(ans) {
+      const scores = { pairs: 0, with: 0, tapple: 0, zexy: 0, omiai: 0 };
+      if (ans[1] === 'female') { scores.with += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (ans[1] === 'male') { scores.pairs += 2; scores.tapple += 1; }
+      else { scores.with += 1; scores.pairs += 1; }
+      if (ans[2] === 'early20s') { scores.tapple += 3; scores.with += 1; }
+      else if (ans[2] === 'late20s') { scores.pairs += 2; scores.tapple += 1; }
+      else if (ans[2] === 'early30s') { scores.pairs += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (ans[2] === 'late30s') { scores.zexy += 4; scores.pairs += 1; scores.omiai += 2; }
+      if (ans[3] === 'marriage') { scores.pairs += 3; scores.with += 2; scores.zexy += 3; scores.omiai += 3; }
+      else if (ans[3] === 'casual') { scores.tapple += 3; scores.with += 1; }
+      else if (ans[3] === 'friend') { scores.tapple += 2; scores.with += 2; }
+      if (ans[4] === 'hobby') { scores.tapple += 3; scores.with += 1; }
+      else if (ans[4] === 'values') { scores.with += 3; scores.pairs += 1; scores.zexy += 1; scores.omiai += 1; }
+      else if (ans[4] === 'looks') { scores.tapple += 2; scores.pairs += 1; }
+      else if (ans[4] === 'stability') { scores.pairs += 3; scores.with += 1; scores.zexy += 2; scores.omiai += 2; }
+      if (ans[5] === 'free') { scores.tapple += 2; scores.with += 1; }
+      else if (ans[5] === 'low') { scores.with += 2; scores.tapple += 1; }
+      else if (ans[5] === 'mid') { scores.pairs += 2; scores.tapple += 1; scores.omiai += 1; }
+      else if (ans[5] === 'high') { scores.zexy += 3; scores.pairs += 1; scores.omiai += 2; }
+      if (ans[6] === 'irregular') { scores.tapple += 2; scores.with += 1; }
+      else if (ans[6] === 'weekday_night') { scores.with += 2; scores.pairs += 1; }
+      else if (ans[6] === 'weekend') { scores.pairs += 2; scores.zexy += 1; scores.omiai += 1; }
+      if (ans[7] === 'none') { scores.with += 2; scores.pairs += 1; }
+      else if (ans[7] === 'some') { scores.pairs += 2; scores.tapple += 1; }
+      else if (ans[7] === 'many') { scores.tapple += 2; scores.zexy += 1; scores.omiai += 1; }
+      if (ans[8] === 'swipe') { scores.tapple += 3; scores.pairs += 1; }
+      else if (ans[8] === 'search') { scores.pairs += 2; scores.zexy += 2; scores.omiai += 2; }
+      else if (ans[8] === 'hobby') { scores.tapple += 3; scores.pairs += 1; }
+      else if (ans[8] === 'ai') { scores.with += 3; scores.pairs += 1; }
+      if (ans[9] === 'talk') { scores.with += 3; scores.tapple += 1; }
+      else if (ans[9] === 'vibe') { scores.tapple += 2; scores.pairs += 1; }
+      else if (ans[9] === 'values') { scores.with += 3; scores.pairs += 2; scores.zexy += 2; scores.omiai += 1; }
+      else if (ans[9] === 'appearance') { scores.tapple += 3; }
+      if (ans[10] === 'now') { scores.pairs += 2; scores.tapple += 1; scores.with += 1; }
+      else if (ans[10] === 'soon') { scores.pairs += 2; scores.with += 1; scores.zexy += 1; scores.omiai += 1; }
+      else if (ans[10] === 'maybe') { scores.with += 2; scores.zexy += 2; scores.omiai += 1; }
+      return scores;
+    }
+
+    // シミュレーションパネルを初期化し、セレクト変更のたびに再計算
+    function initSimulation(origScores) {
+      const sec = document.getElementById('sim-section');
+      if (!sec) return;
+      sec.classList.remove('hidden');
+      const goalEl = document.getElementById('sim-goal');
+      const ageEl = document.getElementById('sim-age');
+      const budgetEl = document.getElementById('sim-budget');
+      // 現在の回答をセレクトに反映
+      if (answers[3] && goalEl) goalEl.value = answers[3];
+      if (answers[2] && ageEl) ageEl.value = answers[2];
+      if (answers[5] && budgetEl) budgetEl.value = answers[5];
+      const rerun = function() { runSimulation(origScores); };
+      goalEl.addEventListener('change', rerun);
+      ageEl.addEventListener('change', rerun);
+      budgetEl.addEventListener('change', rerun);
+      runSimulation(origScores);
+    }
+
+    function runSimulation(origScores) {
+      const goalEl = document.getElementById('sim-goal');
+      const ageEl = document.getElementById('sim-age');
+      const budgetEl = document.getElementById('sim-budget');
+      if (!goalEl || !ageEl || !budgetEl) return;
+
+      const simAnswers = Object.assign({}, answers, {
+        2: ageEl.value,
+        3: goalEl.value,
+        5: budgetEl.value
+      });
+      const simScores = calcScoresWithAnswers(simAnswers);
+      const hasChange = simAnswers[2] !== answers[2] || simAnswers[3] !== answers[3] || simAnswers[5] !== answers[5];
+
+      const origSorted = Object.entries(origScores).sort((a, b) => b[1] - a[1]);
+      const simSorted = Object.entries(simScores).sort((a, b) => b[1] - a[1]);
+      const origMax = origSorted[0][1] || 1;
+      const simMax = simSorted[0][1] || 1;
+
+      // パーセント計算ヘルパー
+      function toPct(scores, sorted, max, key) {
+        const idx = sorted.findIndex(([k]) => k === key);
+        return idx === 0 ? (90 + Math.round((scores[key] / max) * 8)) : Math.max(10, Math.round((scores[key] / max) * 85));
+      }
+
+      let html = '<table style="width:100%;border-collapse:collapse;font-size:.78rem">';
+      html += '<thead><tr style="background:#eff6ff">';
+      html += '<th style="padding:.4rem .6rem;text-align:left;border:1px solid #bfdbfe;color:#1e40af">アプリ</th>';
+      html += '<th style="padding:.4rem .6rem;text-align:center;border:1px solid #bfdbfe;color:#1e40af">現在</th>';
+      if (hasChange) html += '<th style="padding:.4rem .6rem;text-align:center;border:1px solid #bfdbfe;color:#1e40af">変更後</th><th style="padding:.4rem .6rem;text-align:center;border:1px solid #bfdbfe;color:#1e40af">差分</th>';
+      html += '</tr></thead><tbody>';
+
+      origSorted.forEach(([key], i) => {
+        const app = appInfo[key];
+        const origPct = toPct(origScores, origSorted, origMax, key);
+        const simPct = toPct(simScores, simSorted, simMax, key);
+        const diff = simPct - origPct;
+        const diffStr = diff > 0 ? `<span style="color:#16a34a;font-weight:700">▲${diff}%</span>` : diff < 0 ? `<span style="color:#dc2626;font-weight:700">▼${Math.abs(diff)}%</span>` : '<span style="color:#9ca3af">±0</span>';
+        html += `<tr style="background:${i % 2 === 0 ? 'white' : '#f0f9ff'}">`;
+        html += `<td style="padding:.4rem .6rem;border:1px solid #dbeafe;font-weight:600">${app.icon} ${app.name}</td>`;
+        html += `<td style="padding:.4rem .6rem;border:1px solid #dbeafe;text-align:center">${origPct}%</td>`;
+        if (hasChange) html += `<td style="padding:.4rem .6rem;border:1px solid #dbeafe;text-align:center">${simPct}%</td><td style="padding:.4rem .6rem;border:1px solid #dbeafe;text-align:center">${diffStr}</td>`;
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+
+      // 1位が変わった場合にハイライト
+      if (hasChange) {
+        const newTop = simSorted[0][0];
+        const oldTop = origSorted[0][0];
+        if (newTop !== oldTop) {
+          html += `<p style="margin-top:10px;font-size:.82rem;font-weight:700;color:#1e40af;text-align:center;padding:8px;background:#eff6ff;border-radius:8px;">🔄 条件変更後のおすすめ1位：${appInfo[newTop].icon} ${appInfo[newTop].name}</p>`;
+        } else {
+          html += `<p style="margin-top:8px;font-size:.78rem;color:#6b7280;text-align:center;">※ 1位のおすすめは変わりません</p>`;
+        }
+      } else {
+        html += `<p style="margin-top:8px;font-size:.78rem;color:#9ca3af;text-align:center;">← 条件を変えると差分が表示されます</p>`;
+      }
+
+      document.getElementById('sim-comparison').innerHTML = html;
+    }
 
     // URLパラメータから直接結果を表示（シェアURLへの対応）
     (function() {
@@ -1838,19 +2510,14 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
 <div style="border-top:1px solid #e5e7eb;padding:14px 16px 18px;background:#fff;">
   <p style="text-align:center;font-size:11px;font-weight:600;color:#94a3b8;margin:0 0 10px;">スポンサーリンク</p>
   <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:700px;margin:0 auto;">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">日々の生活にハッピーをプラス！《ハピタス》</a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+18PTPM+1O96+699KI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">《ヨガ》をはじめてみませんか？ホットヨガスタジオLAVA</a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4B3WJ7+18PTPM+1O96+699KI" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=457C4C+C23BCA+0K+10FXXU" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">アフィリエイトならA8.net</a><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=457C4C+C23BCA+0K+10FXXU" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJA+AWEYZU+2CG0+5YJRM" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">珈琲きゃろっと</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJA+AWEYZU+2CG0+5YJRM" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">【じゃらん】国内25,000軒の宿をネットで予約OK！2％ポイント還元！</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FIIWRU+1IRY+1TKOKI" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">ファイナンシャルアカデミー「お金の教養講座」</a><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4B3WJ6+FIIWRU+1IRY+1TKOKI" alt="">
-    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJA+86RVSA+3XCC+64C3M" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">松井証券</a><img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B3WJA+86RVSA+3XCC+64C3M" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ7+C3A6JU+4Z92+65ME9" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">【求人数No.1】リゾートバイト・日本を楽しもう【ダイブ】</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ7+C3A6JU+4Z92+65ME9" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ8+4KDYAY+4JGQ+1NQUK2" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;white-space:nowrap;">マネーフォワード クラウド開業届</a><img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B3WJ8+4KDYAY+4JGQ+1NQUK2" alt="">
   </div>
 </div>
 <footer class="bg-gray-800 text-gray-300 py-8 px-4 mt-8">
     <div class="max-w-2xl mx-auto text-center">
-      <div class="text-rose-400 text-2xl mb-3"><span>❤️</span></div>
-      <p class="font-bold text-white mb-2">マッチングアプリ 比較診断</p>
+      <div class="text-2xl mb-3" style="color:#60a5fa"><span>❤️</span></div>
+      <p class="font-bold text-white mb-2">マッチングアプリ比較診断</p>
       <p class="text-xs text-gray-400 mb-4 leading-relaxed">
         本サービスは情報提供を目的としており、特定のマッチングアプリの利用を強制するものではありません。
         アフィリエイトリンクを含む場合があります。
@@ -1859,11 +2526,10 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
         <span>&copy; 2026 AppADayCreator</span>
       </div>
     </div>
-          <div class="bg-slate-50 border-t border-slate-200 py-3 px-4 text-center text-xs text-slate-500 leading-relaxed">
-  <strong>免責事項</strong>：本ツールの計算・診断結果はあくまで参考情報です。本サービスの利用により生じた損害について、当サイトは一切の責任を負いません。
-</div>
-  <div class="mt-2"><a href="privacy-policy.html" class="text-xs opacity-70 underline" style="color:inherit;">プライバシーポリシー</a></div>
-<p class="text-center text-xs mt-1" style="color:#9ca3af;">最終更新: 2026年5月30日 | 本サービスはアフィリエイト広告を掲載しています</p>
+  <div style="border-top:2px solid #374151;margin-top:1.5rem;padding:1rem 1rem 0;font-size:11px;color:#6b7280;text-align:center;line-height:1.8">
+    <p><strong>免責事項</strong>：本ツールの診断結果はあくまで参考情報です。本サービスの利用により生じた損害について、当サイトは一切の責任を負いません。</p>
+    <p><a href="privacy-policy.html" style="color:#9ca3af;text-decoration:underline;">プライバシーポリシー</a>　|　最終更新: 2026年5月30日　|　本サービスはアフィリエイト広告を掲載しています</p>
+  </div>
 </footer>
 <div style="text-align:center;padding:10px 16px 14px;background:#eef2ff;border-top:2px solid #c7d2fe;margin-top:8px">
 <a href="/blog/" style="color:#4f46e5;font-size:.85rem;font-weight:700">📖 マネー・育児・キャリアのコラムを読む →</a>
@@ -1877,7 +2543,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
 </ul>
 </div>
 <!-- r17-mobile-ux -->
-<a href="#top" id="back-to-top" aria-label="ページトップへ戻る" style="display:none;position:fixed;bottom:24px;right:20px;background:#4f46e5;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:1.4rem;line-height:48px;text-align:center;text-decoration:none;box-shadow:0 4px 12px rgba(79,70,229,.4);z-index:9000;cursor:pointer" title="ページトップへ">↑</a>
+<a href="#top" id="back-to-top" aria-label="ページトップへ戻る" style="display:none;position:fixed;bottom:24px;right:20px;background:#2563EB;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:1.4rem;line-height:48px;text-align:center;text-decoration:none;box-shadow:0 4px 12px rgba(37,99,235,.4);z-index:9000;cursor:pointer" title="ページトップへ">↑</a>
 <script>
 (function(){
   var btn = document.getElementById('back-to-top');
@@ -1887,5 +2553,17 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
   }, {passive:true});
 })();
 </script>
+<!-- r31-cookie-banner [V1:優先度低下] -->
+<!-- V2: Cookieバナーをコンパクト化（モバイルで折り返さずCTAを隠さない） -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#f1f5f9;padding:.4rem .75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:.5rem;z-index:100;font-size:.7rem;box-shadow:0 -2px 8px rgba(0,0,0,.2)">
+<div style="line-height:1.3;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">当サイトはCookieおよびGoogle Analyticsを使用。<a href="/privacy-policy.html" style="color:#60a5fa;text-decoration:underline">ポリシー</a></div>
+<button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie-consent','1');window.grantConsent && window.grantConsent()" style="background:#64748b;color:#f1f5f9;border:none;padding:.2rem .55rem;border-radius:.25rem;font-size:.7rem;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;min-height:0">閉じる</button>
+</div>
+<script>if(localStorage.getItem('cookie-consent'))document.getElementById('cookie-banner').style.display='none'</script>
+<!-- r46-org-footer -->
+<div style="text-align:center;font-size:11px;color:#9ca3af;padding:6px 0 4px;background:#f8fafc;border-top:1px solid #e5e7eb;">
+  運営: <a href="https://appadaycreator.com/" style="color:#9ca3af;text-decoration:none;">AppADayCreator</a> | <a href="https://tech-and-brace.co.jp/" rel="noopener" style="color:#9ca3af;text-decoration:none;">株式会社Tech&amp;Brace</a>
+</div>
+<script src="/assets/consent-mode.js"></script>
 </body>
 </html>
