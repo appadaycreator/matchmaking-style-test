@@ -68,7 +68,7 @@
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(37,99,235,.88) 0%, rgba(29,78,216,.72) 60%, rgba(0,0,0,.2) 100%);
+      background: linear-gradient(90deg, rgba(37,99,235,.92) 0%, rgba(29,78,216,.82) 40%, rgba(37,99,235,.50) 68%, rgba(15,30,80,.20) 100%);
     }
     .hero-inner {
       position: relative; z-index: 1;
@@ -305,10 +305,10 @@
     .multi-step {
       display: flex; gap: 16px; align-items: flex-start;
       background: var(--white); border-radius: 14px; padding: 18px;
-      border: 1px solid #E5E7EB; box-shadow: 0 1px 6px rgba(0,0,0,.04);
+      border: 1px solid #FBCFE8; box-shadow: 0 1px 6px rgba(236,72,153,.06);
     }
     .multi-step-icon {
-      width: 44px; height: 44px; border-radius: 12px; background: var(--primary-light);
+      width: 44px; height: 44px; border-radius: 12px; background: rgba(236,72,153,.1);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.3rem; flex-shrink: 0;
     }
@@ -327,10 +327,10 @@
     @media (max-width: 768px) { .privacy-grid { grid-template-columns: 1fr; } }
     .privacy-card {
       background: var(--white); border-radius: 16px; padding: 24px;
-      border: 1px solid #E5E7EB; box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      border: 1px solid #E9D5FF; box-shadow: 0 2px 8px rgba(139,92,246,.06);
     }
     .privacy-icon {
-      width: 48px; height: 48px; border-radius: 12px; background: rgba(37,99,235,.1);
+      width: 48px; height: 48px; border-radius: 12px; background: rgba(139,92,246,.12);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem; margin-bottom: 14px;
     }
@@ -342,7 +342,7 @@
     @media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } }
     .review-card {
       background: var(--white); border-radius: 20px; padding: 24px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.08); border: 1px solid #E5E7EB;
+      box-shadow: 0 4px 16px rgba(249,115,22,.08); border: 1px solid #FED7AA;
     }
     .review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
     .review-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-light); flex-shrink: 0; }
@@ -404,6 +404,83 @@
       50% { box-shadow: 0 8px 32px rgba(245,158,11,.7); }
     }
     .pulse { animation: pulse 2.5s ease-in-out infinite; }
+
+    /* ===== DESIGN ENHANCEMENTS ===== */
+    :root {
+      --accent-pink: #EC4899;
+      --accent-purple: #8B5CF6;
+      --accent-orange: #F97316;
+      --section-warm: #FFF7ED;
+      --section-pink: #FFF0F6;
+      --section-purple: #F5F3FF;
+    }
+
+    /* Hero decorative circles */
+    .hero-deco {
+      position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+    }
+    .hero-deco-1 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(249,115,22,.55) 0%, transparent 65%);
+      top: -130px; right: 3%;
+    }
+    .hero-deco-2 {
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(236,72,153,.5) 0%, transparent 65%);
+      bottom: -90px; right: 26%;
+    }
+    .hero-deco-3 {
+      width: 190px; height: 190px;
+      background: radial-gradient(circle, rgba(139,92,246,.45) 0%, transparent 65%);
+      top: 15%; left: -35px;
+    }
+
+    /* Section backgrounds */
+    .section-warm { background: #FFF7ED; }
+    .section-pink { background: #FFF0F6; }
+    .section-purple { background: #F5F3FF; }
+
+    /* Colorful section labels */
+    .label-orange { background: rgba(249,115,22,.13); color: #EA580C !important; }
+    .label-pink { background: rgba(236,72,153,.13); color: #DB2777 !important; }
+    .label-purple { background: rgba(139,92,246,.13); color: #7C3AED !important; }
+    .label-green { background: rgba(16,185,129,.13); color: #047857 !important; }
+
+    /* Feature card colorful borders */
+    .feature-card-blue { border-top: 3px solid #2563EB !important; }
+    .feature-card-green { border-top: 3px solid #10B981 !important; }
+    .feature-card-purple { border-top: 3px solid #8B5CF6 !important; }
+    .feature-card-orange { border-top: 3px solid #F97316 !important; }
+
+    /* Step number colors */
+    .step-num-pink { background: #EC4899 !important; box-shadow: 0 4px 12px rgba(236,72,153,.35) !important; }
+    .step-num-orange { background: #F97316 !important; box-shadow: 0 4px 12px rgba(249,115,22,.35) !important; }
+
+    /* More vibrant icon backgrounds */
+    .icon-blue { background: #DBEAFE !important; }
+    .icon-green { background: #D1FAE5 !important; }
+    .icon-purple { background: #EDE9FE !important; }
+    .icon-amber { background: #FEF3C7 !important; }
+
+    /* CTA decorative circles */
+    .cta-circle {
+      position: absolute; border-radius: 50%; pointer-events: none;
+    }
+    .cta-circle-1 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(249,115,22,.22) 0%, transparent 70%);
+      bottom: -160px; left: -90px;
+    }
+    .cta-circle-2 {
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(236,72,153,.2) 0%, transparent 70%);
+      top: -80px; right: 3%;
+    }
+    .cta-circle-3 {
+      width: 150px; height: 150px;
+      background: radial-gradient(circle, rgba(139,92,246,.25) 0%, transparent 70%);
+      bottom: 10%; right: 15%;
+    }
 
     /* ===== STATS STRIP ===== */
     .stats-strip {
@@ -479,6 +556,9 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+    <div class="hero-deco hero-deco-3"></div>
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-badge">
@@ -622,27 +702,27 @@
   <section id="features" class="section section-blue">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">特長</span>
+        <span class="section-label label-orange">特長</span>
         <h2 class="section-title">このツールが選ばれる<span>4つの理由</span></h2>
         <p class="section-desc">マッチングアプリ選びで迷っているあなたのために、最適な診断ツールを作りました。</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card feature-card-blue">
           <div class="feature-icon icon-blue">⏱️</div>
           <div class="feature-title">10問・約2分で完結</div>
           <div class="feature-desc">性格・目的・予算に関する10問に答えるだけ。スキマ時間にサクッと診断できます。</div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-card-green">
           <div class="feature-icon icon-green">🛡️</div>
           <div class="feature-title">プライバシー第一</div>
           <div class="feature-desc">入力データはすべてブラウザ内で処理。サーバー送信・登録は一切不要で安心です。</div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-card-purple">
           <div class="feature-icon icon-purple">📱</div>
           <div class="feature-title">5アプリ完全比較</div>
           <div class="feature-desc">Pairs・with・タップル・ゼクシィ縁結び・Omiaiの5大アプリを公平に比較します。</div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card feature-card-orange">
           <div class="feature-icon icon-amber">🆓</div>
           <div class="feature-title">完全無料・登録不要</div>
           <div class="feature-desc">メールアドレスや個人情報の登録なし。今すぐ無料で診断スタートできます。</div>
@@ -652,10 +732,10 @@
   </section>
 
   <!-- ===== STEPS ===== -->
-  <section id="steps" class="section">
+  <section id="steps" class="section section-warm">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">使い方</span>
+        <span class="section-label label-pink">使い方</span>
         <h2 class="section-title">使い方は<span>カンタン3ステップ</span></h2>
         <p class="section-desc">難しい操作は一切ありません。スマホでもPCでも快適に使えます。</p>
       </div>
@@ -668,14 +748,14 @@
           <div class="step-arrow">→</div>
         </div>
         <div class="step-card">
-          <div class="step-num">2</div>
+          <div class="step-num step-num-pink">2</div>
           <img src="../assets/photos/photo_08.jpg" alt="スコアを確認" class="step-photo" loading="lazy">
           <div class="step-title">スコアを確認</div>
           <div class="step-desc">あなたの回答をもとに5アプリのマッチ度をスコアで表示。グラフで一目でわかります。</div>
           <div class="step-arrow">→</div>
         </div>
         <div class="step-card">
-          <div class="step-num">3</div>
+          <div class="step-num step-num-orange">3</div>
           <img src="../assets/photos/photo_09.jpg" alt="アプリに登録" class="step-photo" loading="lazy">
           <div class="step-title">アプリに登録</div>
           <div class="step-desc">おすすめアプリのリンクから無料登録。出会いの第一歩を踏み出しましょう！</div>
@@ -694,7 +774,7 @@
   <section class="section section-blue">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">診断結果</span>
+        <span class="section-label label-purple">診断結果</span>
         <h2 class="section-title">診断結果は<span>こんな形で表示</span>されます</h2>
         <p class="section-desc">あなたの回答パターンから5アプリのマッチ度を数値とグラフで可視化します。</p>
       </div>
@@ -767,10 +847,10 @@
   </section>
 
   <!-- ===== MULTI APP GUIDE ===== -->
-  <section id="multi-app" class="section">
+  <section id="multi-app" class="section section-pink">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">活用ガイド</span>
+        <span class="section-label label-pink">活用ガイド</span>
         <h2 class="section-title">診断後の<span>複数アプリ同時利用</span>ガイド</h2>
         <p class="section-desc">2〜3アプリを同時に使うことで出会いのチャンスが2倍以上に。賢い活用法を紹介します。</p>
       </div>
@@ -821,7 +901,7 @@
   <section id="comparison" class="section section-alt">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">アプリ比較</span>
+        <span class="section-label label-orange">アプリ比較</span>
         <h2 class="section-title">詳細アプリ比較表<span>（料金・ユーザー層・機能）</span></h2>
         <p class="section-desc">主要5アプリの特徴を徹底比較。あなたに合ったアプリ選びの参考にしてください。</p>
       </div>
@@ -893,7 +973,7 @@
   <section class="section">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">出会いの実例</span>
+        <span class="section-label label-pink">出会いの実例</span>
         <h2 class="section-title">マッチングアプリで<span>出会いを見つけた方々</span></h2>
         <p class="section-desc">内閣府調査では2022年結婚者の19.9%がマッチングアプリで出会っています。</p>
       </div>
@@ -913,10 +993,10 @@
   </section>
 
   <!-- ===== PRIVACY ===== -->
-  <section class="section section-blue">
+  <section class="section section-purple">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">プライバシー</span>
+        <span class="section-label label-purple">プライバシー</span>
         <h2 class="section-title">プライバシーを<span>徹底的に重視</span>しています</h2>
         <p class="section-desc">あなたの大切な情報を守るために、設計段階からプライバシーファーストを貫いています。</p>
       </div>
@@ -941,10 +1021,10 @@
   </section>
 
   <!-- ===== REVIEWS ===== -->
-  <section id="reviews" class="section">
+  <section id="reviews" class="section section-warm">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">利用者の声</span>
+        <span class="section-label label-green">利用者の声</span>
         <h2 class="section-title">実際に使った<span>ユーザーの感想</span></h2>
         <p class="section-desc">診断を経てマッチングアプリを始めた方々からいただいた声を紹介します。</p>
       </div>
@@ -1045,6 +1125,9 @@
 
   <!-- ===== CTA ===== -->
   <section class="cta-section">
+    <div class="cta-circle cta-circle-1"></div>
+    <div class="cta-circle cta-circle-2"></div>
+    <div class="cta-circle cta-circle-3"></div>
     <div class="container" style="position:relative;z-index:1">
       <h2 class="section-title" style="color:white;margin-bottom:16px">まずは無料で、<br>あなたにぴったりのアプリを見つけよう</h2>
       <p class="section-desc" style="color:rgba(255,255,255,.8);margin:0 auto 32px;max-width:520px">10問・約2分・完全無料。今すぐ診断スタート！あなたに最適なマッチングアプリが見つかります。</p>
