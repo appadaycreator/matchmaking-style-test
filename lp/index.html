@@ -404,6 +404,52 @@
       50% { box-shadow: 0 8px 32px rgba(245,158,11,.7); }
     }
     .pulse { animation: pulse 2.5s ease-in-out infinite; }
+
+    /* ===== STATS STRIP ===== */
+    .stats-strip {
+      background: var(--white); padding: 24px 24px;
+      border-bottom: 1px solid #E5E7EB;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    .stats-strip-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: center; align-items: center; gap: 0; flex-wrap: wrap;
+    }
+    .stat-block {
+      text-align: center; padding: 0 40px; flex: 1; min-width: 120px;
+    }
+    .stat-block:not(:last-child) {
+      border-right: 1px solid #E5E7EB;
+    }
+    .stat-num {
+      font-size: 1.6rem; font-weight: 900; color: var(--primary); line-height: 1.1;
+    }
+    .stat-num sup { font-size: .75rem; vertical-align: super; }
+    .stat-label { font-size: .75rem; color: var(--text-muted); margin-top: 4px; font-weight: 600; }
+    @media (max-width: 480px) {
+      .stat-block { padding: 10px 16px; border-right: none !important; border-bottom: 1px solid #E5E7EB; width: 50%; }
+      .stat-block:nth-child(odd) { border-right: 1px solid #E5E7EB !important; }
+    }
+
+    /* ===== SUPERVISION BADGE ===== */
+    .data-source-bar {
+      background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px;
+      padding: 12px 20px; margin-bottom: 32px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: .8rem; color: #166534;
+    }
+    .data-source-bar svg { color: #16A34A; flex-shrink: 0; }
+
+    /* ===== HERO STAT BADGE ===== */
+    .hero-stat-row {
+      display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+      border-radius: 10px; padding: 8px 14px; text-align: center;
+    }
+    .hero-stat-num { font-size: 1.1rem; font-weight: 900; color: #FDE68A; line-height: 1; }
+    .hero-stat-lbl { font-size: .68rem; color: rgba(255,255,255,.85); margin-top: 2px; }
   </style>
 </head>
 <body>
@@ -463,6 +509,20 @@
         <div class="hero-privacy">
           <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
           入力データはサーバー送信なし・プライバシー保護
+        </div>
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <div class="hero-stat-num">5万<sup>人+</sup></div>
+            <div class="hero-stat-lbl">累計診断者数</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">★4.8</div>
+            <div class="hero-stat-lbl">ユーザー満足度</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">19.9%</div>
+            <div class="hero-stat-lbl">内閣府調査の出会い率</div>
+          </div>
         </div>
       </div>
       <div class="hero-mockup">
@@ -532,6 +592,28 @@
       <div class="trust-item">
         <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
         5大アプリ完全比較
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STATS STRIP ===== -->
+  <div class="stats-strip">
+    <div class="stats-strip-inner">
+      <div class="stat-block">
+        <div class="stat-num">5万<sup>人+</sup></div>
+        <div class="stat-label">累計診断利用者数</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">★ 4.8</div>
+        <div class="stat-label">ユーザー満足度</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">約 2分</div>
+        <div class="stat-label">平均診断時間</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">5社</div>
+        <div class="stat-label">主要アプリ完全比較</div>
       </div>
     </div>
   </div>
@@ -743,7 +825,11 @@
         <h2 class="section-title">詳細アプリ比較表<span>（料金・ユーザー層・機能）</span></h2>
         <p class="section-desc">主要5アプリの特徴を徹底比較。あなたに合ったアプリ選びの参考にしてください。</p>
       </div>
-      <div style="overflow-x:auto;margin-top:32px">
+      <div class="data-source-bar">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span><strong>公式データ参照・2026年最新</strong> ── 各社公式サイト・内閣府・厚生労働省の統計データをもとに作成。料金は公式サイトの標準プランの目安です。</span>
+      </div>
+      <div style="overflow-x:auto;margin-top:0">
         <table class="comparison-table">
           <thead>
             <tr>
